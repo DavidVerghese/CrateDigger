@@ -8,7 +8,6 @@ class SongssamplesController < ApplicationController
 
   # GET /songssamples/1
   def show
-    # @songssample = SongsSample.new(songssample_params)
     @songssample = SongsSample.find(params[:id])
     render json: @songssample
   end
@@ -28,7 +27,6 @@ class SongssamplesController < ApplicationController
   def update
     @songssample = SongsSample.find(params[:id])
     if @songssample.update(songssample_params)
-    # if @songssample.update(params[:id])
       render json: @songssample
     else
       render json: @songssample.errors, status: :unprocessable_entity

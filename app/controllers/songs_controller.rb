@@ -8,14 +8,12 @@ class SongsController < ApplicationController
 
   # GET /songs/1
   def show
-    # @song = Song.new(song_params)
     @song = Song.find(params[:id])
     render json: @song
   end
 
   # POST /songs
   def create
-    # @song = Song.new(song_params)
     @song = Song.new(params[:id])
 
     if @song.save
@@ -30,12 +28,6 @@ class SongsController < ApplicationController
     @song = Song.find(params[:id])
     @song.update(song_params)
     render json: @song
-
-    # if @song.update(song_params)
-    #   render json: @song
-    # else
-    #   render json: @song.errors, status: :unprocessable_entity
-    # end
   end
 
   # DELETE /songs/1

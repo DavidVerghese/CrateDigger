@@ -9,13 +9,11 @@ class ProducersController < ApplicationController
     # GET /producers/1
     def show
       @producer = Producer.new(producer_params)
-      # @producer = Producer.find(params[:id])
       render json: @producer
     end
   
     # POST /producers
     def create
-      # @producer = Producer.new(producer_params)
       @producer = Producer.new(producer_params)
   
       if @producer.save

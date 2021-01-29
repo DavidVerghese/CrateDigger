@@ -8,7 +8,6 @@ class SamplesController < ApplicationController
   
     # GET /samples/1
     def show
-      # @sample = Sample.new(sample_params)
       @sample = Sample.find(params[:id])
       render json: @sample
     end
