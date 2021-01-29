@@ -25,11 +25,9 @@ class ProducersController < ApplicationController
   
     # PATCH/PUT /producers/1
     def update
-      if @producer.update(producer_params)
-        render json: @producer
-      else
-        render json: @producer.errors, status: :unprocessable_entity
-      end
+      @producer = Producer.find(params[:id])
+      @producer.update(producer_params)
+      render json: @producer
     end
   
     # DELETE /producers/1

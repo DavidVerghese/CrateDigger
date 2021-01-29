@@ -26,11 +26,8 @@ class SongssamplesController < ApplicationController
   # PATCH/PUT /songssamples/1
   def update
     @songssample = SongsSample.find(params[:id])
-    if @songssample.update(songssample_params)
-      render json: @songssample
-    else
-      render json: @songssample.errors, status: :unprocessable_entity
-    end
+    @songssample.update(songssample_params)
+    render json: @songssample
   end
 
   # DELETE /songssamples/1
