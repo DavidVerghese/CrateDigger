@@ -8,8 +8,7 @@ class ProducersController < ApplicationController
   
     # GET /producers/1
     def show
-      # @producer = Producer.new(producer_params)
-      @producer = Producer.find(params[:id])
+      @producer = Producer.new(producer_params)
       render json: @producer
     end
   
@@ -35,6 +34,7 @@ class ProducersController < ApplicationController
   
     # DELETE /producers/1
     def destroy
+      @producer = Producer.find(params[:id])
       @producer.destroy
     end
   

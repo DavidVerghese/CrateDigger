@@ -8,7 +8,6 @@ class SongssamplesController < ApplicationController
 
   # GET /songssamples/1
   def show
-    # @songssample = SongsSample.new(songssample_params)
     @songssample = SongsSample.find(params[:id])
     render json: @songssample
   end
@@ -26,6 +25,7 @@ class SongssamplesController < ApplicationController
 
   # PATCH/PUT /songssamples/1
   def update
+    @songssample = SongsSample.find(params[:id])
     if @songssample.update(songssample_params)
       render json: @songssample
     else
@@ -35,6 +35,7 @@ class SongssamplesController < ApplicationController
 
   # DELETE /songssamples/1
   def destroy
+    @songssample = SongsSample.find(params[:id])
     @songssample.destroy
   end
 
