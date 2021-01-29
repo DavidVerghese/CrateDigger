@@ -26,15 +26,14 @@ class SamplesController < ApplicationController
   
     # PATCH/PUT /samples/1
     def update
-      if @sample.update(sample_params)
-        render json: @sample
-      else
-        render json: @sample.errors, status: :unprocessable_entity
-      end
+      @sample = Sample.find(params[:id])
+      @sample.update(sample_params)
+      render json: @sample
     end
   
     # DELETE /samples/1
     def destroy
+      @sample = Sample.find(params[:id])
       @sample.destroy
     end
   
