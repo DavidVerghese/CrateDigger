@@ -44,6 +44,6 @@ class SamplesController < ApplicationController
   
       # Only allow a trusted parameter "white list" through.
       def sample_params
-        params.require(:sample).permit(:artist, :genre, :record_label, :year, :producer_id, :sampled_at)
+        params.require(:sample).permit(:name, :artist, :genre, :record_label, :year, :producer_id, :sampled_at)
       end
 end
