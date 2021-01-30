@@ -70,6 +70,7 @@ function App() {
           allSongssamples={allSongssamples}
           allSongs={allSongs}
           allSamples={allSamples}
+          allProducers={allProducers}
           />
           </Route>
     </div>
