@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import './SongsSamples.css'
 
 function SongsSamples(props) {
-  console.log(props.allSongs)
+  // console.log(props.allProducers)
+  // console.log(props.allSongs)
   let foo = []
   return <div>
     {props.allSongssamples.map((index) => {
@@ -10,13 +11,18 @@ function SongsSamples(props) {
       {
         props.allSongs.map((index2) => {
           if (index2.id === index.song_id) {
-            console.log(index2);
             item.songName = `${index2.name}`;
             item.songArtist = `${index2.artist}`;
             item.songRecordLabel = `${index2.record_label}`;
             item.songYear = `${index2.year}`;
             item.songGenre = `${index2.genre}`;
             item.songSampleAppears = `${index2.sample_appears}`;
+            {
+              props.allProducers.map((index4) => {
+                if (index2.producer_id === index4.id) {
+                  item.songProducerName = `${index4.name}`
+                }
+            })}
           }
         })
       }
@@ -29,12 +35,17 @@ function SongsSamples(props) {
             item.sampleYear = `${index2.year}`;
             item.sampleGenre = `${index2.genre}`;
             item.songSampledAt = `${index2.sampled_at}`;
+            {
+              props.allProducers.map((index4) => {
+                if (index2.producer_id === index4.id) {
+                  item.sampleProducerName = `${index4.name}`
+                }
+            })}
           }
         })
       }
       foo.push(item);
     })}
-    {console.log(foo)}
     {foo.map((index3) => {
       return <div className="songssamples-entry">
         <div className="songssamples-song">
@@ -43,6 +54,7 @@ function SongsSamples(props) {
           <p>{index3.songYear}</p>
           <p>Genre: {index3.songGenre}</p>
           <p>Sample Appears: <em>{index3.songSampleAppears}</em></p>
+          <p>Producer: {index3.songProducerName}</p>
         </div>
         <div className="songssamples-sample">
         <h3>Sample: "{index3.sampleName}" by {index3.sampleArtist} </h3>
@@ -50,6 +62,7 @@ function SongsSamples(props) {
         <p>{index3.sampleYear}</p>
         <p>Genre: {index3.sampleGenre}</p>
           <p>Sampled At: <em>{index3.songSampledAt}</em></p>
+          <p>Producer: {index3.sampleProducerName}</p>
         </div>
         </div>
     })}
