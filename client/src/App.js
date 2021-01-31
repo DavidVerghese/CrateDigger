@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { Route, Link, Switch, useHistory } from 'react-router-dom';
 import Container from './containers/Container';
 import SongsSamples from './screens/SongsSamples/SongsSamples.jsx';
+import SongsSamplesDetail from './screens/SongsSamplesDetail/SongsSamplesDetail.jsx';
 import Producers from './screens/Producers/Producers.jsx';
 import { getAllSongssamples, deleteSongssample, postSongssample, putSongssample } from './services/songssamples';
 import { getAllSongs, deleteSong, postSong, putSong } from './services/songs';
@@ -75,6 +76,15 @@ function App() {
           allSamples={allSamples}
           allProducers={allProducers}
           />
+      </Route>
+      <Route exact path='/songssamples/:id'>
+        <SongsSamplesDetail
+          allSongssamples={allSongssamples}
+          removeSongssample={removeSongssample}
+          allSongs={allSongs}
+          allSamples={allSamples}
+          allProducers={allProducers}
+        />
       </Route>
       <Route exact path='/producers'>
         <Producers
