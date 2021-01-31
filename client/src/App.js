@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { Route, Link, Switch, useHistory } from 'react-router-dom';
 import Container from './containers/Container';
 import SongsSamples from './screens/SongsSamples/SongsSamples.jsx';
+import Producers from './screens/Producers/Producers.jsx';
 import { getAllSongssamples, deleteSongssample, postSongssample, putSongssample } from './services/songssamples';
 import { getAllSongs, deleteSong, postSong, putSong } from './services/songs';
 import { getAllSamples, deleteSample, postSample, putSample } from './services/samples';
@@ -62,8 +63,10 @@ function App() {
 
   return (
     <div className="App">
-      <Link to='/songssamples'>SongsSamples</Link>
-      <Link to='/container'>Container</Link>
+      <h4><Link to='/songssamples'>SongsSamples</Link></h4>
+      <h4><Link to='/container'>Container</Link></h4>
+      <h4><Link to='/producers'>Producers</Link></h4>
+      
       <Route exact path='/container'><Container /></Route>
       <Route exact path='/songssamples'>
         <SongsSamples
@@ -72,7 +75,11 @@ function App() {
           allSamples={allSamples}
           allProducers={allProducers}
           />
-          </Route>
+      </Route>
+      <Route exact path='/producers'>
+        <Producers
+          allProducers={allProducers}/>
+      </Route>
     </div>
   );
 }
