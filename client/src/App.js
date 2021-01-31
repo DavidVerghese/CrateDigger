@@ -6,6 +6,7 @@ import Container from './containers/Container';
 import SongsSamples from './screens/SongsSamples/SongsSamples.jsx';
 import SongsSamplesDetail from './screens/SongsSamplesDetail/SongsSamplesDetail.jsx';
 import Producers from './screens/Producers/Producers.jsx';
+import ProducersDetail from './screens/ProducersDetail/ProducersDetail.jsx';
 import { getAllSongssamples, deleteSongssample, postSongssample, putSongssample } from './services/songssamples';
 import { getAllSongs, deleteSong, postSong, putSong } from './services/songs';
 import { getAllSamples, deleteSample, postSample, putSample } from './services/samples';
@@ -61,6 +62,11 @@ function App() {
     setAllSongssamples(prevState => prevState.filter(songssample => songssample.id !== id));
     // history.push('/dogs');
   }
+  const removeProducer = async (id) => {
+    await deleteProducer(id);
+    setAllProducers(prevState => prevState.filter(producer => producer.id !== id));
+    // history.push('/dogs');
+  }
 
   return (
     <div className="App">
@@ -88,6 +94,10 @@ function App() {
       </Route>
       <Route exact path='/producers'>
         <Producers
+          allProducers={allProducers}/>
+      </Route>
+      <Route exact path='/producers/:id'>
+        <ProducersDetail
           allProducers={allProducers}/>
       </Route>
     </div>

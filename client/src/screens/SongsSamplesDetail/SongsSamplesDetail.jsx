@@ -7,7 +7,6 @@ function SongsSamplesDetail(props) {
   const allSongssamples = props.allSongssamples;
   const removeAllsongssamples = props.removeAllsongssamples;
   let oneSongssample = '';
-  console.log(allSongssamples);
   useEffect(() => {
     if (allSongssamples.length) {
       allSongssamples.map((num) => {
@@ -18,6 +17,7 @@ function SongsSamplesDetail(props) {
       setSongssamples(oneSongssample)
     }
   }, [allSongssamples, id])
+  console.log(oneSongssample);
   let foo = [];
   let item = {};
   return <div className="songssamples-entry">
