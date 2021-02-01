@@ -7,7 +7,6 @@ function ProducersDetail(props) {
   const allProducers = props.allProducers;
   const removeProducers = props.removeProducer;
   let oneProducer = '';
-  let foo = [];
   let item = {};
   useEffect(() => {
     if (allProducers.length) {
