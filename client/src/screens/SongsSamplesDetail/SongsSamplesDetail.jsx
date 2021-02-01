@@ -22,7 +22,8 @@ function SongsSamplesDetail(props) {
   let item = {};
   return <div className="songssamples-entry">
     {
-        props.allSongs.map((index2) => {
+      props.allSongs.map((index2) => {
+        if (songssamples !== null) {
           if (index2.id === songssamples.id) {
             item.songName = `${index2.name}`;
             item.songArtist = `${index2.artist}`;
@@ -35,12 +36,15 @@ function SongsSamplesDetail(props) {
                 if (index2.producer_id === index4.id) {
                   item.songProducerName = `${index4.name}`
                 }
-            })}
+              })
+            }
           }
+        }
         })
     }
     {
-        props.allSamples.map((index2) => {
+      props.allSamples.map((index2) => {
+        if (songssamples !== null) {
           if (index2.id === songssamples.sample_id) {
             item.sampleName = `${index2.name}`
             item.sampleArtist = `${index2.artist}`;
@@ -53,8 +57,10 @@ function SongsSamplesDetail(props) {
                 if (index2.producer_id === index4.id) {
                   item.sampleProducerName = `${index4.name}`
                 }
-            })}
+              })
+            }
           }
+        }
         })
       }
     <div className="songssamples-song">
@@ -64,7 +70,7 @@ function SongsSamplesDetail(props) {
           <p>Genre: {item.songGenre}</p>
           <p>Sample Appears: <em>{item.songSampleAppears}</em></p>
           <p>Producer: {item.songProducerName}</p> 
-    </div>
+    </div> 
     <div className="songssamples-sample">
         <h3>Sample: "{item.sampleName}" by {item.sampleArtist} </h3>
         <p>Record label: {item.sampleRecordLabel}</p>
