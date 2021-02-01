@@ -65,6 +65,14 @@ function App() {
     ]));
     // history.push('/songssamples');
   }
+  const createProducer = async (producerData) => {
+    const newProducer = await postProducer(producerData);
+    setAllProducers(prevState => ([
+      ...prevState,
+      newProducer
+    ]));
+    // history.push('/songssamples');
+  }
 
   const updateSongssample = async (id, songssampleData) => {
     const updatedSongssample = await putSongssample(id, songssampleData);
@@ -113,6 +121,10 @@ function App() {
           createSongssample={createSongssample}
           createSong={createSong}
           createSample={createSample}
+          createProducer={createSample}
+          allSongs={allSongs}
+          allSamples={allSamples}
+          allProducers={allProducers}
           />
         </Route>
       <Route exact path='/songssamples'>
