@@ -57,6 +57,14 @@ function App() {
     ]));
     // history.push('/songssamples');
   }
+  const createSample = async (sampleData) => {
+    const newSample = await postSample(sampleData);
+    setAllSamples(prevState => ([
+      ...prevState,
+      newSample
+    ]));
+    // history.push('/songssamples');
+  }
 
   const updateSongssample = async (id, songssampleData) => {
     const updatedSongssample = await putSongssample(id, songssampleData);
@@ -104,6 +112,7 @@ function App() {
           <SongsSamplesCreate
           createSongssample={createSongssample}
           createSong={createSong}
+          createSample={createSample}
           />
         </Route>
       <Route exact path='/songssamples'>
