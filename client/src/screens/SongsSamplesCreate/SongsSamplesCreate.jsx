@@ -178,7 +178,7 @@ function SongsSamplesCreate(props) {
               onChange={sampleHandleChange}
             />
       </label>
-      {/* <h3>Create a producer:</h3>
+      <h3>Create a producer:</h3>
       <label>Name:
             <input
               type="text"
@@ -206,12 +206,16 @@ function SongsSamplesCreate(props) {
               name="location"
               onChange={producerHandleChange}
             />
-      </label> */}
-      <button>Ready</button> 
+      </label>
+
+      <div className="song-sample-create-button-section">
+        <button>Ready</button> 
       <button onClick={(e) => {setFormData({
   song_id: props.allSongs[props.allSongs.length-1].id,
   sample_id: props.allSamples[props.allSamples.length - 1].id})}}>Set</button>
   <button onClick={(e) => {createSongssample(formData);}}>Go</button>
+      </div>
+      
     </form>
   </div>
 }

@@ -121,7 +121,7 @@ function App() {
           createSongssample={createSongssample}
           createSong={createSong}
           createSample={createSample}
-          createProducer={createSample}
+          createProducer={createProducer}
           allSongs={allSongs}
           allSamples={allSamples}
           allProducers={allProducers}
