@@ -5,7 +5,7 @@ function SongsSamplesDetail(props) {
   const [songssamples, setSongssamples] = useState(null);
   const { id } = useParams();
   const allSongssamples = props.allSongssamples;
-  const removeAllsongssamples = props.removeAllsongssamples;
+  const removeSongssample = props.removeSongssample;
   let oneSongssample = '';
   useEffect(() => {
     if (allSongssamples.length) {
@@ -80,6 +80,7 @@ function SongsSamplesDetail(props) {
           <p>Producer: {item.sampleProducerName}</p>
     </div>
     <Link to={`/songssamples/${item.id}/edit`}>Edit</Link>
+    <button onClick={() => removeSongssample(item.id)}>Delete</button>
   </div>
 }
 export default SongsSamplesDetail
