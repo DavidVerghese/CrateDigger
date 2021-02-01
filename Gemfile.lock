@@ -160,8 +160,6 @@ GEM
     thor (1.1.0)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
-    tzinfo-data (1.2021.1)
-      tzinfo (>= 1.0.0)
     websocket-driver (0.7.3)
       websocket-extensions (>= 0.1.0)
     websocket-driver (0.7.3-java)
@@ -186,7 +184,6 @@ DEPENDENCIES
   rack-cors
   rails (~> 6.1.1)
   spring
-  tzinfo-data
 
 RUBY VERSION
    ruby 2.7.1p83
