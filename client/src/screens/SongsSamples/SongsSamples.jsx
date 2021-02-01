@@ -10,6 +10,7 @@ function SongsSamples(props) {
     <div>
       {props.allSongssamples.map((index) => {
         let item = {};
+        // console.log(props.allSongs);
         {
           props.allSongs.map((index2) => {
             if (index2.id === index.song_id) {
