@@ -5,7 +5,7 @@ import { Route, Link, Switch, useHistory } from "react-router-dom";
 function SongsSamples(props) {
   // console.log(props.allProducers)
   // console.log(props.allSongs)
-  let foo = [];
+  let arrayOfObjects = [];
   return (
     <div>
       {props.allSongssamples.map((index) => {
@@ -49,9 +49,9 @@ function SongsSamples(props) {
             }
           });
         }
-        foo.push(item);
+        arrayOfObjects.push(item);
       })}
-      {foo.map((index3) => {
+      {arrayOfObjects.map((index3) => {
         return (
           <div className="songssamples-entry">
             <div className="songssamples-song">

@@ -18,7 +18,6 @@ function SongsSamplesDetail(props) {
     }
   }, [allSongssamples, id])
   console.log(oneSongssample);
-  let foo = [];
   let item = {};
   return <div className="songssamples-entry">
     {
