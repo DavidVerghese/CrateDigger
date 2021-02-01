@@ -1,4 +1,6 @@
-import './Producers.css'
+import './Producers.css';
+import { Route, Link, Switch, useHistory } from 'react-router-dom';
+
 function Producers(props) {
   return <div>
     {props.allProducers.map((index) =>
@@ -8,6 +10,7 @@ function Producers(props) {
         <p>Genre: {index.genre}</p>
         <p>Lifetime: {index.lifetime}</p>
         <p>Location: {index.location}</p>
+        <Link to={`/producers/${index.id}`}>Read more</Link>
       </div>
     })}
     </div>
