@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./SongsSamples.css";
 import { Route, Link, Switch, useHistory } from "react-router-dom";
 import Search from '../../components/Search/Search.jsx';
-// import { AZ, ZA} from "../../utils/sort.js";
+import { AZ, ZA} from "../../utils/sort.js";
 
 
 function SongsSamples(props) {
