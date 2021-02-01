@@ -51,6 +51,7 @@ function SongsSamplesDetail(props) {
             item.sampleYear = `${index2.year}`;
             item.sampleGenre = `${index2.genre}`;
             item.songSampledAt = `${index2.sampled_at}`;
+            item.id = index2.id;
             {
               props.allProducers.map((index4) => {
                 if (index2.producer_id === index4.id) {
@@ -77,7 +78,8 @@ function SongsSamplesDetail(props) {
         <p>Genre: {item.sampleGenre}</p>
           <p>Sampled At: <em>{item.songSampledAt}</em></p>
           <p>Producer: {item.sampleProducerName}</p>
-        </div>
+    </div>
+    <Link to={`/songssamples/${item.id}/edit`}>Edit</Link>
   </div>
 }
 export default SongsSamplesDetail
