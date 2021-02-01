@@ -16,10 +16,21 @@ function SongsSamplesCreate(props) {
     producer_id: "",
     sample_appears: ""
   });
-  const { song_id, sample_id } = formData;
-  const { name, artist, genre, record_label, year, producer_id, sample_appears } = songFormData;
+  const [sampleFormData, setSampleFormData] = useState({
+    name: "",
+    artist: "",
+    genre: "",
+    record_label: "",
+    year: "",
+    producer_id: "",
+    sampled_at: ""
+  });
+  // const { song_id, sample_id } = formData;
+  // const { name, artist, genre, record_label, year, producer_id, sample_appears } = songFormData;
+  // const sampleFormData = { sampleName, sampleArtist, sampleGenre, sampleRecord_label, sampleYear, sampleProducer_id, sampleSampled_at }
   const createSongssample = props.createSongssample;
   const createSong = props.createSong;
+  const createSample = props.createSample;
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -35,6 +46,13 @@ function SongsSamplesCreate(props) {
       [name]: value
     }));
   }
+  const sampleHandleChange = (e) => {
+    const { name, value } = e.target;
+    setSampleFormData(prevState => ({
+      ...prevState,
+      [name]: value
+    }));
+  }
 
   return <div className="songs-samples-create-parent-div">
     <form onSubmit={(e) => {
@@ -42,6 +60,7 @@ function SongsSamplesCreate(props) {
           // call the create dog function and pass in the formData;
       createSongssample(formData);
       createSong(songFormData);
+      createSample(sampleFormData);
         }}>
           <h3>Create a Song/Sample Pair:</h3>
           <label>Song id:
@@ -106,6 +125,56 @@ function SongsSamplesCreate(props) {
               type="text"
               name="sample_appears"
               onChange={songHandleChange}
+            />
+      </label>
+      <h3>Create a Sample:</h3>
+      <label>Name:
+            <input
+              type="text"
+              name="name"
+              onChange={sampleHandleChange}
+            />
+      </label>
+      <label>Artist:
+            <input
+              type="text"
+              name="artist"
+              onChange={sampleHandleChange}
+            />
+      </label>
+      <label>Genre:
+            <input
+              type="text"
+              name="genre"
+              onChange={sampleHandleChange}
+            />
+      </label>
+      <label>Record label:
+            <input
+              type="text"
+              name="record_label"
+              onChange={sampleHandleChange}
+            />
+      </label>
+      <label>Year:
+            <input
+              type="text"
+              name="year"
+              onChange={sampleHandleChange}
+            />
+      </label>
+      <label>Producer id:
+            <input
+              type="text"
+              name="producer_id"
+              onChange={sampleHandleChange}
+            />
+      </label>
+      <label>Sample appears:
+            <input
+              type="text"
+              name="sampled_at"
+              onChange={sampleHandleChange}
             />
           </label>
           <button>Submit</button> 
