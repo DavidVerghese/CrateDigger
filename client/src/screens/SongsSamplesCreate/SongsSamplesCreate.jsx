@@ -3,10 +3,12 @@ import './SongsSamplesCreate.css'
 import React, { useState } from 'react'
 
 function SongsSamplesCreate(props) {
+
   const [formData, setFormData] = useState({
-    song_id: "",
-    sample_id: "",
+    song_id: props.allSongs.length,
+    sample_id: props.allSamples.length,
   });
+  console.log(formData)
   const [songFormData, setSongFormData] = useState({
     name: "",
     artist: "",
@@ -25,20 +27,18 @@ function SongsSamplesCreate(props) {
     producer_id: "",
     sampled_at: ""
   });
-  // const { song_id, sample_id } = formData;
-  // const { name, artist, genre, record_label, year, producer_id, sample_appears } = songFormData;
-  // const sampleFormData = { sampleName, sampleArtist, sampleGenre, sampleRecord_label, sampleYear, sampleProducer_id, sampleSampled_at }
   const createSongssample = props.createSongssample;
   const createSong = props.createSong;
   const createSample = props.createSample;
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prevState => ({
-      ...prevState,
-      [name]: value
-    }));
-  }
+  console.log(props.allSamples.length);
+  // const handleChange = (e) => {
+  //   const { name, value } = e.target;
+  //   setFormData(prevState => ({
+  //     ...prevState,
+  //     [name]: value
+  //   }));
+  // }
   const songHandleChange = (e) => {
     const { name, value } = e.target;
     setSongFormData(prevState => ({
@@ -58,25 +58,10 @@ function SongsSamplesCreate(props) {
     <form onSubmit={(e) => {
           e.preventDefault()
           // call the create dog function and pass in the formData;
-      createSongssample(formData);
       createSong(songFormData);
       createSample(sampleFormData);
+      createSongssample(formData);
         }}>
-          <h3>Create a Song/Sample Pair:</h3>
-          <label>Song id:
-            <input
-              type="text"
-              name="song_id"
-              onChange={handleChange}
-            />
-          </label>
-          <label>Sample id:
-            <input
-              type="text"
-              name="sample_id"
-              onChange={handleChange}
-            />
-      </label>
       <h3>Create a Song:</h3>
       <label>Name:
             <input

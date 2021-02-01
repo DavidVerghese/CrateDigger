@@ -113,6 +113,8 @@ function App() {
           createSongssample={createSongssample}
           createSong={createSong}
           createSample={createSample}
+          allSongs={allSongs}
+          allSamples={allSamples}
           />
         </Route>
       <Route exact path='/songssamples'>
