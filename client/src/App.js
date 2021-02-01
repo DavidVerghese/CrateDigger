@@ -5,6 +5,7 @@ import { Route, Link, Switch, useHistory } from 'react-router-dom';
 import Container from './containers/Container';
 import SongsSamples from './screens/SongsSamples/SongsSamples.jsx';
 import SongsSamplesDetail from './screens/SongsSamplesDetail/SongsSamplesDetail.jsx';
+import SongsSamplesEditing from './screens/SongsSamplesEditing/SongsSamplesEditing.jsx';
 import Producers from './screens/Producers/Producers.jsx';
 import ProducersDetail from './screens/ProducersDetail/ProducersDetail.jsx';
 import { getAllSongssamples, deleteSongssample, postSongssample, putSongssample } from './services/songssamples';
@@ -92,6 +93,12 @@ function App() {
           allProducers={allProducers}
         />
       </Route>
+      <Route path='/songssamples/:id/edit'>
+          <SongsSamplesEditing
+            updateDog={updateSongssample}
+            allDogs={allSongssamples}
+          />
+        </Route>
       <Route exact path='/producers'>
         <Producers
           allProducers={allProducers}/>
