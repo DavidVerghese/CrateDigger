@@ -94,7 +94,10 @@ function App() {
         />
       </Route>
       <Route path='/songssamples/:id/edit'>
-          <SongsSamplesEditing
+        <SongsSamplesEditing
+          allSongssamples={allSongssamples}
+          updateSongssample = {updateSongssample}
+          removeSongssample={removeSongssample}
             updateDog={updateSongssample}
             allDogs={allSongssamples}
           />
