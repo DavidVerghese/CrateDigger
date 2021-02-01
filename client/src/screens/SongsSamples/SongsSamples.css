@@ -5,8 +5,13 @@
 .songssamples-song {
   background-color: rgb(199, 144, 144);
   padding: 10px;
+  color: black;
 }
-.songssamples-samples {
+.songssamples-sample {
   padding: 10px;
   margin: 10px;
+  color: black;
+}
+.songssamples-sample a {
+  color: black;
 }

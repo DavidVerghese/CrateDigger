@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import './SongsSamplesEditing.css'
 
 function SongsSamplesEdit(props) {
   //songs
@@ -90,7 +91,7 @@ function SongsSamplesEdit(props) {
     }));
   }
 
-  return (<div className="form-container">
+  return (<div className="songs-samples-editing-form-container">
   <form onSubmit={(e) => {
     e.preventDefault()
       updateSong(id, songFormData);
