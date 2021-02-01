@@ -1,10 +1,34 @@
 import React, { useState, useEffect } from "react";
 import "./SongsSamples.css";
 import { Route, Link, Switch, useHistory } from "react-router-dom";
+import Search from '../../components/Search/Search.jsx';
+// import { AZ, ZA} from "../../utils/sort.js";
+
 
 function SongsSamples(props) {
-  // console.log(props.allProducers)
-  // console.log(props.allSongs)
+  // searchbar stuff 
+  // const [queriedProducts, setQueriedProducts] = useState([])
+  // const [sortType, setSortType] = useState([]);
+  // const handleSort = type => {
+  //   setSortType(type)
+  //   switch (type) {
+  //     case "name-ascending":
+  //       setQueriedProducts(AZ(queriedProducts))
+  //       break
+  //     case "name-descending":
+  //       setQueriedProducts(ZA(queriedProducts))
+  //       break
+  //     default:
+  //       break
+  //   }
+  // };
+
+  // const handleSubmit = event => event.preventDefault()
+  // const handleSearch = event => {
+  //   const newQueriedProducts = props.allSongsSamples.filter(product => product.name.toLowerCase().includes(event.target.value.toLowerCase()))
+  //   setQueriedProducts(newQueriedProducts, () => handleSort(sortType))
+  // }
+
   let arrayOfObjects = [];
   return (
     <div>
@@ -52,6 +76,7 @@ function SongsSamples(props) {
         }
         arrayOfObjects.push(item);
       })}
+      <Search/>
       {arrayOfObjects.map((index3) => {
         return (
           <div className="songssamples-entry">
