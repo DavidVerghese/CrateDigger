@@ -1,5 +1,5 @@
 import SongsSamples from "../SongsSamples/SongsSamples"
-
+import './SongsSamplesCreate.css'
 import React, { useState } from 'react'
 
 function SongsSamplesCreate(props) {
@@ -18,8 +18,29 @@ function SongsSamplesCreate(props) {
     }));
   }
 
-  return <div>
-    Hi
+  return <div className="songs-samples-create-parent-div">
+    <form onSubmit={(e) => {
+          e.preventDefault()
+          // call the create dog function and pass in the formData;
+          createSongssample(formData);
+        }}>
+          <h3>Create a Song/Sample Pair</h3>
+          <label>Song id:
+            <input
+              type="text"
+              name="song_id"
+              onChange={handleChange}
+            />
+          </label>
+          <label>Sample id:
+            <input
+              type="text"
+              name="sample_id"
+              onChange={handleChange}
+            />
+          </label>
+          <button>Submit</button> 
+        </form>
     </div>
 }
 export default SongsSamplesCreate
