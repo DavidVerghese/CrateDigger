@@ -77,10 +77,11 @@ function SongsSamplesDetail(props) {
         <p>{item.sampleYear}</p>
         <p>Genre: {item.sampleGenre}</p>
           <p>Sampled At: <em>{item.songSampledAt}</em></p>
-          <p>Producer: {item.sampleProducerName}</p>
-    </div>
-    <Link to={`/songssamples/${item.id}/edit`}>Edit</Link>
+      <p>Producer: {item.sampleProducerName}</p>
+      <Link to={`/songssamples/${item.id}/edit`}>Edit</Link>
     <button onClick={() => removeSongssample(item.id)}>Delete</button>
+    </div>
+    
   </div>
 }
 export default SongsSamplesDetail

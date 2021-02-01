@@ -6,6 +6,7 @@ import Container from './containers/Container';
 import SongsSamples from './screens/SongsSamples/SongsSamples.jsx';
 import SongsSamplesDetail from './screens/SongsSamplesDetail/SongsSamplesDetail.jsx';
 import SongsSamplesEditing from './screens/SongsSamplesEditing/SongsSamplesEditing.jsx';
+import SongsSamplesCreate from './screens/SongsSamplesCreate/SongsSamplesCreate.jsx';
 import Producers from './screens/Producers/Producers.jsx';
 import ProducersDetail from './screens/ProducersDetail/ProducersDetail.jsx';
 import { getAllSongssamples, deleteSongssample, postSongssample, putSongssample } from './services/songssamples';
@@ -88,8 +89,14 @@ function App() {
       <h4><Link to='/songssamples'>SongsSamples</Link></h4>
       <h4><Link to='/container'>Container</Link></h4>
       <h4><Link to='/producers'>Producers</Link></h4>
+      <h4><Link to='/new'>Add a post</Link></h4>
       
       <Route exact path='/container'><Container /></Route>
+      <Route exact path='/new'>
+          <SongsSamplesCreate
+            createSongssample={createSongssample}
+          />
+        </Route>
       <Route exact path='/songssamples'>
         <SongsSamples
           allSongssamples={allSongssamples}

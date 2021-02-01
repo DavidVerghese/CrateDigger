@@ -77,8 +77,9 @@ function SongsSamples(props) {
                 Sampled At: <em>{index3.songSampledAt}</em>
               </p>
               <p>Producer: {index3.sampleProducerName}</p>
+              <Link to={`/songssamples/${index3.id}`}>Read more</Link>
             </div>
-            <Link to={`/songssamples/${index3.id}`}>Read more</Link>
+            
           </div>
         )
       })}
