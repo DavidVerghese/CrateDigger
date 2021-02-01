@@ -23,10 +23,10 @@ function App() {
   const history = useHistory();
 
   useEffect(() => {
-    fetchSongssamples();
+    fetchData();
   }, [])
 
-  const fetchSongssamples = async () => {
+  const fetchData = async () => {
     const songssamples = await getAllSongssamples();
     setAllSongssamples(songssamples);
 
@@ -56,6 +56,13 @@ function App() {
       })
     )
     // history.push('/dogs');
+  }
+  const updateSong = async (id, songData) => {
+    const updatedSong = await putSong(id, songData);
+    setAllSongs(prevState => prevState.map(song => {
+        return song.id === Number(id) ? updatedSong : song
+      })
+    )
   }
 
   const removeSongssample = async (id) => {
@@ -96,10 +103,12 @@ function App() {
       <Route path='/songssamples/:id/edit'>
         <SongsSamplesEditing
           allSongssamples={allSongssamples}
-          updateSongssample = {updateSongssample}
+          updateSongssample={updateSongssample}
+          allSongs={allSongs}
+          updateSong = {updateSong}
           removeSongssample={removeSongssample}
-            updateDog={updateSongssample}
-            allDogs={allSongssamples}
+          allSongssamples={allSongssamples}
+          
           />
         </Route>
       <Route exact path='/producers'>
