@@ -2,11 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
 function SongsSamplesEdit(props) {
-  // songssamples
-  const [formData, setFormData] = useState({
-    song_id: "",
-    sample_id: "",
-  });
   //songs
   const [songFormData, setSongFormData] = useState({
     name: "",
@@ -17,15 +12,27 @@ function SongsSamplesEdit(props) {
     producer_id: "",
     sample_appears: ""
   });
-  const { song_id, sample_id } = formData;
-  const { name, artist, genre, record_label, year, producer_id } = songFormData;
+  const [sampleFormData, setSampleFormData] = useState({
+    name: "",
+    artist: "",
+    genre: "",
+    record_label: "",
+    year: "",
+    producer_id: "",
+    sampled_at: ""
+  });
+  const { name, artist, genre, record_label, year, producer_id,sample_appears } = songFormData;
+  const { sampleName, sampleArtist, sampleGenre, sampleRecord_label, sampleYear, sampleProducer_id,sampled_at } = sampleFormData;
   const updateSongssample = props.updateSongssample;
   const allSongssamples = props.allSongssamples;
   const updateSong = props.updateSong;
   const allSongs = props.allSongs;
+  const updateSample = props.updateSample;
+  const allSamples = props.allSamples;
   const { id } = useParams();
   let oneSongssample = '';
   let oneSong = '';
+  let oneSample = '';
   useEffect(() => {
     const prefillFormData = () => {
       allSongssamples.map((index) => {
@@ -36,11 +43,13 @@ function SongsSamplesEdit(props) {
               oneSong = index2;
             }
           })
+          allSamples.map((index3) => {
+            if (index3.id === index.sample_id) {
+              oneSample = index3;
+            }
+          })
         }
       })
-      //SONGSAMPLE
-      const song_id = oneSongssample.song_id;
-      const sample_id = oneSongssample.sample_id;
       //SONGS
       const songName = oneSong.name;
       const songArtist = oneSong.artist;
@@ -49,8 +58,16 @@ function SongsSamplesEdit(props) {
       const songYear = oneSong.year;
       const songProducerId = oneSong.producer_id;
       const songSampleAppears = oneSong.sample_appears;
-      setFormData({ song_id, sample_id });
-      setSongFormData({ songName, songArtist,songGenre,songRecordLabel,songYear,songProducerId,songSampleAppears });
+      //samples
+      const sampleName = oneSample.name;
+      const sampleArtist = oneSample.artist;
+      const sampleGenre = oneSample.genre;
+      const sampleRecordLabel = oneSample.record_label;
+      const sampleYear = oneSample.year;
+      const sampleProducerId = oneSample.producer_id;
+      const sampleSampledAt = oneSample.sampled_at;
+      setSongFormData({ songName, songArtist, songGenre, songRecordLabel, songYear, songProducerId, songSampleAppears });
+      setSampleFormData({ sampleName, sampleArtist,sampleGenre,sampleRecordLabel,sampleYear,sampleProducerId,sampleSampledAt });
     }
     if (allSongssamples.length) {
       prefillFormData()
@@ -58,16 +75,16 @@ function SongsSamplesEdit(props) {
   }, [allSongssamples, id])
 
 
-  const handleChange = (e) => {
+  const songHandleChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prevState => ({
+    setSongFormData(prevState => ({
       ...prevState,
       [name]: value
     }));
   }
-  const songHandleChange = (e) => {
+  const sampleHandleChange = (e) => {
     const { name, value } = e.target;
-    setSongFormData(prevState => ({
+    setSampleFormData(prevState => ({
       ...prevState,
       [name]: value
     }));
@@ -76,25 +93,10 @@ function SongsSamplesEdit(props) {
   return (<div className="form-container">
   <form onSubmit={(e) => {
     e.preventDefault()
-      updateSongssample(id, formData);
       updateSong(id, songFormData);
+      updateSample(id, sampleFormData);
       console.log();
   }}>
-    <h3>Update Song id</h3>
-    <label>Song id:
-      <input
-        type="text"
-        name="song_id"
-        onChange={handleChange}
-      />
-    </label>
-    <label>Sample id:
-    <input
-          type="text"
-          name="sample_id"
-        onChange={handleChange}
-      />
-      </label>
       <h3>Song info</h3>
       <label>name:
     <input
@@ -138,11 +140,62 @@ function SongsSamplesEdit(props) {
         onChange={songHandleChange}
       />
       </label>
-      <label>Song name:
+      <label>Sample appears:
     <input
           type="text"
           name="sample_appears"
         onChange={songHandleChange}
+      />
+      </label>
+
+      <h3>Sample info</h3>
+      <label>name:
+    <input
+          type="text"
+          name="name"
+        onChange={sampleHandleChange}
+      />
+      </label>
+      <label>artist:
+    <input
+          type="text"
+          name="artist"
+        onChange={sampleHandleChange}
+      />
+      </label>
+      <label>genre:
+    <input
+          type="text"
+          name="genre"
+        onChange={sampleHandleChange}
+      />
+      </label>
+      <label>Record Label:
+    <input
+          type="text"
+          name="record_label"
+        onChange={sampleHandleChange}
+      />
+      </label>
+      <label>Year:
+    <input
+          type="text"
+          name="year"
+        onChange={sampleHandleChange}
+      />
+      </label>
+      <label>Producer Id:
+    <input
+          type="text"
+          name="producer id"
+        onChange={sampleHandleChange}
+      />
+      </label>
+      <label>Sampled at:
+    <input
+          type="text"
+          name="sample_appears"
+        onChange={sampleHandleChange}
       />
       </label>
     <button>Submit</button>

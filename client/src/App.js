@@ -64,6 +64,13 @@ function App() {
       })
     )
   }
+  const updateSample = async (id, sampleData) => {
+    const updatedSample = await putSong(id, sampleData);
+    setAllSamples(prevState => prevState.map(sample => {
+        return sample.id === Number(id) ? updatedSample : sample
+      })
+    )
+  }
 
   const removeSongssample = async (id) => {
     await deleteSongssample(id);
@@ -105,7 +112,9 @@ function App() {
           allSongssamples={allSongssamples}
           updateSongssample={updateSongssample}
           allSongs={allSongs}
-          updateSong = {updateSong}
+          updateSong={updateSong}
+          allSamples={allSamples}
+          updateSample = {updateSample}
           removeSongssample={removeSongssample}
           allSongssamples={allSongssamples}
           
