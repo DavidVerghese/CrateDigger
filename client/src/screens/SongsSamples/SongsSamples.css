@@ -1,9 +1,10 @@
 .songssamples-entry {
-  background-color: rgb(203, 202, 202);
+  background-color: #f98e62;
   margin: 10px;
+  /* width: 400px; */
 }
 .songssamples-song {
-  background-color: rgb(199, 144, 144);
+  background-color: #f25569;
   padding: 10px;
   color: black;
 }
