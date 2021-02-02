@@ -46,7 +46,7 @@ function SongsSamples(props) {
   }
 
   const searchResultsJSX = searchResults.map((product, index) => {
-    console.log(product,index)
+    console.log(product, index);
     // return < Product _id={product._id} name={product.name} images={product.images} price={product.price} key={index} sale={product.sale} />
   })
 
