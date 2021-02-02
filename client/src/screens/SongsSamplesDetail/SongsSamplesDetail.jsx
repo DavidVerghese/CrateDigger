@@ -17,7 +17,7 @@ function SongsSamplesDetail(props) {
       setSongssamples(oneSongssample)
     }
   }, [allSongssamples, id])
-  console.log(oneSongssample);
+  // console.log(oneSongssample);
   let item = {};
   return <div className="songssamples-entry">
     {
