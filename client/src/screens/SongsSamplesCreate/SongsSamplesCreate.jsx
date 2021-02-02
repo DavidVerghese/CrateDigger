@@ -60,9 +60,9 @@ function SongsSamplesCreate(props) {
       ...prevState,
       [name]: value
     }));
-    // ONE: You can't set form data here, as the songs and samples 
+    // SONGSSAMPLES ERROR ONE: You can't set form data here, as the songs and samples 
       // haven't been created yet -- You have to set it with 
-    // a new button 
+    // a new button outside of form
      // setFormData({
       //   song_id: props.allSongs[props.allSongs.length-1].id,
       //   sample_id: props.allSamples[props.allSamples.length-1].id
@@ -84,8 +84,10 @@ function SongsSamplesCreate(props) {
       createSong(songFormData);
       createSample(sampleFormData);
       createProducer(producerFormData);
-      // TWO: You can't set formdata here, as the songs and samples 
-      // haven't been created yet -- You have to se
+      // console.log(props.allProducers);
+      // SONGSSAMPLES ERROR TWO: You can't set formdata here, as the songs and samples 
+      // haven't been created yet -- You have to set it with a new button 
+      // outside of the form 
       // setFormData({
       //   song_id: props.allSongs[props.allSongs.length-1].id,
       //   sample_id: props.allSamples[props.allSamples.length-1].id
@@ -238,7 +240,7 @@ function SongsSamplesCreate(props) {
         }); console.log(props.allSongs[props.allSongs.length - 1]);
         console.log(props.allSamples[props.allSamples.length - 1]);
         
-      // THREE: songssamples doesn't get updated if I run createSongssamples here 
+      // SONGSSAMPLES ERROR THREE: songssamples doesn't get updated if I run createSongssamples here 
         // createSongssample(formData)
     }}>Set</button>
     <button onClick={(e) => {createSongssample(formData);}}>Go</button>
