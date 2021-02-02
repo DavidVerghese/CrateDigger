@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import "./SongsSamples.css";
 import { Route, Link, Switch, useHistory } from "react-router-dom";
 import Search from '../../components/Search/Search.jsx';
+import SearchResults from '../SongsSamples/SongsSamples.jsx';
 import { AZ, ZA} from "../../utils/sort.js";
-
 
 function SongsSamples(props) {
   // searchbar stuff 
@@ -35,24 +35,44 @@ function SongsSamples(props) {
     const newQueriedSongs = props.allSongs.filter(song => song.name.toLowerCase().includes(event.target.value.toLowerCase()));
     const newQueriedSamples = props.allSamples.filter(sample => sample.name.toLowerCase().includes(event.target.value.toLowerCase()));
     const newQueriedProducers = props.allProducers.filter(producer => producer.name.toLowerCase().includes(event.target.value.toLowerCase()));
-    newQueriedSongs.map((index6) => {
-      newQueriedSamples.push(index6);
-    });
-    newQueriedSamples.map((songsSamplesIterable) => {
-      newQueriedProducers.push(songsSamplesIterable);
-    })
+    // newQueriedSongs.map((index6) => {
+    //   newQueriedSamples.push(index6);
+    // });
+    // newQueriedSamples.map((songsSamplesIterable) => {
+    //   newQueriedProducers.push(songsSamplesIterable);
+    // })
     //console.log(newQueriedProducers);
-    setSearchResults(newQueriedProducers);
+    //setSearchResults(newQueriedProducers);
+    console.log(newQueriedProducers, newQueriedSamples, newQueriedSongs);
+    setQueriedProducers(newQueriedProducers);
+    setQueriedSamples(newQueriedSamples);
+    setQueriedSongs(newQueriedSongs);
   }
 
-  const searchResultsJSX = searchResults.map((product, index) => {
-    console.log(product, index);
-    // return < Product _id={product._id} name={product.name} images={product.images} price={product.price} key={index} sale={product.sale} />
-  })
+
 
   let arrayOfObjects = [];
+  
   return (
     <div>
+      <Search
+        onSubmit={handleSubmit} 
+        onChange={handleSearch} 
+      />
+       <p>Producers: </p>
+      {queriedProducers.map((producerIndex)=>{
+        return <div>
+          {producerIndex.name}
+        </div>
+      })}
+       <p>Samples: </p>
+      {queriedSamples.map((sampleIndex)=>{
+        return <div>{sampleIndex.name}</div>
+      })}
+      <p>Songs: </p>
+      {queriedSongs.map((songIndex)=>{
+        return <div>{songIndex.name}</div>
+      })}
       {props.allSongssamples.map((index) => {
         let item = {};
         {
@@ -96,10 +116,6 @@ function SongsSamples(props) {
         }
         arrayOfObjects.push(item);
       })}
-      <Search
-        onSubmit={handleSubmit} 
-        onChange={handleSearch} 
-      />
       {arrayOfObjects.map((index3) => {
         return (
           <div className="songssamples-entry">
