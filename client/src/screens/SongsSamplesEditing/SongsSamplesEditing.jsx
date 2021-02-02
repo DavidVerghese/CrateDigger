@@ -32,6 +32,7 @@ function SongsSamplesEdit(props) {
   const allSamples = props.allSamples;
   const { id } = useParams();
   let oneSongssample = '';
+  let songPicAddress = ''
   let oneSong = '';
   let oneSample = '';
   useEffect(() => {
@@ -59,6 +60,8 @@ function SongsSamplesEdit(props) {
       const songYear = oneSong.year;
       const songProducerId = oneSong.producer_id;
       const songSampleAppears = oneSong.sample_appears;
+      const songImageAddress = oneSong.song_pic_address;
+      songPicAddress = songImageAddress;
       //samples
       const sampleName = oneSample.name;
       const sampleArtist = oneSample.artist;
@@ -99,6 +102,7 @@ function SongsSamplesEdit(props) {
       console.log();
   }}>
       <h3>SONG INFO</h3>
+      <img src={songPicAddress}/>
       <label>NAME:
     <input
           type="text"

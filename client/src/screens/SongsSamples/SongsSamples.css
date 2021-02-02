@@ -3,6 +3,9 @@
   margin: 10px;
   /* width: 400px; */
 }
+.songssamples-song img {
+  width: 40%;
+} 
 .songssamples-song {
   background-color: #f25569;
   padding: 10px;

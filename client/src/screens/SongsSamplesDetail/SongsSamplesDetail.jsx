@@ -30,6 +30,7 @@ function SongsSamplesDetail(props) {
             item.songYear = `${index2.year}`;
             item.songGenre = `${index2.genre}`;
             item.songSampleAppears = `${index2.sample_appears}`;
+            item.imageAddress = `${index2.song_pic_address}`;
             {
               props.allProducers.map((index4) => {
                 if (index2.producer_id === index4.id) {
@@ -64,7 +65,8 @@ function SongsSamplesDetail(props) {
         })
       }
     <div className="songssamples-song">
-          <h3>SONG: "{item.songName}" by {item.songArtist} </h3> 
+      <h3>SONG: "{item.songName}" by {item.songArtist} </h3> 
+      <img src={item.imageAddress} />
           <p>RECORD LABEL: {item.songRecordLabel} </p>
          <p>YEAR: {item.songYear}</p>
           <p>GENRE: {item.songGenre}</p>
