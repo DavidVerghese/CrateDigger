@@ -5,7 +5,7 @@ import { Route, Link, Switch, useHistory } from "react-router-dom";
 function SearchResults(props) {
   let arrayOfObjects = [];
   return <div>
-        <h2>Songs/Samples</h2>
+        <h2>Songs </h2>
     {props.queriedSongssamples.map((index) => {
       console.log(index);
       let item = {};

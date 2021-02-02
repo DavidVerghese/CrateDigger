@@ -5,6 +5,8 @@
 body {
   background-color: black;
   color: white;
+  font-family: 'Coda Caption';
+  font-size: 18px;
 }
 a {
   color: white;

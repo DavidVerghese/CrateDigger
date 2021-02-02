@@ -64,20 +64,20 @@ function SongsSamplesDetail(props) {
         })
       }
     <div className="songssamples-song">
-          <h3>Song: "{item.songName}" by {item.songArtist} </h3> 
-          <p>Record label: {item.songRecordLabel} </p>
-         <p>{item.songYear}</p>
-          <p>Genre: {item.songGenre}</p>
-          <p>Sample Appears: <em>{item.songSampleAppears}</em></p>
+          <h3>SONG: "{item.songName}" by {item.songArtist} </h3> 
+          <p>RECORD LABEL: {item.songRecordLabel} </p>
+         <p>YEAR: {item.songYear}</p>
+          <p>GENRE: {item.songGenre}</p>
+          <p>SAMPLE APPEARS: <em>{item.songSampleAppears}</em></p>
           <p>Producer: {item.songProducerName}</p> 
     </div> 
     <div className="songssamples-sample">
-        <h3>Sample: "{item.sampleName}" by {item.sampleArtist} </h3>
-        <p>Record label: {item.sampleRecordLabel}</p>
-        <p>{item.sampleYear}</p>
-        <p>Genre: {item.sampleGenre}</p>
+        <h3>SAMPLE: "{item.sampleName}" by {item.sampleArtist} </h3>
+        <p>RECORD LABEL: {item.sampleRecordLabel}</p>
+        <p>YEAR: {item.sampleYear}</p>
+        <p>GENRE: {item.sampleGenre}</p>
           <p>Sampled At: <em>{item.songSampledAt}</em></p>
-      <p>Producer: {item.sampleProducerName}</p>
+      <p>PRODUCER: {item.sampleProducerName}</p>
       <Link to={`/songssamples/${item.id}/edit`}>Edit</Link>
     <button onClick={() => removeSongssample(item.id)}>Delete</button>
     </div>
