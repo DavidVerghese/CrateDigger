@@ -28,7 +28,7 @@ function App() {
 
   useEffect(() => {
     fetchData();
-  }, [])
+  }, [allSongssamples])
 
   const fetchData = async () => {
     const songssamples = await getAllSongssamples();
