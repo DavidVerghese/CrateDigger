@@ -2,39 +2,45 @@ import React, { useState, useEffect } from "react";
 import "./SongsSamples.css";
 import { Route, Link, Switch, useHistory } from "react-router-dom";
 import Search from '../../components/Search/Search.jsx';
-//import { AZ, ZA} from "../../utils/sort.js";
+import { AZ, ZA} from "../../utils/sort.js";
 
 
 function SongsSamples(props) {
   // searchbar stuff 
-  // const [queriedProducts, setQueriedProducts] = useState([])
-  // const [sortType, setSortType] = useState([]);
-  // const handleSort = type => {
-  //   setSortType(type)
-  //   switch (type) {
-  //     case "name-ascending":
-  //       setQueriedProducts(AZ(queriedProducts))
-  //       break
-  //     case "name-descending":
-  //       setQueriedProducts(ZA(queriedProducts))
-  //       break
-  //     default:
-  //       break
-  //   }
-  // };
+  const [queriedSongs, setQueriedSongs] = useState([]);
+  const [queriedSamples, setQueriedSamples] = useState([]);
+   const [sortType, setSortType] = useState([]);
+  const handleSort = type => {
+    setSortType(type)
+    switch (type) {
+      case "name-ascending":
+        setQueriedSongs(AZ(queriedSongs));
+        setQueriedSamples(AZ(queriedSamples));
+        break
+      case "name-descending":
+        setQueriedSongs(ZA(queriedSongs));
+        setQueriedSamples(ZA(queriedSamples));
+        break
+      default:
+        break
+    }
+  };
 
-  // const handleSubmit = event => event.preventDefault()
-  // const handleSearch = event => {
-  //   const newQueriedProducts = props.allSongsSamples.filter(product => product.name.toLowerCase().includes(event.target.value.toLowerCase()))
-  //   setQueriedProducts(newQueriedProducts, () => handleSort(sortType))
-  // }
+  const handleSubmit = event => event.preventDefault()
+  const handleSearch = event => {
+    const newQueriedSongs = props.allSongs.filter(song => song.name.toLowerCase().includes(event.target.value.toLowerCase()));
+    const newQueriedSamples = props.allSamples.filter(sample => sample.name.toLowerCase().includes(event.target.value.toLowerCase()));
+    setQueriedSongs(newQueriedSongs, () => handleSort(sortType));
+    setQueriedSamples(newQueriedSamples, () => handleSort(sortType));
+    // console.log(newQueriedSongs);
+    // console.log(newQueriedSamples);
+  }
 
   let arrayOfObjects = [];
   return (
     <div>
       {props.allSongssamples.map((index) => {
         let item = {};
-        // console.log(props.allSongs);
         {
           props.allSongs.map((index2) => {
             if (index2.id === index.song_id) {
@@ -76,7 +82,10 @@ function SongsSamples(props) {
         }
         arrayOfObjects.push(item);
       })}
-      <Search/>
+      <Search
+        onSubmit={handleSubmit} 
+        onChange={handleSearch} 
+      />
       {arrayOfObjects.map((index3) => {
         return (
           <div className="songssamples-entry">
