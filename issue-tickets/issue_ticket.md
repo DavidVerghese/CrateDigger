@@ -9,7 +9,7 @@ Fourth, on the 'All Posts' page the website shall find the information about the
 
 I was hoping I would be able to use a single 'submit' button to handle everything. Instead, I have found trying to perform multiple, connected functions with one button creates errors. For example, I can't create a song and a sample, and then get their ids in the same step, as the songs and samples haven't been created yet. In order to get everything to work, I now have three buttons. 
 
-I have written about the errors I was getting in more detail on the SongsSamplesCreate page.
+I have written about the errors I was getting in more detail below under 'Reproduce the Error', as well as on the SongsSamplesCreate page.
 
 ## Reproduce the Error
 
@@ -30,8 +30,11 @@ To see the error
 ```
 
 To summarize: 
+<br />
 line 66-75... in order to create a new post in the 'joins' table, songssamples, you need to have the id of the song and sample. You can't get this as the song and sample haven't been created yet. 
+<br />
 lines 96-105: same problem. In order to solve this problem, I had to create a button outside of the form (line 244) that would get the ids of the song and sample after they had been created. 
+<br />
 line 251-252: while I was able to get the ids of the song and sample here, I wasn't able to use them to create a new entry in the 'joins' table. I had to use a third button (line 256) for that step
 
 
