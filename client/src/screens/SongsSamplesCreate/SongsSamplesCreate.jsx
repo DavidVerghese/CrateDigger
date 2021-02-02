@@ -11,14 +11,14 @@ function SongsSamplesCreate(props) {
   const [songProducerFormData, setSongProducerFormData] = useState({
     name: "",
     genre: "",
-    lifetime: "",
-    location: ""
+    location: "",
+    lifetime: ""
   });
   const [sampleProducerFormData, setSampleProducerFormData] = useState({
     name: "",
     genre: "",
-    lifetime: "",
-    location: ""
+    location: "",
+    lifetime: ""
   });
   const [songFormData, setSongFormData] = useState({
     name: "",
@@ -26,7 +26,7 @@ function SongsSamplesCreate(props) {
     genre: "",
     record_label: "",
     year: "",
-    producer_id: "",
+    // producer_id: "",
     sample_appears: ""
   });
   const [sampleFormData, setSampleFormData] = useState({
@@ -35,13 +35,16 @@ function SongsSamplesCreate(props) {
     genre: "",
     record_label: "",
     year: "",
-    producer_id: "",
+    // producer_id: "",
     sampled_at: ""
   });
   const [songsSampleFormData, setSongsSampleFormData] = useState({
     song_id: songFormData,
-    sample_id: sampleFormData
+    sample_id: sampleFormData,
+    song_producer: songProducerFormData,
+    sample_producer: sampleProducerFormData
   });
+  console.log(songsSampleFormData);
   const object = {};
   const [producerFormData, setProducerFormData] = useState({
     name: "",
@@ -56,7 +59,37 @@ function SongsSamplesCreate(props) {
   const createSong = props.createSong;
   const createSample = props.createSample;
   const createProducer = props.createProducer;
+  const createSongProducer = props.createProducer;
+  const createSampleProducer = props.createProducer;
 
+  const songProducerHandleChange = (e) => {
+    const { name, value } = e.target;
+    setSongProducerFormData(prevState => ({
+      ...prevState,
+      [name]: value
+    }));
+    setSongsSampleFormData({
+      song: songFormData,
+      sample: sampleFormData,
+      song_producer: songProducerFormData,
+      sample_producer: sampleProducerFormData
+    })
+    // console.log(songFormData);
+  }
+  const sampleProducerHandleChange = (e) => {
+    const { name, value } = e.target;
+    setSampleProducerFormData(prevState => ({
+      ...prevState,
+      [name]: value
+    }));
+    setSongsSampleFormData({
+      song: songFormData,
+      sample: sampleFormData,
+      song_producer: songProducerFormData,
+      sample_producer: sampleProducerFormData
+    })
+    // console.log(sampleFormData);
+  }
   const songHandleChange = (e) => {
     const { name, value } = e.target;
     setSongFormData(prevState => ({
@@ -64,9 +97,12 @@ function SongsSamplesCreate(props) {
       [name]: value
     }));
     setSongsSampleFormData({
-      song_id: songFormData,
-      sample_id: sampleFormData
+      song: songFormData,
+      sample: sampleFormData,
+      song_producer: songProducerFormData,
+      sample_producer: sampleProducerFormData
     })
+    console.log(songsSampleFormData);
   }
   const sampleHandleChange = (e) => {
     const { name, value } = e.target;
@@ -76,8 +112,11 @@ function SongsSamplesCreate(props) {
     }));
     setSongsSampleFormData({
       song: songFormData,
-      sample: sampleFormData
+      sample: sampleFormData,
+      song_producer: songProducerFormData,
+      sample_producer: sampleProducerFormData
     })
+    console.log(songsSampleFormData);
   }
   const producerHandleChange = (e) => {
     const { name, value } = e.target;
@@ -115,6 +154,35 @@ function SongsSamplesCreate(props) {
     
       
     }}>
+      <h3>Create a Song Producer:</h3>
+      <label>Name:
+            <input
+              type="text"
+              name="name"
+              onChange={songProducerHandleChange}
+            />
+      </label>
+      <label>Genre:
+            <input
+              type="text"
+              name="genre"
+              onChange={songProducerHandleChange}
+            />
+      </label>
+      <label>Location:
+            <input
+              type="text"
+              name="location"
+              onChange={songProducerHandleChange}
+            />
+      </label>
+      <label>Lifetime:
+            <input
+              type="text"
+              name="lifetime"
+              onChange={songProducerHandleChange}
+            />
+      </label>
       <h3>Create a Song:</h3>
 
       <label>Name:
@@ -152,18 +220,47 @@ function SongsSamplesCreate(props) {
               onChange={songHandleChange}
             />
       </label>
-      <label>Producer id:
+      {/* <label>Producer id:
             <input
               type="text"
               name="producer_id"
               onChange={songHandleChange}
             />
-      </label>
+      </label> */}
       <label>Sample appears:
             <input
               type="text"
               name="sample_appears"
               onChange={songHandleChange}
+            />
+      </label>
+      <h3>Create a Sample Producer:</h3>
+      <label>Name:
+            <input
+              type="text"
+              name="name"
+              onChange={sampleProducerHandleChange}
+            />
+      </label>
+      <label>Genre:
+            <input
+              type="text"
+              name="genre"
+              onChange={sampleProducerHandleChange}
+            />
+      </label>
+      <label>Location:
+            <input
+              type="text"
+              name="location"
+              onChange={sampleProducerHandleChange}
+            />
+      </label>
+      <label>Lifetime:
+            <input
+              type="text"
+              name="lifetime"
+              onChange={sampleProducerHandleChange}
             />
       </label>
       <h3>Create a Sample:</h3>
@@ -202,13 +299,13 @@ function SongsSamplesCreate(props) {
               onChange={sampleHandleChange}
             />
       </label>
-      <label>Producer id:
+      {/* <label>Producer id:
             <input
               type="text"
               name="producer_id"
               onChange={sampleHandleChange}
             />
-      </label>
+      </label> */}
       <label>Sample appears:
             <input
               type="text"
@@ -216,7 +313,7 @@ function SongsSamplesCreate(props) {
               onChange={sampleHandleChange}
             />
       </label>
-      <button onClick={(e) => { e.preventDefault();}}>Hi</button>
+
       <h3>Create a producer:</h3>
       <label>Name:
             <input
