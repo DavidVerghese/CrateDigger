@@ -59,27 +59,27 @@ function SongsSamples(props) {
           <div className="songssamples-entry">
             <div className="songssamples-song">
               <h3>
-                Song: "{index3.songName}" by {index3.songArtist}{" "}
+                SONG: "{index3.songName}" by {index3.songArtist}{" "}
               </h3>
-              <p>Record label: {index3.songRecordLabel} </p>
-              <p>{index3.songYear}</p>
-              <p>Genre: {index3.songGenre}</p>
+              <p>RECORD LABEL: {index3.songRecordLabel} </p>
+              <p>YEAR: {index3.songYear}</p>
+              <p>GENRE: {index3.songGenre}</p>
               <p>
-                Sample Appears: <em>{index3.songSampleAppears}</em>
+                SAMPLE APPEARS: <em>{index3.songSampleAppears}</em>
               </p>
-              <p>Producer: {index3.songProducerName}</p>
+              <p>PRODUCER: {index3.songProducerName}</p>
             </div>
             <div className="songssamples-sample">
               <h3>
-                Sample: "{index3.sampleName}" by {index3.sampleArtist}{" "}
+                SAMPLE: "{index3.sampleName}" by {index3.sampleArtist}{" "}
               </h3>
-              <p>Record label: {index3.sampleRecordLabel}</p>
-              <p>{index3.sampleYear}</p>
-              <p>Genre: {index3.sampleGenre}</p>
+              <p>RECORD LABEL: {index3.sampleRecordLabel}</p>
+              <p>YEAR: {index3.sampleYear}</p>
+              <p>GENRE: {index3.sampleGenre}</p>
               <p>
-                Sampled At: <em>{index3.songSampledAt}</em>
+                SAMPLED AT: <em>{index3.songSampledAt}</em>
               </p>
-              <p>Producer: {index3.sampleProducerName}</p>
+              <p>PRODUCER: {index3.sampleProducerName}</p>
               <Link to={`/songssamples/${index3.id}`}>Read more</Link>
             </div>
             

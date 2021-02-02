@@ -98,15 +98,15 @@ function SongsSamplesEdit(props) {
       updateSample(id, sampleFormData);
       console.log();
   }}>
-      <h3>Song info</h3>
-      <label>name:
+      <h3>SONG INFO</h3>
+      <label>NAME:
     <input
           type="text"
           name="name"
         onChange={songHandleChange}
       />
       </label>
-      <label>artist:
+      <label>ARTIST:
     <input
           type="text"
           name="artist"

@@ -7,12 +7,15 @@ import SongsSamples from './screens/SongsSamples/SongsSamples.jsx';
 import SongsSamplesDetail from './screens/SongsSamplesDetail/SongsSamplesDetail.jsx';
 import SongsSamplesEditing from './screens/SongsSamplesEditing/SongsSamplesEditing.jsx';
 import SongsSamplesCreate from './screens/SongsSamplesCreate/SongsSamplesCreate.jsx';
+import SearchResults from './screens/SearchResults/SearchResults.jsx';
 import Producers from './screens/Producers/Producers.jsx';
 import ProducersDetail from './screens/ProducersDetail/ProducersDetail.jsx';
 import { getAllSongssamples, deleteSongssample, postSongssample, putSongssample } from './services/songssamples';
 import { getAllSongs, deleteSong, postSong, putSong } from './services/songs';
 import { getAllSamples, deleteSample, postSample, putSample } from './services/samples';
 import { getAllProducers, deleteProducer, postProducer, putProducer } from './services/producers';
+import Search from './components/Search/Search.jsx';
+import { AZ, ZA} from "./utils/sort.js";
 
 function App() {
 
@@ -108,12 +111,74 @@ function App() {
     // history.push('/dogs');
   }
 
+
+  // searchbar stuff 
+  const [queriedSongs, setQueriedSongs] = useState([]);
+  const [queriedSamples, setQueriedSamples] = useState([]);
+  const [queriedProducers, setQueriedProducers] = useState([]);
+  const [queriedSongssamples, setQueriedSongssamples] = useState([]);
+
+  const [searchResults, setSearchResults] = useState([]);
+   const [sortType, setSortType] = useState([]);
+  const handleSort = type => {
+    setSortType(type)
+    switch (type) {
+      case "name-ascending":
+        setQueriedSongs(AZ(queriedSongs));
+        setQueriedSamples(AZ(queriedSamples));
+        setQueriedProducers(AZ(queriedProducers));
+        setQueriedSongssamples(AZ(queriedSongssamples));
+        break
+      case "name-descending":
+        setQueriedSongs(ZA(queriedSongs));
+        setQueriedSamples(ZA(queriedSamples));
+        setQueriedProducers(ZA(queriedProducers));
+        setQueriedSongssamples(ZA(queriedSongssamples));
+        break
+      default:
+        break
+    }
+  };
+
+  const handleSubmit = event => event.preventDefault()
+  const handleSearch = event => {
+    const newQueriedSongs = allSongs.filter(song => song.name.toLowerCase().includes(event.target.value.toLowerCase()));
+    const newQueriedSamples = allSamples.filter(sample => sample.name.toLowerCase().includes(event.target.value.toLowerCase()));
+    const newQueriedProducers = allProducers.filter(producer => producer.name.toLowerCase().includes(event.target.value.toLowerCase()));
+    const newQueriedSongssamples = [];
+    allSongssamples.map((songssamplesid) => {
+      newQueriedSongs.map((queriedsongsid) => {
+        if (queriedsongsid.id === songssamplesid.song_id) {
+          newQueriedSongssamples.push(songssamplesid);
+        }
+      })
+      newQueriedSamples.map((queriedsamplesid) => {
+        if (queriedsamplesid.id === songssamplesid.sample_id) {
+          newQueriedSongssamples.push(songssamplesid);
+        }
+      })
+    })
+    setQueriedProducers(newQueriedProducers);
+    setQueriedSamples(newQueriedSamples);
+    setQueriedSongs(newQueriedSongs);
+    setQueriedSongssamples(newQueriedSongssamples);
+  }
+
+  //end search bar stuff
+
+
   return (
     <div className="App">
-      <h4><Link to='/songssamples'>SongsSamples</Link></h4>
-      <h4><Link to='/container'>Container</Link></h4>
-      <h4><Link to='/producers'>Producers</Link></h4>
-      <h4><Link to='/new'>Add a post</Link></h4>
+      <h1>CRATE DIGGER</h1>
+      <h4><Link to='/songssamples'>ALL POSTS</Link></h4>
+      <h4><Link to='/container'>CONTAINER</Link></h4>
+      <h4><Link to='/producers'>PRODUCERS</Link></h4>
+      <h4><Link to='/new'>ADD A POST</Link></h4>
+      <Search
+        onSubmit={handleSubmit} 
+        onChange={handleSearch} 
+      />
+      <Link to='/searchresults'><button>Submit</button></Link>
       
       <Route exact path='/container'><Container /></Route>
       <Route exact path='/new'>
@@ -164,6 +229,19 @@ function App() {
       <Route exact path='/producers/:id'>
         <ProducersDetail
           allProducers={allProducers}/>
+      </Route>
+      <Route exact path='/searchresults'>
+        <SearchResults
+          queriedProducers={queriedProducers}
+          queriedSamples={queriedSamples}
+          queriedSongs={queriedSongs}
+          queriedSongssamples={queriedSongssamples}
+          allSongssamples={allSongssamples}
+          removeSongssample={removeSongssample}
+          allSongs={allSongs}
+          allSamples={allSamples}
+          allProducers={allProducers}
+        />
       </Route>
     </div>
   );
