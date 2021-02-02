@@ -75,6 +75,13 @@ function SongsSamplesCreate(props) {
       createSong(songFormData);
       createSample(sampleFormData);
       createProducer(producerFormData);
+
+      setFormData({
+        song_id: props.allSongs[props.allSongs.length-1].id,
+        sample_id: props.allSamples[props.allSamples.length - 1].id
+      })
+      
+      createSongssample(formData)
       
     }}>
       <h3>Create a Song:</h3>
@@ -210,11 +217,11 @@ function SongsSamplesCreate(props) {
 
       <div className="song-sample-create-button-section">
         <button>Ready</button> 
-      <button onClick={(e) => {setFormData({
-  song_id: props.allSongs[props.allSongs.length-1].id,
-  sample_id: props.allSamples[props.allSamples.length - 1].id})}}>Set</button>
-  <button onClick={(e) => {createSongssample(formData);}}>Go</button>
       </div>
+      {/* <button onClick={(e) => {setFormData({
+  song_id: props.allSongs[props.allSongs.length-1].id,
+  sample_id: props.allSamples[props.allSamples.length - 1].id})}}>Set</button> */}
+  {/* <button onClick={(e) => {createSongssample(formData);}}>Go</button> */}
       
     </form>
   </div>
