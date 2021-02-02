@@ -89,7 +89,9 @@ tommy_butler = Producer.where(name: "Tommy Butler", genre:"soul", lifetime: "unk
   record_label: "EMI and Elektra",
   year: "1981",
   producer:queen_and_david_bowie,
-  sampled_at: "0:00"
+  sampled_at: "0:00",
+  sample_pic_address: "https://faroutmagazine.co.uk/static/uploads/2019/11/Neil-Young-Joni-Mitchell-2.jpg",
+  youtube_embed: "https://www.youtube.com/watch?v=FKiBG8y2UsY"
 ).first_or_create
 
 @grandmas_hands = Sample.where(
@@ -99,7 +101,9 @@ tommy_butler = Producer.where(name: "Tommy Butler", genre:"soul", lifetime: "unk
   record_label: "Sussex",
   year: "1971",
   producer:booker_t_jones,
-  sampled_at: "0:00"
+  sampled_at: "0:00",
+  sample_pic_address: "https://www.rollingstone.com/wp-content/uploads/2020/04/BillWithers2.jpg?w=1024",
+  youtube_embed: "https://www.youtube.com/watch?v=TdrChyGb574"
 ).first_or_create
 
 @thirty_four_ghosts_iv = Sample.where(
@@ -109,7 +113,9 @@ tommy_butler = Producer.where(name: "Tommy Butler", genre:"soul", lifetime: "unk
   record_label: "The Null Corporation",
   year: "2008",
   producer:alan_moulder_trent_reznor_atticus_ross,
-  sampled_at: "0:07"
+  sampled_at: "0:07",
+  sample_pic_address: "https://thumbor.forbes.com/thumbor/960x0/https%3A%2F%2Fspecials-images.forbesimg.com%2Fdam%2Fimageserve%2F1015367702%2F960x0.jpg%3Ffit%3Dscale",
+  youtube_embed: "https://www.youtube.com/watch?v=XF_ceFugJjQ"
 ).first_or_create
 
 @as_long_as_ive_got_you = Sample.where(
@@ -119,7 +125,9 @@ tommy_butler = Producer.where(name: "Tommy Butler", genre:"soul", lifetime: "unk
   record_label: "Volt",
   year: "1967",
   producer:isaac_hayes_and_david_porter, 
-  sampled_at: "0:20"
+  sampled_at: "0:20",
+  sample_pic_address: "http://4.bp.blogspot.com/-j47S2BW6ryY/U0Bp9bPqpxI/AAAAAAAAAX4/rCfCMZjA02w/s1600/Charmels+5.jpg",
+  youtube_embed: "https://www.youtube.com/watch?v=gp9uZjPaB4w"
 ).first_or_create
 
 @prison_song = Sample.where(
@@ -129,7 +137,9 @@ tommy_butler = Producer.where(name: "Tommy Butler", genre:"soul", lifetime: "unk
   record_label: "Cotillon",
   year: "1976",
   producer:tommy_butler, 
-  sampled_at: "0:00 and 0:30"
+  sampled_at: "0:00 and 0:30",
+  sample_pic_address: "https://m.media-amazon.com/images/I/A1r5ipjp+5L._SS500_.jpg",
+  youtube_embed: "https://www.youtube.com/watch?v=s6F37L7vtyw"
 ).first_or_create
 
 # SONG SAMPLE JOINS TABLE
