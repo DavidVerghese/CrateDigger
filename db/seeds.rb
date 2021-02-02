@@ -27,7 +27,9 @@ tommy_butler = Producer.where(name: "Tommy Butler", genre:"soul", lifetime: "unk
   record_label: "SBK", 
   year: "1990", 
   producer:vanilla_ice, 
-  sample_appears:"0:08 and onwards throughout the rest of the song"
+  sample_appears:"0:08 and onwards throughout the rest of the song",
+  song_pic_address: "https://www.iheartradio.ca/image/policy:1.12865920:1593688745/ice.jpg?f=default&$p$f=57dbce3",
+  youtube_address: "https://www.youtube.com/watch?v=jewmMjnbfzE"
 ).first_or_create
 
 @no_diggity = Song.where(
@@ -37,7 +39,9 @@ tommy_butler = Producer.where(name: "Tommy Butler", genre:"soul", lifetime: "unk
   record_label: "Interscope", 
   year: "1996", 
   producer:teddy_riley_and_william_skylz_stewart, 
-  sample_appears:"0:00 and onwards throughout the rest of the song"
+  sample_appears:"0:00 and onwards throughout the rest of the song",
+  song_pic_address: "https://images-na.ssl-images-amazon.com/images/I/814DUNOJaoL._SL1400_.jpg",
+  youtube_address: "https://www.youtube.com/watch?v=3KL9mRus19o"
 ).first_or_create
 
 @old_town_road = Song.where(
@@ -47,7 +51,9 @@ tommy_butler = Producer.where(name: "Tommy Butler", genre:"soul", lifetime: "unk
   record_label: "Columbia", 
   year: "2018", 
   producer:young_kio, 
-  sample_appears:"0:00 and onwards throughout the rest of the song"
+  sample_appears:"0:00 and onwards throughout the rest of the song",
+  song_pic_address: "https://assets.teenvogue.com/photos/5e3c3401cffc940008b611df/16:9/w_2560%2Cc_limit/lede.jpg",
+  youtube_address: "https://www.youtube.com/watch?v=7ysFgElQtjI"
 ).first_or_create
 
 @c_r_e_a_m = Song.where(
@@ -57,7 +63,9 @@ tommy_butler = Producer.where(name: "Tommy Butler", genre:"soul", lifetime: "unk
   record_label: "Loud", 
   year: "1994", 
   producer: rza, 
-  sample_appears:"0:06 and throughout"
+  sample_appears:"0:06 and throughout",
+  song_pic_address: "https://images.genius.com/7d142605d5b5a0784a1e842f9377b8f6.702x702x1.jpg",
+  youtube_address: "https://www.youtube.com/watch?v=PBwAxmrE194"
 ).first_or_create
 
 @mask_off = Song.where(
@@ -67,7 +75,9 @@ tommy_butler = Producer.where(name: "Tommy Butler", genre:"soul", lifetime: "unk
   record_label: "Freebands, Epic", 
   year: "2017", 
   producer: metro_boomin_and_freyy, 
-  sample_appears:"1:36, 3:12"
+  sample_appears:"1:36, 3:12",
+  song_pic_address: "https://upload.wikimedia.org/wikipedia/en/e/ef/Future_%E2%80%93_Mask_Off.jpg",
+  youtube_address: "https://www.youtube.com/watch?v=xvZqHgFz51I"
 ).first_or_create
 
 # SAMPLES
