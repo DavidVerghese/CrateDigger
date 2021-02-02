@@ -14,14 +14,17 @@ class SongssamplesController < ApplicationController
 
   # POST /songssamples
   def create
-    @songssample = SongsSample.new(songssample_params)
-
+    @song = Song.new(song_params)
+    @sample = Sample.new(sample_params)
+    if @song.save && @sample.save
+      @songssample = SongsSample.new(song: @song, sample: @sample)
     if @songssample.save
       render json: @songssample, status: :created
     else
       render json: @songssample.errors, status: :unprocessable_entity
     end
   end
+end
 
   # PATCH/PUT /songssamples/1
   def update
@@ -43,7 +46,10 @@ class SongssamplesController < ApplicationController
     end
 
     # Only allow a trusted parameter "white list" through.
-    def songssample_params
-      params.require(:songssample).permit(:song_id, :sample_id)
+    def song_params
+      params.require(:song).permit(:name, :artist, :genre, :record_label, :year, :producer_id, :sample_appears)
     end
+    def sample_params 
+      params.require(:sample).permit(:name, :artist, :genre, :record_label, :year, :producer_id, :sampled_at)
+    end 
 end

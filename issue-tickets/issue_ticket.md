@@ -2,14 +2,14 @@
 
 ## Unexpected Behavior
 
-> In my project, I want to give the user the ability to create a song and a sample, and see the song and sample pair on the 'All Posts' page. First, the website will take the information the user has input about the song and the sample on the 'Add a Post' page (eg the year the song was released, the producer of the sample). 
+In my project, I want to give the user the ability to create a song and a sample, and see the song and sample pair on the 'All Posts' page. First, the website will take the information the user has input about the song and the sample on the 'Add a Post' page (eg the year the song was released, the producer of the sample). 
 Then it will create an entry in the song table, and an entry in the sample. 
 Third, it will take the ids of the new song and the new sample created, and send then to a joins table (songssamples). 
 Fourth, on the 'All Posts' page the website shall find the information about the newly created song and sample pair. Last, it will look the song id and sample id, and render information about both as a single post. 
 
 I was hoping I would be able to use a single 'submit' button to handle everything. Instead, I have found trying to perform multiple, connected functions with one button creates errors. For example, I can't create a song and a sample, and then get their ids in the same step, as the songs and samples haven't been created yet. In order to get everything to work, I now have three buttons. 
 
-I have written about the errors I was getting in more detail on the SongsSamplesCreate page.
+I have written about the errors I was getting in more detail below under 'Reproduce the Error', as well as on the SongsSamplesCreate page.
 
 ## Reproduce the Error
 
@@ -27,11 +27,16 @@ To create a post:
 To see the error 
 1. In the local repo, go to clients/src/screens/SongsSamplesCreate
 2. On lines 67-75, 96-105, and 251-252, I wrote out pseudocode explaining what kind of problems I was having
-3. To summarize: 
-4. line 66-75... in order to create a new post in the 'joins' table, songssamples, you need to have the id of the song and sample. You can't get this as the song and sample haven't been created yet. 
-5. lines 96-105: same problem. In order to solve this problem, I had to create a button outside of the form (line 244) that would get the ids of the song and sample after they had been created. 
-6. line 251-252: while I was able to get the ids of the song and sample here, I wasn't able to use them to create a new entry in the 'joins' table. I had to use a third button (line 256) for that step
 ```
+
+To summarize: 
+<br />
+line 66-75... in order to create a new post in the 'joins' table, songssamples, you need to have the id of the song and sample. You can't get this as the song and sample haven't been created yet. 
+<br />
+lines 96-105: same problem. In order to solve this problem, I had to create a button outside of the form (line 244) that would get the ids of the song and sample after they had been created. 
+<br />
+line 251-252: while I was able to get the ids of the song and sample here, I wasn't able to use them to create a new entry in the 'joins' table. I had to use a third button (line 256) for that step
+
 
 ## Attempted Resolution
 
