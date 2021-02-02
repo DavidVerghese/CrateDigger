@@ -30,11 +30,24 @@ function SongsSamples(props) {
   const handleSearch = event => {
     const newQueriedSongs = props.allSongs.filter(song => song.name.toLowerCase().includes(event.target.value.toLowerCase()));
     const newQueriedSamples = props.allSamples.filter(sample => sample.name.toLowerCase().includes(event.target.value.toLowerCase()));
-    setQueriedSongs(newQueriedSongs, () => handleSort(sortType));
-    setQueriedSamples(newQueriedSamples, () => handleSort(sortType));
-    // console.log(newQueriedSongs);
-    // console.log(newQueriedSamples);
+    // setQueriedSongs(newQueriedSongs, () => handleSort(sortType));
+    // setQueriedSamples(newQueriedSamples, () => handleSort(sortType));
+    // console.log(  newQueriedSongs);
+    // console.log( newQueriedSamples);
+    newQueriedSongs.map((index6) => {
+      newQueriedSamples.push(index6);
+    })
+    const newQueriedSongsAndSamples = newQueriedSongs;
   }
+
+  const songsJSX = queriedSongs.map((product, index) => {
+    console.log(product.id,index)
+    // return < Product _id={product._id} name={product.name} images={product.images} price={product.price} key={index} sale={product.sale} />
+  })
+  const samplesJSX = queriedSamples.map((product, index) => {
+    console.log(product.id,index)
+    // return < Product _id={product._id} name={product.name} images={product.images} price={product.price} key={index} sale={product.sale} />
+  })
 
   let arrayOfObjects = [];
   return (
