@@ -24,7 +24,6 @@ function App() {
   const [allProducers, setAllProducers] = useState([]);
 
   const history = useHistory();
-
   useEffect(() => {
     fetchData();
   }, [allSongssamples])
@@ -177,7 +176,6 @@ function App() {
         onChange={handleSearch} 
       />
       <Link to='/searchresults'><button>Submit</button></Link>
-      
       <Route exact path='/new'>
           <SongsSamplesCreate
           createSongssample={createSongssample}

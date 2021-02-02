@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_28_212451) do
+ActiveRecord::Schema.define(version: 2021_02_02_223923) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,6 +47,8 @@ ActiveRecord::Schema.define(version: 2021_01_28_212451) do
     t.string "sample_appears"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "song_pic_address"
+    t.string "youtube_address"
     t.index ["producer_id"], name: "index_songs_on_producer_id"
   end
 
