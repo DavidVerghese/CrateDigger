@@ -26,6 +26,11 @@ function SongsSamplesCreate(props) {
     producer_id: "",
     sampled_at: ""
   });
+  const [songsSampleFormData, setSongsSampleFormData] = useState({
+    song_id: songFormData,
+    sample_id: sampleFormData
+  });
+  const object = {};
   const [producerFormData, setProducerFormData] = useState({
     name: "",
     genre: "",
@@ -46,6 +51,10 @@ function SongsSamplesCreate(props) {
       ...prevState,
       [name]: value
     }));
+    setSongsSampleFormData({
+      song_id: songFormData,
+      sample_id: sampleFormData
+    })
   }
   const sampleHandleChange = (e) => {
     const { name, value } = e.target;
@@ -53,6 +62,10 @@ function SongsSamplesCreate(props) {
       ...prevState,
       [name]: value
     }));
+    setSongsSampleFormData({
+      song: songFormData,
+      sample: sampleFormData
+    })
   }
   const producerHandleChange = (e) => {
     const { name, value } = e.target;
@@ -85,24 +98,9 @@ function SongsSamplesCreate(props) {
   return <div className="songs-samples-create-parent-div">
     <form onSubmit={(e) => {
           e.preventDefault()
-      createSong(songFormData);
-      createSample(sampleFormData);
       createProducer(producerFormData);
-      // PRODUCER ERRROR TWO
-    // can't get the id of the producer since it hasn't 
-    // been created yet
-      //  console.log(props.allProducers[props.allProducers.length - 1].id);
-      
-      // SONGSSAMPLES ERROR TWO: You can't set formdata here, as the songs and samples 
-      // haven't been created yet -- You have to set it with a new button 
-      // outside of the form 
-      // setFormData({
-      //   song_id: props.allSongs[props.allSongs.length-1].id,
-      //   sample_id: props.allSamples[props.allSamples.length-1].id
-      // })
-      // console.log(props.allSongs[props.allSongs.length - 1]);
-      // console.log(props.allSamples[props.allSamples.length - 1]);
-      // createSongssample(formData)
+      createSongssample(songsSampleFormData);
+    
       
     }}>
       <h3>Create a Song:</h3>
@@ -206,6 +204,7 @@ function SongsSamplesCreate(props) {
               onChange={sampleHandleChange}
             />
       </label>
+      <button onClick={(e) => { e.preventDefault();}}>Hi</button>
       <h3>Create a producer:</h3>
       <label>Name:
             <input
@@ -241,19 +240,6 @@ function SongsSamplesCreate(props) {
       </div>
       
     </form>
-    <button onClick={(e) => {
-        setFormData({
-          song_id: props.allSongs[props.allSongs.length - 1].id,
-          sample_id: props.allSamples[props.allSamples.length - 1].id
-        }); console.log(props.allSongs[props.allSongs.length - 1]);
-        console.log(props.allSamples[props.allSamples.length - 1]);
-        
-      // SONGSSAMPLES ERROR THREE: songssamples doesn't get updated if I run createSongssamples here 
-        // createSongssample(formData)
-      
-      console.log(props.allProducers[props.allProducers.length - 1].id);
-    }}>Set</button>
-    <button onClick={(e) => {createSongssample(formData);}}>Go</button>
   </div>
 }
 export default SongsSamplesCreate
