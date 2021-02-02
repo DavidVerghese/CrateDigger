@@ -14,12 +14,19 @@ class SongssamplesController < ApplicationController
 
   # POST /songssamples
   def create
-    @song = Song.new(song_params)
+    @song_producer = Producer.create(song_producer_params)
+    @sample_producer = Producer.create(sample_producer_params)
     @sample = Sample.new(sample_params)
+    @sample.producer = @sample_producer
+    @sample.save
+    @song = Song.new(song_params)
+    @song.producer = @song_producer
+    @song.save
+
     if @song.save && @sample.save
       @songssample = SongsSample.new(song: @song, sample: @sample)
     if @songssample.save
-      render json: @songssample, status: :created
+      render json: @songssample, include: [{song: {include: :producer}}, {sample: {include: :producer}}], status: :created
     else
       render json: @songssample.errors, status: :unprocessable_entity
     end
@@ -46,8 +53,15 @@ end
     end
 
     # Only allow a trusted parameter "white list" through.
+    def song_producer_params
+      params.require(:song_producer).permit(:name, :genre, :lifetime, :location)
+    end
+    def sample_producer_params
+      params.require(:sample_producer).permit(:name, :genre, :lifetime, :location)
+    end
     def song_params
-      params.require(:song).permit(:name, :artist, :genre, :record_label, :year, :producer_id, :sample_appears)
+      #song is the key to sort through the params
+      params.require(:song).permit(:name, :artist, :genre, :record_label, :year, :sample_appears)
     end
     def sample_params 
       params.require(:sample).permit(:name, :artist, :genre, :record_label, :year, :producer_id, :sampled_at)
