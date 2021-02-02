@@ -2,7 +2,6 @@ import logo from './logo.svg';
 import './App.css';
 import React, { useState, useEffect } from 'react';
 import { Route, Link, Switch, useHistory } from 'react-router-dom';
-import Container from './containers/Container';
 import SongsSamples from './screens/SongsSamples/SongsSamples.jsx';
 import SongsSamplesDetail from './screens/SongsSamplesDetail/SongsSamplesDetail.jsx';
 import SongsSamplesEditing from './screens/SongsSamplesEditing/SongsSamplesEditing.jsx';
@@ -28,7 +27,7 @@ function App() {
 
   useEffect(() => {
     fetchData();
-  }, [allSongssamples])
+  }, [])
 
   const fetchData = async () => {
     const songssamples = await getAllSongssamples();
@@ -171,7 +170,6 @@ function App() {
     <div className="App">
       <h1>CRATE DIGGER</h1>
       <h4><Link to='/songssamples'>ALL POSTS</Link></h4>
-      <h4><Link to='/container'>CONTAINER</Link></h4>
       <h4><Link to='/producers'>PRODUCERS</Link></h4>
       <h4><Link to='/new'>ADD A POST</Link></h4>
       <Search
@@ -180,7 +178,6 @@ function App() {
       />
       <Link to='/searchresults'><button>Submit</button></Link>
       
-      <Route exact path='/container'><Container /></Route>
       <Route exact path='/new'>
           <SongsSamplesCreate
           createSongssample={createSongssample}

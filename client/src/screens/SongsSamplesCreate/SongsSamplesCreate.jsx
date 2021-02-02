@@ -8,6 +8,18 @@ function SongsSamplesCreate(props) {
     song_id: "",
     sample_id: ""
   });
+  const [songProducerFormData, setSongProducerFormData] = useState({
+    name: "",
+    genre: "",
+    lifetime: "",
+    location: ""
+  });
+  const [sampleProducerFormData, setSampleProducerFormData] = useState({
+    name: "",
+    genre: "",
+    lifetime: "",
+    location: ""
+  });
   const [songFormData, setSongFormData] = useState({
     name: "",
     artist: "",
