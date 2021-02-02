@@ -11,6 +11,9 @@
   padding: 10px;
   color: black;
 }
+.songssamples-song a {
+  color: black;
+}
 .songssamples-sample {
   padding: 10px;
   margin: 10px;
@@ -19,3 +22,6 @@
 .songssamples-sample a {
   color: black;
 }
+.songssamples-sample img {
+  width: 40%;
+} 

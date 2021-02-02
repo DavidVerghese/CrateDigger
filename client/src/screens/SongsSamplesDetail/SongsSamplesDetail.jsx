@@ -31,6 +31,7 @@ function SongsSamplesDetail(props) {
             item.songGenre = `${index2.genre}`;
             item.songSampleAppears = `${index2.sample_appears}`;
             item.imageAddress = `${index2.song_pic_address}`;
+            item.youtubeAddress = `${index2.youtube_address}`;
             {
               props.allProducers.map((index4) => {
                 if (index2.producer_id === index4.id) {
@@ -53,6 +54,8 @@ function SongsSamplesDetail(props) {
             item.sampleGenre = `${index2.genre}`;
             item.songSampledAt = `${index2.sampled_at}`;
             item.id = index2.id;
+            item.sampleYoutubeAddress = `${index2.youtube_embed}`;
+            item.sampleImageAddress = `${index2.sample_pic_address}`;
             {
               props.allProducers.map((index4) => {
                 if (index2.producer_id === index4.id) {
@@ -67,6 +70,8 @@ function SongsSamplesDetail(props) {
     <div className="songssamples-song">
       <h3>SONG: "{item.songName}" by {item.songArtist} </h3> 
       <img src={item.imageAddress} />
+      <br></br>
+              <a href={item.youtubeAddress}>Link</a>
           <p>RECORD LABEL: {item.songRecordLabel} </p>
          <p>YEAR: {item.songYear}</p>
           <p>GENRE: {item.songGenre}</p>
@@ -74,7 +79,10 @@ function SongsSamplesDetail(props) {
           <p>Producer: {item.songProducerName}</p> 
     </div> 
     <div className="songssamples-sample">
-        <h3>SAMPLE: "{item.sampleName}" by {item.sampleArtist} </h3>
+      <h3>SAMPLE: "{item.sampleName}" by {item.sampleArtist} </h3>
+      <img src={item.sampleImageAddress} />
+              <br></br>
+              <a href={item.sampleYoutubeAddress}>Link</a>
         <p>RECORD LABEL: {item.sampleRecordLabel}</p>
         <p>YEAR: {item.sampleYear}</p>
         <p>GENRE: {item.sampleGenre}</p>
