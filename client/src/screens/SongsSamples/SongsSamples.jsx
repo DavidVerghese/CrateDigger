@@ -23,6 +23,8 @@ function SongsSamples(props) {
               item.songYear = `${index2.year}`;
               item.songGenre = `${index2.genre}`;
               item.songSampleAppears = `${index2.sample_appears}`;
+              item.youtubeAddress = `${index2.youtube_address}`;
+              item.imageAddress = `${index2.song_pic_address}`;
               {
                 props.allProducers.map((index4) => {
                   if (index2.producer_id === index4.id) {
@@ -62,6 +64,7 @@ function SongsSamples(props) {
               <h3>
                 SONG: "{index3.songName}" by {index3.songArtist}{" "}
               </h3>
+              <img src={index3.imageAddress} />
               <p>RECORD LABEL: {index3.songRecordLabel} </p>
               <p>YEAR: {index3.songYear}</p>
               <p>GENRE: {index3.songGenre}</p>
