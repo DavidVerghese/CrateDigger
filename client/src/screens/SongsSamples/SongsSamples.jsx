@@ -9,6 +9,8 @@ function SongsSamples(props) {
   // searchbar stuff 
   const [queriedSongs, setQueriedSongs] = useState([]);
   const [queriedSamples, setQueriedSamples] = useState([]);
+  const [queriedProducers, setQueriedProducers] = useState([]);
+  const [searchResults, setSearchResults] = useState([]);
    const [sortType, setSortType] = useState([]);
   const handleSort = type => {
     setSortType(type)
@@ -16,10 +18,12 @@ function SongsSamples(props) {
       case "name-ascending":
         setQueriedSongs(AZ(queriedSongs));
         setQueriedSamples(AZ(queriedSamples));
+        setQueriedProducers(AZ(queriedProducers));
         break
       case "name-descending":
         setQueriedSongs(ZA(queriedSongs));
         setQueriedSamples(ZA(queriedSamples));
+        setQueriedProducers(ZA(queriedProducers));
         break
       default:
         break
@@ -30,22 +34,19 @@ function SongsSamples(props) {
   const handleSearch = event => {
     const newQueriedSongs = props.allSongs.filter(song => song.name.toLowerCase().includes(event.target.value.toLowerCase()));
     const newQueriedSamples = props.allSamples.filter(sample => sample.name.toLowerCase().includes(event.target.value.toLowerCase()));
-    // setQueriedSongs(newQueriedSongs, () => handleSort(sortType));
-    // setQueriedSamples(newQueriedSamples, () => handleSort(sortType));
-    // console.log(  newQueriedSongs);
-    // console.log( newQueriedSamples);
+    const newQueriedProducers = props.allProducers.filter(producer => producer.name.toLowerCase().includes(event.target.value.toLowerCase()));
     newQueriedSongs.map((index6) => {
       newQueriedSamples.push(index6);
+    });
+    newQueriedSamples.map((songsSamplesIterable) => {
+      newQueriedProducers.push(songsSamplesIterable);
     })
-    const newQueriedSongsAndSamples = newQueriedSongs;
+    //console.log(newQueriedProducers);
+    setSearchResults(newQueriedProducers);
   }
 
-  const songsJSX = queriedSongs.map((product, index) => {
-    console.log(product.id,index)
-    // return < Product _id={product._id} name={product.name} images={product.images} price={product.price} key={index} sale={product.sale} />
-  })
-  const samplesJSX = queriedSamples.map((product, index) => {
-    console.log(product.id,index)
+  const searchResultsJSX = searchResults.map((product, index) => {
+    console.log(product,index)
     // return < Product _id={product._id} name={product.name} images={product.images} price={product.price} key={index} sale={product.sale} />
   })
 
