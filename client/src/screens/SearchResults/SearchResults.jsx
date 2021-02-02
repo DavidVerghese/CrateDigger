@@ -1,11 +1,22 @@
 import Search from '../../components/Search/Search.jsx';
 import { AZ, ZA } from "../../utils/sort.js";
 import { Route, Link, Switch, useHistory } from "react-router-dom";
+import React, { useState, useEffect } from 'react';
 
 function SearchResults(props) {
+  
+  let noResults = '';
+  let noResultsImgUrl = '';
+  if (props.queriedSongssamples.length === 0 && props.queriedProducers.length===0) {
+    noResults = 'No results to be found';
+    noResultsImgUrl = 'https://media1.giphy.com/media/5x89XRx3sBZFC/giphy.gif?cid=ecf05e47owra8pwdsqv5wccqslnrijh7fl4up938oh33bf9w&rid=giphy.gif';
+  }
+
+
   let arrayOfObjects = [];
   return <div>
-        <h2>Songs </h2>
+    <p>{noResults}</p>
+    <img src={noResultsImgUrl}/>
     {props.queriedSongssamples.map((index) => {
       console.log(index);
       let item = {};
@@ -82,9 +93,9 @@ function SearchResults(props) {
           </div>
         )
     })}
-    <h2>Producers</h2>
-    {props.queriedProducers.map((producerIndex)=>{
-        return <div className="producers-entry">
+    {props.queriedProducers.map((producerIndex) => {
+      return <div className="producers-entry">
+                 <h2>Producer</h2>
           <h3>Name: {producerIndex.name}</h3>
       <p>Genre: {producerIndex.genre}</p>
       <p>Lifetime: {producerIndex.lifetime}</p>
