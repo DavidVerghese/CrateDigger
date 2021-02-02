@@ -8,6 +8,7 @@ import { AZ, ZA} from "../../utils/sort.js";
 function SongsSamples(props) {
 
   let arrayOfObjects = [];
+  console.log(props.allSongs);
   
   return (
     <div>
