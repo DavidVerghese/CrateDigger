@@ -1,0 +1,15 @@
+.songsamples-detail-song-text {
+  background-color: #47151e;
+  margin: 0 auto;
+  margin-top: 30px;
+  width: 50%;
+  padding: 20px;
+}
+.songssamples-detail-buttons-parent-div button {
+  background-color: #b97d5c;
+  font-size: 21px;
+  margin: 10px 30px 10px 30px;
+}
+.songssamples-detail-parent-div img{
+  width: 600px;
+}
