@@ -9,3 +9,13 @@
 #producers-detail-songs-worked-on {
   color: yellow;
 }
+
+@media (max-width: 400px) {
+  .producers-detail-parent-div img{
+    width: 300px;
+  }
+  .producers-detail-text {
+    width: 350px;
+  }
+}
+

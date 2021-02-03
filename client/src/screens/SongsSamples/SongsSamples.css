@@ -44,3 +44,19 @@
 .songssamples-sample img {
   width: 100%;
 } 
+
+@media (max-width: 400px) {
+  .songssamples-entry {
+    margin: 30px;
+    width: 300px;
+  }
+  .songssamples-song-img-div {
+    width: 250px;
+    height: 250px;
+  }
+  .songssamples-samples-img-div {
+    width: 250px;
+    margin: 0 auto;
+  }
+}
+
