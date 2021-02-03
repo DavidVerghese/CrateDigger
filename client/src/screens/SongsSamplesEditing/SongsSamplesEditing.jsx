@@ -99,7 +99,6 @@ function SongsSamplesEdit(props) {
     e.preventDefault()
       updateSong(id, songFormData);
       updateSample(id, sampleFormData);
-      console.log();
   }}>
       <h3>SONG INFO</h3>
       <img src={songPicAddress}/>

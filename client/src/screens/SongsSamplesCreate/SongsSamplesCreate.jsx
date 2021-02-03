@@ -82,7 +82,6 @@ function SongsSamplesCreate(props) {
       song_producer: songProducerFormData,
       sample_producer: sampleProducerFormData
     })
-    console.log(songsSampleFormData);
   }
   const sampleHandleChange = (e) => {
     const { name, value } = e.target;

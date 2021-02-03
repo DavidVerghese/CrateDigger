@@ -18,7 +18,6 @@ function SearchResults(props) {
     <p>{noResults}</p>
     <img src={noResultsImgUrl}/>
     {props.queriedSongssamples.map((index) => {
-      console.log(index);
       let item = {};
         {
           props.allSongs.map((index2) => {
