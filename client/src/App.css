@@ -51,3 +51,10 @@ button {
   }
 }
 
+@media (min-width: 400px) and (max-width: 1000px) {
+  body {
+    font-size: 23px;
+  }
+}
+
+
