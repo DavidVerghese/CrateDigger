@@ -3,10 +3,8 @@
   flex-direction: row;
 }
 .songssamples-entry {
-  /* background-color: #ddd580; */
   margin: 30px;
   width: 400px;
-  /* text-align: center; */
 }
 .songssamples-song img {
   width: 100%;
@@ -20,7 +18,6 @@
   color: white;
 } 
 .songssamples-song {
-  /* background-color: #bcb9be; */
   background-color: black;
   
   padding: 10px;
@@ -32,10 +29,7 @@
 }
 .songssamples-sample {
   padding: 10px;
-  /* margin: 10px; */
   color: black;
-  /* background-color: #ddd580; */
-  /* background-color: white; */
   color: white;
   border: 1px solid white;
 }
@@ -46,7 +40,6 @@
 .songssamples-samples-img-div {
   width: 350px;
   margin: 0 auto;
-  /* height: 350px; */
 }
 .songssamples-sample img {
   width: 100%;

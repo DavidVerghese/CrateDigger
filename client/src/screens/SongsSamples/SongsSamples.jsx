@@ -8,7 +8,6 @@ import { AZ, ZA} from "../../utils/sort.js";
 function SongsSamples(props) {
 
   let arrayOfObjects = [];
-  // console.log(props.allSongs);
   
   return (
     <div>
@@ -69,15 +68,7 @@ function SongsSamples(props) {
                 </h3>
                 <div className="songssamples-song-img-div">
               <img src={index3.imageAddress} /></div>
-              {/* <br></br>
-              <a href={index3.youtubeAddress}>Link</a>
-              <p>RECORD LABEL: {index3.songRecordLabel} </p>
-              <p>YEAR: {index3.songYear}</p> */}
               <p>GENRE: {index3.songGenre}</p>
-              {/* <p>
-                SAMPLE APPEARS: <em>{index3.songSampleAppears}</em>
-              </p>
-              <p>PRODUCER: {index3.songProducerName}</p> */}
             </div>
             <div className="songssamples-sample">
               <h3>
@@ -85,15 +76,7 @@ function SongsSamples(props) {
                 </h3>
                 <div className="songssamples-samples-img-div">
               <img src={index3.sampleImageAddress} /></div>
-              {/* <br></br>
-              <a href={index3.sampleYoutubeAddress}>Link</a>
-              <p>RECORD LABEL: {index3.sampleRecordLabel}</p>
-              <p>YEAR: {index3.sampleYear}</p> */}
               <p>GENRE: {index3.sampleGenre}</p>
-              {/* <p>
-                SAMPLED AT: <em>{index3.songSampledAt}</em>
-              </p>
-              <p>PRODUCER: {index3.sampleProducerName}</p> */}
               <Link to={`/songssamples/${index3.id}`}><button>Read more</button></Link>
             </div>
             

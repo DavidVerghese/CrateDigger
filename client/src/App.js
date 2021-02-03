@@ -48,7 +48,6 @@ function App() {
       ...prevState,
       newSongssample
     ]));
-    // history.push('/songssamples');
   }
   const createSong = async (songData) => {
     const newSong = await postSong(songData);
@@ -56,7 +55,6 @@ function App() {
       ...prevState,
       newSong
     ]));
-    // history.push('/songssamples');
   }
   const createSample = async (sampleData) => {
     const newSample = await postSample(sampleData);
@@ -64,7 +62,6 @@ function App() {
       ...prevState,
       newSample
     ]));
-    // history.push('/songssamples');
   }
   const createProducer = async (producerData) => {
     const newProducer = await postProducer(producerData);
@@ -72,7 +69,6 @@ function App() {
       ...prevState,
       newProducer
     ]));
-    // history.push('/songssamples');
   }
 
   const updateSongssample = async (id, songssampleData) => {
@@ -81,7 +77,6 @@ function App() {
         return songssample.id === Number(id) ? updatedSongssample : songssample
       })
     )
-    // history.push('/dogs');
   }
   const updateSong = async (id, songData) => {
     const updatedSong = await putSong(id, songData);
@@ -101,16 +96,13 @@ function App() {
   const removeSongssample = async (id) => {
     await deleteSongssample(id);
     setAllSongssamples(prevState => prevState.filter(songssample => songssample.id !== id));
-    // history.push('/dogs');
   }
   const removeProducer = async (id) => {
     await deleteProducer(id);
     setAllProducers(prevState => prevState.filter(producer => producer.id !== id));
-    // history.push('/dogs');
   }
 
 
-  // searchbar stuff 
   const [queriedSongs, setQueriedSongs] = useState([]);
   const [queriedSamples, setQueriedSamples] = useState([]);
   const [queriedProducers, setQueriedProducers] = useState([]);
@@ -161,8 +153,6 @@ function App() {
     setQueriedSongs(newQueriedSongs);
     setQueriedSongssamples(newQueriedSongssamples);
   }
-
-  //end search bar stuff
 
 
   return (
