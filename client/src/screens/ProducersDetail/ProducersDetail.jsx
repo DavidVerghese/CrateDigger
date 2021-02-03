@@ -31,12 +31,14 @@ function ProducersDetail(props) {
               item.genre = index2.genre;
               item.lifetime = index2.lifetime;
               item.location = index2.location;
+              item.imageAddress = index2.producer_pic_address;
             }
           }
       }
       )
       }
       <h3>Name: {item.name}</h3>
+      <img src={item.imageAddress}/>
       <p>Genre: {item.genre}</p>
       <p>Lifetime: {item.lifetime}</p>
       <p>Location: {item.location}</p> 
