@@ -1,11 +1,35 @@
+.producers-parent-div {
+  display: inline-flex;
+  flex-direction: row;
+}
+
 .producers-entry {
-  background-color: #f0d798;
-  color: black;
+
+  margin: 30px;
+  width: 400px;
+  padding: 20px;
+  border: 2px solid white;
+}
+.producers-entry button {
+  margin: 20px;
+  background-color: #892d3e;
+  font-size: 20px;
 }
 .producers-entry img {
-  width: 400px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .producers-entry a{
   color: black;
+}
+.producers-image-div {
+  width: 350px;
+  height: 350px; 
+  margin-bottom: 20px;
+  margin: 0 auto;
+}
+.producers-text {
+  margin-top: 20px;
 }

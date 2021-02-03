@@ -5,14 +5,15 @@ function Producers(props) {
   return <div>
     {props.allProducers.map((index) =>
     {
-      return <div className="producers-entry">
-        <h3>Name: {index.name}</h3>
-        <img src={index.producer_pic_address}/>
-        <p>Genre: {index.genre}</p>
-        <p>Lifetime: {index.lifetime}</p>
-        <p>Location: {index.location}</p>
-        <Link to={`/producers/${index.id}`}>Read more</Link>
-      </div>
+      return <div className="producers-parent-div">
+        <div className="producers-entry">
+          <h3>Name: {index.name}</h3>
+          <div className="producers-image-div">
+            <img src={index.producer_pic_address} />
+          </div>
+          <div className="producers-text">
+        <Link to={`/producers/${index.id}`}><button>Read more</button></Link></div>
+      </div></div>
     })}
     </div>
 }
