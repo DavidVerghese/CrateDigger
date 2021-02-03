@@ -35,10 +35,24 @@ end
 
   # PATCH/PUT /songssamples/1
   def update
+
     @songssample = SongsSample.find(params[:id])
+    @song_id = @songssample.song_id
+    @sample_id = @songssample.sample_id
+    @song = Song.find(@song_id)
+    @song_producer_id = @song.producer_id
+    @song_producer = Producer.find(@song_producer_id)
+    @sample = Sample.find(@sample_id)
+    @sample_producer_id = @sample.producer_id
+    @sample_producer = Producer.find(@sample_producer_id)
+    @song.update(song_params)
+    @sample.update(sample_params)
+    @song_producer.update(song_producer_params)
+    @sample_producer.update(sample_producer_params)
     @songssample.update(songssample_params)
-    render json: @songssample
+    render json: @sample
   end
+
 
   # DELETE /songssamples/1
   def destroy
@@ -66,4 +80,7 @@ end
     def sample_params 
       params.require(:sample).permit(:name, :artist, :genre, :record_label, :year, :producer_id, :sampled_at, :sample_pic_address, :youtube_embed)
     end 
+    def songssample_params
+      params.require(:songssample).permit(:song_id, :sample_id)
+    end
 end

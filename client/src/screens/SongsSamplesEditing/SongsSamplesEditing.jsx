@@ -11,7 +11,9 @@ function SongsSamplesEdit(props) {
     record_label: "",
     year: "",
     producer_id: "",
-    sample_appears: ""
+    sample_appears: "",
+    song_pic_address: "",
+    youtube_address: ""
   });
   const [sampleFormData, setSampleFormData] = useState({
     name: "",
@@ -20,10 +22,12 @@ function SongsSamplesEdit(props) {
     record_label: "",
     year: "",
     producer_id: "",
-    sampled_at: ""
+    sampled_at: "",
+    sample_pic_address: "",
+    youtube_embed: ""
   });
-  const { name, artist, genre, record_label, year, producer_id,sample_appears } = songFormData;
-  const { sampleName, sampleArtist, sampleGenre, sampleRecord_label, sampleYear, sampleProducer_id,sampled_at } = sampleFormData;
+  const { name, artist, genre, record_label, year, producer_id,sample_appears, song_pic_address, youtube_address } = songFormData;
+  const { sampleName, sampleArtist, sampleGenre, sampleRecord_label, sampleYear, sampleProducer_id,sampled_at, sample_pic_address, youtube_embed} = sampleFormData;
   const updateSongssample = props.updateSongssample;
   const allSongssamples = props.allSongssamples;
   const updateSong = props.updateSong;
@@ -43,11 +47,13 @@ function SongsSamplesEdit(props) {
           allSongs.map((index2) => {
             if (index2.id === index.song_id) {
               oneSong = index2;
+              // console.log(oneSong);
             }
           })
           allSamples.map((index3) => {
             if (index3.id === index.sample_id) {
               oneSample = index3;
+              // console.log(oneSample);
             }
           })
         }
@@ -61,6 +67,7 @@ function SongsSamplesEdit(props) {
       const songProducerId = oneSong.producer_id;
       const songSampleAppears = oneSong.sample_appears;
       const songImageAddress = oneSong.song_pic_address;
+      const songYoutubeAddress = oneSong.youtube_address;
       songPicAddress = songImageAddress;
       //samples
       const sampleName = oneSample.name;
@@ -70,8 +77,12 @@ function SongsSamplesEdit(props) {
       const sampleYear = oneSample.year;
       const sampleProducerId = oneSample.producer_id;
       const sampleSampledAt = oneSample.sampled_at;
-      setSongFormData({ songName, songArtist, songGenre, songRecordLabel, songYear, songProducerId, songSampleAppears });
-      setSampleFormData({ sampleName, sampleArtist,sampleGenre,sampleRecordLabel,sampleYear,sampleProducerId,sampleSampledAt });
+      const sampleImageAddress = oneSample.sample_pic_address;
+      const sampleYoutubeAddress = oneSample.youtube_embed;
+      setSongFormData({ songName, songArtist, songGenre, songRecordLabel, songYear, songProducerId, songSampleAppears, songImageAddress, songYoutubeAddress });
+      setSampleFormData({ sampleName, sampleArtist, sampleGenre, sampleRecordLabel, sampleYear, sampleProducerId, sampleSampledAt, sampleImageAddress, sampleYoutubeAddress });
+      // console.log(songFormData);
+      // console.log(sampleFormData);
     }
     if (allSongssamples.length) {
       prefillFormData()
@@ -85,6 +96,7 @@ function SongsSamplesEdit(props) {
       ...prevState,
       [name]: value
     }));
+    console.log(songFormData);
   }
   const sampleHandleChange = (e) => {
     const { name, value } = e.target;
@@ -99,6 +111,7 @@ function SongsSamplesEdit(props) {
     e.preventDefault()
       updateSong(id, songFormData);
       updateSample(id, sampleFormData);
+      console.log(songFormData, sampleFormData);
     }}>
       <div className="song-samples-editing-song-info">
         <h3>Song Information</h3>
@@ -107,49 +120,72 @@ function SongsSamplesEdit(props) {
       <label><p>name:</p>
     <input
           type="text"
-          name="name"
+            name="songName"
+            value={name}
         onChange={songHandleChange}
       />
       </label>
       <label><p>artist:</p>
     <input
           type="text"
-          name="artist"
+            name="songArtist"
+            value={artist}
         onChange={songHandleChange}
       />
       </label>
       <label><p>genre:</p>
     <input
           type="text"
-          name="genre"
+            name="genre"
+            value={genre}
         onChange={songHandleChange}
       />
       </label>
       <label><p>Record Label:</p>
     <input
           type="text"
-          name="record_label"
+            name="record_label"
+            value={record_label}
         onChange={songHandleChange}
       />
       </label>
       <label><p>Year:</p>
     <input
           type="text"
-          name="year"
+            name="year"
+            value={year}
         onChange={songHandleChange}
       />
       </label>
       <label><p>Producer Id:</p>
     <input
           type="text"
-          name="producer id"
+            name="producer_id"
+            value={producer_id}
         onChange={songHandleChange}
       />
       </label>
       <label><p>Sample appears:</p>
     <input
           type="text"
-          name="sample_appears"
+            name="sample_appears"
+            value={sample_appears}
+        onChange={songHandleChange}
+      />
+        </label>
+        <label><p>Song Image URL:</p>
+    <input
+          type="text"
+            name="song_pic_address"
+            value={song_pic_address}
+        onChange={songHandleChange}
+      />
+        </label>
+        <label><p>Song Youtube link:</p>
+    <input
+          type="text"
+            name="youtube_address"
+            value={youtube_address}
         onChange={songHandleChange}
       />
         </label>
@@ -196,7 +232,7 @@ function SongsSamplesEdit(props) {
       <label><p>Producer Id:</p>
     <input
           type="text"
-          name="producer id"
+          name="producer_id"
         onChange={sampleHandleChange}
       />
       </label>
@@ -204,6 +240,20 @@ function SongsSamplesEdit(props) {
     <input
           type="text"
           name="sample_appears"
+        onChange={sampleHandleChange}
+      />
+        </label>
+        <label><p>Sample Image URL:</p>
+    <input
+          type="text"
+          name="sample_pic_address"
+        onChange={sampleHandleChange}
+      />
+        </label>
+        <label><p>Sample Youtube link:</p>
+    <input
+          type="text"
+          name="youtube_embed"
         onChange={sampleHandleChange}
       />
         </label>
