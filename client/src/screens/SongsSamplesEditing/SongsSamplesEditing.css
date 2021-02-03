@@ -1,4 +1,17 @@
 .songs-samples-editing-form-container {
-  background-color: rgb(247, 101, 101);
   padding: 10px;
+  margin: 0 auto;
+  width: 600px;
+  border: 1px solid white;
+}
+.song-samples-editing-sample-info {
+  background-color: #873346;
+  color: black;
+  padding: 20px;
+  margin-top: 30px;
+}
+.song-samples-editing-song-info {
+  background-color: #4b7f91;
+  color: black;
+  padding: 20px;
 }

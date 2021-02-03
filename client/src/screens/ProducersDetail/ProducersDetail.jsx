@@ -9,6 +9,7 @@ function ProducersDetail(props) {
   const removeProducers = props.removeProducer;
   let oneProducer = '';
   let item = {};
+  let songsWorkedOn = [];
   useEffect(() => {
     if (allProducers.length) {
       allProducers.map((num) => {
@@ -32,17 +33,32 @@ function ProducersDetail(props) {
               item.lifetime = index2.lifetime;
               item.location = index2.location;
               item.imageAddress = index2.producer_pic_address;
+              props.allSongs.map((thing) => {
+                if (thing.producer_id === producers.id) {
+                  songsWorkedOn.push(thing);
+                }
+              })
+              props.allSamples.map((thing4) => {
+                if (thing4.producer_id === producers.id) {
+                  songsWorkedOn.push(thing4);
+                }
+              })
             }
+            
           }
       }
       )
       }
       <h3>Name: {item.name}</h3>
+      {console.log('hey', songsWorkedOn)}
       <img src={item.imageAddress} />
       <div className="producers-detail-text">
       <p>Genre: {item.genre}</p>
       <p>Lifetime: {item.lifetime}</p>
-      <p>Location: {item.location}</p> </div>
+        <p>Location: {item.location}</p> </div>
+        {songsWorkedOn.map((thing2) => {
+        return <p id="producers-detail-songs-worked-on">Songs worked on: "{thing2.name}"</p>
+      })}
       </div>
   )
 }
