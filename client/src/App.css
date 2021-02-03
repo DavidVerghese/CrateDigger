@@ -19,6 +19,7 @@ a {
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 #submit-button {
@@ -40,3 +41,20 @@ button {
 .footer {
   padding: 30px;
 }
+
+@media (max-width: 400px) {
+  body {
+    font-size: 15px;
+  }
+  #home-pic {
+    width: 300px;
+  }
+}
+
+@media (min-width: 400px) and (max-width: 1000px) {
+  body {
+    font-size: 23px;
+  }
+}
+
+

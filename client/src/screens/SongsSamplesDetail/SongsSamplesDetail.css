@@ -13,3 +13,10 @@
 .songssamples-detail-parent-div img{
   width: 600px;
 }
+
+@media (max-width: 400px) {
+  .songssamples-detail-parent-div img{
+    width: 300px;
+  }
+}
+

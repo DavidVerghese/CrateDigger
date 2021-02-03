@@ -2,6 +2,7 @@ import Search from '../../components/Search/Search.jsx';
 import { AZ, ZA } from "../../utils/sort.js";
 import { Route, Link, Switch, useHistory } from "react-router-dom";
 import React, { useState, useEffect } from 'react';
+import './SearchResults.css'
 
 function SearchResults(props) {
   
@@ -14,7 +15,7 @@ function SearchResults(props) {
 
 
   let arrayOfObjects = [];
-  return <div>
+  return <div className="search-result-parent-div">
     <p>{noResults}</p>
     <img src={noResultsImgUrl}/>
     {props.queriedSongssamples.map((index) => {
@@ -28,6 +29,7 @@ function SearchResults(props) {
               item.songYear = `${index2.year}`;
               item.songGenre = `${index2.genre}`;
               item.songSampleAppears = `${index2.sample_appears}`;
+              item.picAddress = `${index2.song_pic_address}`;
               {
                 props.allProducers.map((index4) => {
                   if (index2.producer_id === index4.id) {
@@ -47,6 +49,7 @@ function SearchResults(props) {
             item.sampleYear = `${index2.year}`;
             item.sampleGenre = `${index2.genre}`;
             item.songSampledAt = `${index2.sampled_at}`;
+            item.samplePicAddress = `${index2.sample_pic_address}`;
             item.id = index.id;
             {
               props.allProducers.map((index4) => {
@@ -62,11 +65,12 @@ function SearchResults(props) {
     })}
     {arrayOfObjects.map((index3) => {
         return (
-          <div className="songssamples-entry">
-            <div className="songssamples-song">
+          <div>
+            <div>
               <h3>
                 Song: "{index3.songName}" by {index3.songArtist}{" "}
               </h3>
+              <img src={index3.picAddress}/>
               <p>Record label: {index3.songRecordLabel} </p>
               <p>{index3.songYear}</p>
               <p>Genre: {index3.songGenre}</p>
@@ -75,10 +79,11 @@ function SearchResults(props) {
               </p>
               <p>Producer: {index3.songProducerName}</p>
             </div>
-            <div className="songssamples-sample">
+            <div>
               <h3>
                 Sample: "{index3.sampleName}" by {index3.sampleArtist}{" "}
               </h3>
+              <img src={index3.samplePicAddress}/>
               <p>Record label: {index3.sampleRecordLabel}</p>
               <p>{index3.sampleYear}</p>
               <p>Genre: {index3.sampleGenre}</p>
@@ -93,12 +98,13 @@ function SearchResults(props) {
         )
     })}
     {props.queriedProducers.map((producerIndex) => {
-      return <div className="producers-entry">
-                 <h2>Producer</h2>
+      return <div>
+        <h2>Producer</h2>
+        <img src={producerIndex.producer_pic_address}/>
           <h3>Name: {producerIndex.name}</h3>
       <p>Genre: {producerIndex.genre}</p>
       <p>Lifetime: {producerIndex.lifetime}</p>
-      <p>Location: {producerIndex.location}</p> 
+        <p>Location: {producerIndex.location}</p> 
         </div>
       })}
     </div> 
