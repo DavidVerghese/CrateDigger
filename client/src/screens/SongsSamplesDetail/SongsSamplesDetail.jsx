@@ -1,5 +1,6 @@
 import { Link, useParams } from 'react-router-dom'
 import React, { useState, useEffect } from 'react';
+import './SongsSamplesDetail.css'
 
 function SongsSamplesDetail(props) {
   const [songssamples, setSongssamples] = useState(null);
@@ -18,7 +19,7 @@ function SongsSamplesDetail(props) {
     }
   }, [allSongssamples, id])
   let item = {};
-  return <div className="songssamples-entry">
+  return <div className="songssamples-detail-parent-div">
     {
       props.allSongs.map((index2) => {
         if (songssamples !== null) {
@@ -66,31 +67,35 @@ function SongsSamplesDetail(props) {
         }
         })
       }
-    <div className="songssamples-song">
-      <h3>SONG: "{item.songName}" by {item.songArtist} </h3> 
+    <div>
+      <h2>SONG: "{item.songName}" by {item.songArtist} </h2> 
       <img src={item.imageAddress} />
       <br></br>
+      <div className="songsamples-detail-song-text">
               <a href={item.youtubeAddress}>Link</a>
           <p>RECORD LABEL: {item.songRecordLabel} </p>
          <p>YEAR: {item.songYear}</p>
           <p>GENRE: {item.songGenre}</p>
           <p>SAMPLE APPEARS: <em>{item.songSampleAppears}</em></p>
-          <p>Producer: {item.songProducerName}</p> 
+        <p>Producer: {item.songProducerName}</p>
+      </div>
     </div> 
-    <div className="songssamples-sample">
+    <div>
       <h3>SAMPLE: "{item.sampleName}" by {item.sampleArtist} </h3>
       <img src={item.sampleImageAddress} />
-              <br></br>
+      <br></br>
+      <div className="songsamples-detail-song-text">
               <a href={item.sampleYoutubeAddress}>Link</a>
         <p>RECORD LABEL: {item.sampleRecordLabel}</p>
         <p>YEAR: {item.sampleYear}</p>
         <p>GENRE: {item.sampleGenre}</p>
           <p>Sampled At: <em>{item.songSampledAt}</em></p>
-      <p>PRODUCER: {item.sampleProducerName}</p>
-      <Link to={`/songssamples/${item.id}/edit`}>Edit</Link>
-    <button onClick={() => removeSongssample(item.id)}>Delete</button>
+        <p>PRODUCER: {item.sampleProducerName}</p>
+      </div>
+      <div className="songssamples-detail-buttons-parent-div">
+      <Link to={`/songssamples/${item.id}/edit`}><button>Edit</button></Link>
+    <button onClick={() => removeSongssample(item.id)}>Delete</button></div>
     </div>
-    
   </div>
 }
 export default SongsSamplesDetail
