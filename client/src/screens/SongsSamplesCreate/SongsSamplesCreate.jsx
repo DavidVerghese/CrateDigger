@@ -104,35 +104,7 @@ function SongsSamplesCreate(props) {
     
       
     }}>
-      <h3>Create a Song Producer:</h3>
-      <label>Name:
-            <input
-              type="text"
-              name="name"
-              onChange={songProducerHandleChange}
-            />
-      </label>
-      <label>Genre:
-            <input
-              type="text"
-              name="genre"
-              onChange={songProducerHandleChange}
-            />
-      </label>
-      <label>Location:
-            <input
-              type="text"
-              name="location"
-              onChange={songProducerHandleChange}
-            />
-      </label>
-      <label>Lifetime:
-            <input
-              type="text"
-              name="lifetime"
-              onChange={songProducerHandleChange}
-            />
-      </label>
+      
       <h3>Create a Song:</h3>
 
       <label>Name:
@@ -177,35 +149,36 @@ function SongsSamplesCreate(props) {
               onChange={songHandleChange}
             />
       </label>
-      <h3>Create a Sample Producer:</h3>
+      <h3>Create a Song Producer:</h3>
       <label>Name:
             <input
               type="text"
               name="name"
-              onChange={sampleProducerHandleChange}
+              onChange={songProducerHandleChange}
             />
       </label>
       <label>Genre:
             <input
               type="text"
               name="genre"
-              onChange={sampleProducerHandleChange}
+              onChange={songProducerHandleChange}
             />
       </label>
       <label>Location:
             <input
               type="text"
               name="location"
-              onChange={sampleProducerHandleChange}
+              onChange={songProducerHandleChange}
             />
       </label>
       <label>Lifetime:
             <input
               type="text"
               name="lifetime"
-              onChange={sampleProducerHandleChange}
+              onChange={songProducerHandleChange}
             />
       </label>
+      
       <h3>Create a Sample:</h3>
       <label>Name:
             <input
@@ -247,6 +220,36 @@ function SongsSamplesCreate(props) {
               type="text"
               name="sampled_at"
               onChange={sampleHandleChange}
+            />
+      </label>
+
+      <h3>Create a Sample Producer:</h3>
+      <label>Name:
+            <input
+              type="text"
+              name="name"
+              onChange={sampleProducerHandleChange}
+            />
+      </label>
+      <label>Genre:
+            <input
+              type="text"
+              name="genre"
+              onChange={sampleProducerHandleChange}
+            />
+      </label>
+      <label>Location:
+            <input
+              type="text"
+              name="location"
+              onChange={sampleProducerHandleChange}
+            />
+      </label>
+      <label>Lifetime:
+            <input
+              type="text"
+              name="lifetime"
+              onChange={sampleProducerHandleChange}
             />
       </label>
 
