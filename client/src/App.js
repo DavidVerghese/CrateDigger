@@ -214,11 +214,16 @@ function App() {
         </Route>
       <Route exact path='/producers'>
         <Producers
-          allProducers={allProducers}/>
+          allProducers={allProducers}
+          allSongs={allSongs}
+          allSamples={allSamples}
+        />
       </Route>
       <Route exact path='/producers/:id'>
         <ProducersDetail
-          allProducers={allProducers}/>
+          allProducers={allProducers} allSongs={allSongs}
+          allSamples={allSamples}/>
+        
       </Route>
       <Route exact path='/searchresults'>
         <SearchResults
