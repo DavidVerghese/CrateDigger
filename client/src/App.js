@@ -175,7 +175,7 @@ function App() {
         onSubmit={handleSubmit} 
         onChange={handleSearch} 
       />
-      <Link to='/searchresults'><button>Submit</button></Link>
+      <Link to='/searchresults'><button id="submit-button">Submit</button></Link>
       <Route exact path='/new'>
           <SongsSamplesCreate
           createSongssample={createSongssample}
