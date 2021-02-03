@@ -26,7 +26,6 @@ function ProducersDetail(props) {
         props.allProducers.map((index2) => {
           if (producers !== null) {
             if (index2.id === producers.id) {
-              console.log(index2);
               item.name = index2.name;
               item.genre = index2.genre;
               item.lifetime = index2.lifetime;

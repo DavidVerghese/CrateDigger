@@ -1,6 +1,3 @@
-/* .App {
-  text-align: center;
-} */
 
 body {
   background-color: #0b0b0b;
@@ -15,25 +12,30 @@ body {
 a {
   color: white;
 }
-/* .App h1 {
-  color: #f25569;
-} */
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
 #submit-button {
-  background-color: #2b4781;
-  color: white;
+  background-color: #f5a64f;
+  color: black;
+}
+.searchbar-parent-div {
+  display: flex;
+  flex-direction: row;
+}
+.searchbar-parent-div button {
+  margin-left: 10px;
 }
 button {
   background-color: #3a6a6f;
   color: white;
 }
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
 
+.footer {
+  padding: 30px;
+}
