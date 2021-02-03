@@ -14,7 +14,8 @@ import { getAllSongs, deleteSong, postSong, putSong } from './services/songs';
 import { getAllSamples, deleteSample, postSample, putSample } from './services/samples';
 import { getAllProducers, deleteProducer, postProducer, putProducer } from './services/producers';
 import Search from './components/Search/Search.jsx';
-import { AZ, ZA} from "./utils/sort.js";
+import { AZ, ZA } from "./utils/sort.js";
+import Home from './screens/Home/Home.jsx';
 
 function App() {
 
@@ -158,7 +159,7 @@ function App() {
   return (
     <div className="App">
       <div className="nav">
-      <h1>CRATE DIGGER</h1>
+      <Link to='/'><h1>CRATE DIGGER</h1></Link>
       <p><Link to='/songssamples'>ALL POSTS</Link></p>
       <p><Link to='/producers'>PRODUCERS</Link></p>
         <p><Link to='/new'>ADD A POST</Link></p>
@@ -171,6 +172,9 @@ function App() {
           </div>
      
       </div>
+      <Route exact path='/'>
+          <Home />
+        </Route>
       <Route exact path='/new'>
           <SongsSamplesCreate
           createSongssample={createSongssample}
