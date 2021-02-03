@@ -8,13 +8,15 @@ function SongsSamplesCreate(props) {
     name: "",
     genre: "",
     location: "",
-    lifetime: ""
+    lifetime: "",
+    producer_pic_address: ""
   });
   const [sampleProducerFormData, setSampleProducerFormData] = useState({
     name: "",
     genre: "",
     location: "",
-    lifetime: ""
+    lifetime: "",
+    producer_pic_address: ""
   });
   const [songFormData, setSongFormData] = useState({
     name: "",
@@ -22,7 +24,9 @@ function SongsSamplesCreate(props) {
     genre: "",
     record_label: "",
     year: "",
-    sample_appears: ""
+    sample_appears: "",
+    song_pic_address: "",
+    youtube_address: ""
   });
   const [sampleFormData, setSampleFormData] = useState({
     name: "",
@@ -30,7 +34,9 @@ function SongsSamplesCreate(props) {
     genre: "",
     record_label: "",
     year: "",
-    sampled_at: ""
+    sampled_at: "",
+    sample_pic_address: "",
+    youtube_embed: ""
   });
   const [songsSampleFormData, setSongsSampleFormData] = useState({
     song_id: songFormData,
@@ -101,38 +107,8 @@ function SongsSamplesCreate(props) {
     <form onSubmit={(e) => {
       e.preventDefault();
       createSongssample(songsSampleFormData);
-    
-      
     }}>
-      <h3>Create a Song Producer:</h3>
-      <label>Name:
-            <input
-              type="text"
-              name="name"
-              onChange={songProducerHandleChange}
-            />
-      </label>
-      <label>Genre:
-            <input
-              type="text"
-              name="genre"
-              onChange={songProducerHandleChange}
-            />
-      </label>
-      <label>Location:
-            <input
-              type="text"
-              name="location"
-              onChange={songProducerHandleChange}
-            />
-      </label>
-      <label>Lifetime:
-            <input
-              type="text"
-              name="lifetime"
-              onChange={songProducerHandleChange}
-            />
-      </label>
+      
       <h3>Create a Song:</h3>
 
       <label>Name:
@@ -177,35 +153,57 @@ function SongsSamplesCreate(props) {
               onChange={songHandleChange}
             />
       </label>
-      <h3>Create a Sample Producer:</h3>
+      <label>Image URL:
+            <input
+              type="text"
+              name="song_pic_address"
+              onChange={songHandleChange}
+            />
+      </label>
+      <label>Youtube link:
+            <input
+              type="text"
+              name="youtube_address"
+              onChange={songHandleChange}
+            />
+      </label>
+      <h3>Create a Song Producer:</h3>
       <label>Name:
             <input
               type="text"
               name="name"
-              onChange={sampleProducerHandleChange}
+              onChange={songProducerHandleChange}
             />
       </label>
       <label>Genre:
             <input
               type="text"
               name="genre"
-              onChange={sampleProducerHandleChange}
+              onChange={songProducerHandleChange}
             />
       </label>
       <label>Location:
             <input
               type="text"
               name="location"
-              onChange={sampleProducerHandleChange}
+              onChange={songProducerHandleChange}
             />
       </label>
       <label>Lifetime:
             <input
               type="text"
               name="lifetime"
-              onChange={sampleProducerHandleChange}
+              onChange={songProducerHandleChange}
             />
       </label>
+      <label>Image URL:
+            <input
+              type="text"
+              name="producer_pic_address"
+              onChange={songProducerHandleChange}
+            />
+      </label>
+      
       <h3>Create a Sample:</h3>
       <label>Name:
             <input
@@ -247,6 +245,57 @@ function SongsSamplesCreate(props) {
               type="text"
               name="sampled_at"
               onChange={sampleHandleChange}
+            />
+      </label>
+      <label>Image URL:
+            <input
+              type="text"
+              name="sample_pic_address"
+              onChange={sampleHandleChange}
+            />
+      </label>
+      <label>Youtube link:
+            <input
+              type="text"
+              name="youtube_embed"
+              onChange={sampleHandleChange}
+            />
+      </label>
+
+      <h3>Create a Sample Producer:</h3>
+      <label>Name:
+            <input
+              type="text"
+              name="name"
+              onChange={sampleProducerHandleChange}
+            />
+      </label>
+      <label>Genre:
+            <input
+              type="text"
+              name="genre"
+              onChange={sampleProducerHandleChange}
+            />
+      </label>
+      <label>Location:
+            <input
+              type="text"
+              name="location"
+              onChange={sampleProducerHandleChange}
+            />
+      </label>
+      <label>Lifetime:
+            <input
+              type="text"
+              name="lifetime"
+              onChange={sampleProducerHandleChange}
+            />
+      </label>
+      <label>Image URL:
+            <input
+              type="text"
+              name="producer_pic_address"
+              onChange={sampleProducerHandleChange}
             />
       </label>
 
