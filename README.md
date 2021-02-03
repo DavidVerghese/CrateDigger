@@ -168,7 +168,25 @@ Lucid chart link: https://lucid.app/lucidchart/1f470e7b-8921-490e-9d65-43201f871
 
 ## Code Showcase
 
-> Use this section to include a brief code snippet of functionality that you are proud of and a brief description.
+> def create
+    @song_producer = Producer.create(song_producer_params)
+    @sample_producer = Producer.create(sample_producer_params)
+    @sample = Sample.new(sample_params)
+    @sample.producer = @sample_producer
+    @sample.save
+    @song = Song.new(song_params)
+    @song.producer = @song_producer
+    @song.save
+
+    if @song.save && @sample.save
+      @songssample = SongsSample.new(song: @song, sample: @sample)
+    if @songssample.save
+      render json: @songssample, include: [{song: {include: :producer}}, {sample: {include: :producer}}], status: :created
+    else
+      render json: @songssample.errors, status: :unprocessable_entity
+    end
+  end
+end
 
 ## Code Issues & Resolutions
 
