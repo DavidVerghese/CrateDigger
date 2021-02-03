@@ -1,5 +1,6 @@
 import { Link, useParams } from 'react-router-dom'
 import React, { useState, useEffect } from 'react';
+import './ProducersDetail.css'
 
 function ProducersDetail(props) {
   const [producers, setProducers] = useState(null);
@@ -21,7 +22,7 @@ function ProducersDetail(props) {
 
   return (
     
-    <div className="producers-entry">
+    <div className="producers-detail-parent-div">
          {
         props.allProducers.map((index2) => {
           if (producers !== null) {
@@ -37,10 +38,11 @@ function ProducersDetail(props) {
       )
       }
       <h3>Name: {item.name}</h3>
-      <img src={item.imageAddress}/>
+      <img src={item.imageAddress} />
+      <div className="producers-detail-text">
       <p>Genre: {item.genre}</p>
       <p>Lifetime: {item.lifetime}</p>
-      <p>Location: {item.location}</p> 
+      <p>Location: {item.location}</p> </div>
       </div>
   )
 }
