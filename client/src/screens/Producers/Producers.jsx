@@ -7,6 +7,7 @@ function Producers(props) {
     {
       return <div className="producers-entry">
         <h3>Name: {index.name}</h3>
+        <img src={index.producer_pic_address}/>
         <p>Genre: {index.genre}</p>
         <p>Lifetime: {index.lifetime}</p>
         <p>Location: {index.location}</p>

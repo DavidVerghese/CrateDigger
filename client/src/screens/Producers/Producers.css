@@ -2,6 +2,9 @@
   background-color: #f0d798;
   color: black;
 }
+.producers-entry img {
+  width: 400px;
+}
 
 .producers-entry a{
   color: black;
