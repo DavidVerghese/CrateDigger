@@ -50,7 +50,6 @@ function ProducersDetail(props) {
       )
       }
       <h3>Name: {item.name}</h3>
-      {console.log('hey', songsWorkedOn)}
       <img src={item.imageAddress} />
       <div className="producers-detail-text">
       <p>Genre: {item.genre}</p>
