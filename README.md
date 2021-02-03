@@ -168,7 +168,8 @@ Lucid chart link: https://lucid.app/lucidchart/1f470e7b-8921-490e-9d65-43201f871
 
 ## Code Showcase
 
-> def create
+```
+def create
     @song_producer = Producer.create(song_producer_params)
     @sample_producer = Producer.create(sample_producer_params)
     @sample = Sample.new(sample_params)
@@ -187,6 +188,7 @@ Lucid chart link: https://lucid.app/lucidchart/1f470e7b-8921-490e-9d65-43201f871
     end
   end
 end
+```
 
 ## Code Issues & Resolutions
 
