@@ -167,15 +167,20 @@ function App() {
 
   return (
     <div className="App">
+      <div className="nav">
       <h1>CRATE DIGGER</h1>
-      <h4><Link to='/songssamples'>ALL POSTS</Link></h4>
-      <h4><Link to='/producers'>PRODUCERS</Link></h4>
-      <h4><Link to='/new'>ADD A POST</Link></h4>
-      <Search
+      <p><Link to='/songssamples'>ALL POSTS</Link></p>
+      <p><Link to='/producers'>PRODUCERS</Link></p>
+        <p><Link to='/new'>ADD A POST</Link></p>
+        <div className="searchbar-parent-div">
+           <Search
         onSubmit={handleSubmit} 
         onChange={handleSearch} 
       />
       <Link to='/searchresults'><button id="submit-button">Submit</button></Link>
+          </div>
+     
+      </div>
       <Route exact path='/new'>
           <SongsSamplesCreate
           createSongssample={createSongssample}
@@ -238,6 +243,7 @@ function App() {
           allProducers={allProducers}
         />
       </Route>
+      <div className="footer"> © David Verghese</div>
     </div>
   );
 }
