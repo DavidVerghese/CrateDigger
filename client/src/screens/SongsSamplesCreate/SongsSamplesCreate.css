@@ -1,8 +1,45 @@
 .songs-samples-create-parent-div {
-  background-color: rgb(210, 5, 210);
-  color: black;
+  border: 1px solid white;
   padding: 10px;
 }
+.songs-samples-create-parent-div img {
+  width: 550px;
+  margin: 10px;
+}
+
+
 .song-sample-create-button-section {
   margin-top: 20px;
+}
+.songs-samples-create-song {
+  background-color: #f0c97c;
+  color: black;
+  margin: 0 auto;
+  margin-bottom: 40px;
+  width: 600px;
+  padding: 10px;
+}
+.songs-samples-create-song-producer {
+  background-color: #fe88ed;
+  color: black;
+  margin: 0 auto;
+  margin-bottom: 40px;
+  width: 600px;
+  padding: 10px;
+}
+.songs-samples-create-sample {
+  background-color: #e87d79;
+  color: black;
+  margin: 0 auto;
+  margin-bottom: 40px;
+  width: 600px;
+  padding: 10px;
+}
+.songs-samples-create-sample-producer {
+  background-color: #bbe4ee;
+  color: black;
+  margin: 0 auto;
+  margin-bottom: 40px;
+  width: 600px;
+  padding: 10px;
 }

@@ -109,196 +109,204 @@ function SongsSamplesCreate(props) {
       createSongssample(songsSampleFormData);
     }}>
       
-      <h3>Create a Song:</h3>
-
-      <label>Name:
+      <h2>Create a New Post</h2>
+      <img src="https://media4.giphy.com/media/l0MYz6wr2YZQ1fjuo/giphy.gif?cid=ecf05e47xx0zu6eja3gfubgfw4lfnohpmluh5h65hesdcqb5&rid=giphy.gif"/>
+      <div className="songs-samples-create-song">
+      <h3>Add a New Song</h3>
+      <label><p>Name:</p>
             <input
               type="text"
               name="name"
               onChange={songHandleChange}
             />
       </label>
-      <label>Artist:
+      <label><p>Artist:</p>
             <input
               type="text"
               name="artist"
               onChange={songHandleChange}
             />
       </label>
-      <label>Genre:
+      <label><p>Genre:</p>
             <input
               type="text"
               name="genre"
               onChange={songHandleChange}
             />
       </label>
-      <label>Record label:
+      <label><p>Record label:</p>
             <input
               type="text"
               name="record_label"
               onChange={songHandleChange}
             />
       </label>
-      <label>Year:
+      <label><p>Year:</p>
             <input
               type="text"
               name="year"
               onChange={songHandleChange}
             />
       </label>
-      <label>Sample appears:
+      <label><p>Sample appears:</p>
             <input
               type="text"
               name="sample_appears"
               onChange={songHandleChange}
             />
       </label>
-      <label>Image URL:
+      <label><p>Image URL:</p>
             <input
               type="text"
               name="song_pic_address"
               onChange={songHandleChange}
             />
       </label>
-      <label>Youtube link:
+      <label><p>Youtube link:</p>
             <input
               type="text"
               name="youtube_address"
               onChange={songHandleChange}
             />
-      </label>
-      <h3>Create a Song Producer:</h3>
-      <label>Name:
+        </label></div>
+        <div className="songs-samples-create-song-producer">
+      <h3>Who Produced This Song?</h3>
+      <img src="https://media2.giphy.com/media/CMX3CJpQzlpsc/giphy.gif?cid=ecf05e47xhivbcfwr7prvy3d91rtbkc4p3nxov0n37kbtp6n&rid=giphy.gif"/>
+      <label><p>Name:</p>
             <input
               type="text"
               name="name"
               onChange={songProducerHandleChange}
             />
       </label>
-      <label>Genre:
+      <label><p>Genre:</p>
             <input
               type="text"
               name="genre"
               onChange={songProducerHandleChange}
             />
       </label>
-      <label>Location:
+      <label><p>Location:</p>
             <input
               type="text"
               name="location"
               onChange={songProducerHandleChange}
             />
       </label>
-      <label>Lifetime:
+      <label><p>Lifetime:</p>
             <input
               type="text"
               name="lifetime"
               onChange={songProducerHandleChange}
             />
       </label>
-      <label>Image URL:
+      <label><p>Image URL:</p>
             <input
               type="text"
               name="producer_pic_address"
               onChange={songProducerHandleChange}
             />
       </label>
-      
+      </div>
+      <div className="songs-samples-create-sample">
       <h3>Create a Sample:</h3>
-      <label>Name:
+      <img src="https://media2.giphy.com/media/u0YhXjoPxl0Pu/giphy.gif?cid=ecf05e47wj7szty5az5r7q8jao8o5g8qw35p4g6xi4x1l8ab&rid=giphy.gif"/>
+      <label><p>Name:</p>
             <input
               type="text"
               name="name"
               onChange={sampleHandleChange}
             />
       </label>
-      <label>Artist:
+      <label><p>Artist:</p>
             <input
               type="text"
               name="artist"
               onChange={sampleHandleChange}
             />
       </label>
-      <label>Genre:
+      <label><p>Genre:</p>
             <input
               type="text"
               name="genre"
               onChange={sampleHandleChange}
             />
       </label>
-      <label>Record label:
+      <label><p>Record label:</p>
             <input
               type="text"
               name="record_label"
               onChange={sampleHandleChange}
             />
       </label>
-      <label>Year:
+      <label><p>Year:</p>
             <input
               type="text"
               name="year"
               onChange={sampleHandleChange}
             />
       </label>
-      <label>Sample appears:
+      <label><p>Sample appears:</p>
             <input
               type="text"
               name="sampled_at"
               onChange={sampleHandleChange}
             />
       </label>
-      <label>Image URL:
+      <label><p>Image URL:</p>
             <input
               type="text"
               name="sample_pic_address"
               onChange={sampleHandleChange}
             />
       </label>
-      <label>Youtube link:
+      <label><p>Youtube link:</p>
             <input
               type="text"
               name="youtube_embed"
               onChange={sampleHandleChange}
             />
       </label>
-
-      <h3>Create a Sample Producer:</h3>
-      <label>Name:
+      </div>
+      <div className="songs-samples-create-sample-producer">
+      <h3>Who produced this sample?</h3>
+      <img src="https://media1.giphy.com/media/aeUvvglb3PcdO/giphy.gif?cid=ecf05e47ys9e1j4k517eloclcqtptewh1iiide34lz6cdr6m&rid=giphy.gif"/>
+      <label><p>Name:</p>
             <input
               type="text"
               name="name"
               onChange={sampleProducerHandleChange}
             />
       </label>
-      <label>Genre:
+      <label><p>Genre:</p>
             <input
               type="text"
               name="genre"
               onChange={sampleProducerHandleChange}
             />
       </label>
-      <label>Location:
+      <label><p>Location:</p>
             <input
               type="text"
               name="location"
               onChange={sampleProducerHandleChange}
             />
       </label>
-      <label>Lifetime:
+      <label><p>Lifetime:</p>
             <input
               type="text"
               name="lifetime"
               onChange={sampleProducerHandleChange}
             />
       </label>
-      <label>Image URL:
+      <label><p>Image URL:</p>
             <input
               type="text"
               name="producer_pic_address"
               onChange={sampleProducerHandleChange}
             />
       </label>
-
+      </div>
       <div className="song-sample-create-button-section">
         <button>Ready</button> 
       </div>
