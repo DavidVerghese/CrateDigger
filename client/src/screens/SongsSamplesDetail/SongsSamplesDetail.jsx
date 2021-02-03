@@ -72,7 +72,7 @@ function SongsSamplesDetail(props) {
       <img src={item.imageAddress} />
       <br></br>
       <div className="songsamples-detail-song-text">
-              <a href={item.youtubeAddress}>Link</a>
+              <a href={item.youtubeAddress} target="_blank">Link</a>
           <p>RECORD LABEL: {item.songRecordLabel} </p>
          <p>YEAR: {item.songYear}</p>
           <p>GENRE: {item.songGenre}</p>
@@ -85,7 +85,7 @@ function SongsSamplesDetail(props) {
       <img src={item.sampleImageAddress} />
       <br></br>
       <div className="songsamples-detail-song-text">
-              <a href={item.sampleYoutubeAddress}>Link</a>
+              <a href={item.sampleYoutubeAddress} target="_blank">Link</a>
         <p>RECORD LABEL: {item.sampleRecordLabel}</p>
         <p>YEAR: {item.sampleYear}</p>
         <p>GENRE: {item.sampleGenre}</p>

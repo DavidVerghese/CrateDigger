@@ -99,109 +99,116 @@ function SongsSamplesEdit(props) {
     e.preventDefault()
       updateSong(id, songFormData);
       updateSample(id, sampleFormData);
-  }}>
-      <h3>SONG INFO</h3>
+    }}>
+      <div className="song-samples-editing-song-info">
+        <h3>Song Information</h3>
+        <p><em>Leave fields you don't want to change blank</em></p>
       <img src={songPicAddress}/>
-      <label>NAME:
+      <label><p>name:</p>
     <input
           type="text"
           name="name"
         onChange={songHandleChange}
       />
       </label>
-      <label>ARTIST:
+      <label><p>artist:</p>
     <input
           type="text"
           name="artist"
         onChange={songHandleChange}
       />
       </label>
-      <label>genre:
+      <label><p>genre:</p>
     <input
           type="text"
           name="genre"
         onChange={songHandleChange}
       />
       </label>
-      <label>Record Label:
+      <label><p>Record Label:</p>
     <input
           type="text"
           name="record_label"
         onChange={songHandleChange}
       />
       </label>
-      <label>Year:
+      <label><p>Year:</p>
     <input
           type="text"
           name="year"
         onChange={songHandleChange}
       />
       </label>
-      <label>Producer Id:
+      <label><p>Producer Id:</p>
     <input
           type="text"
           name="producer id"
         onChange={songHandleChange}
       />
       </label>
-      <label>Sample appears:
+      <label><p>Sample appears:</p>
     <input
           type="text"
           name="sample_appears"
         onChange={songHandleChange}
       />
-      </label>
-
-      <h3>Sample info</h3>
-      <label>name:
+        </label>
+      </div>
+    
+      <div className="song-samples-editing-sample-info">
+        <h3>Sample information</h3>
+        <p><em>Leave fields you don't want to change blank</em></p>
+      <label><p>name:</p>
     <input
           type="text"
           name="name"
         onChange={sampleHandleChange}
       />
       </label>
-      <label>artist:
+      <label><p>artist:</p>
     <input
           type="text"
           name="artist"
         onChange={sampleHandleChange}
       />
       </label>
-      <label>genre:
+      <label><p>genre:</p>
     <input
           type="text"
           name="genre"
         onChange={sampleHandleChange}
       />
       </label>
-      <label>Record Label:
+      <label><p>Record Label:</p>
     <input
           type="text"
           name="record_label"
         onChange={sampleHandleChange}
       />
       </label>
-      <label>Year:
+      <label><p>Year:</p>
     <input
           type="text"
           name="year"
         onChange={sampleHandleChange}
       />
       </label>
-      <label>Producer Id:
+      <label><p>Producer Id:</p>
     <input
           type="text"
           name="producer id"
         onChange={sampleHandleChange}
       />
       </label>
-      <label>Sampled at:
+      <label><p>Sampled at:</p>
     <input
           type="text"
           name="sample_appears"
         onChange={sampleHandleChange}
       />
-      </label>
+        </label>
+        </div>
+    <br/>
     <button>Submit</button>
   </form>
 </div>)
