@@ -1,27 +1,53 @@
+.songssamples-parent-div {
+  display: inline-flex;
+  flex-direction: row;
+}
 .songssamples-entry {
-  background-color: #f98e62;
-  margin: 10px;
-  /* width: 400px; */
+  /* background-color: #ddd580; */
+  margin: 30px;
+  width: 400px;
+  /* text-align: center; */
 }
 .songssamples-song img {
-  width: 40%;
+  width: 100%;
+} 
+.songssamples-song-img-div {
+  width: 350px;
+  height: 350px;
+}
+.songssamples-song h3 {
+  background-color:#5d262d;
+  color: white;
 } 
 .songssamples-song {
-  background-color: #f25569;
+  /* background-color: #bcb9be; */
+  background-color: black;
+  
   padding: 10px;
-  color: black;
+  color: white;
+  border: 1px solid white;
 }
 .songssamples-song a {
   color: black;
 }
 .songssamples-sample {
   padding: 10px;
-  margin: 10px;
+  /* margin: 10px; */
   color: black;
+  /* background-color: #ddd580; */
+  /* background-color: white; */
+  color: white;
+  border: 1px solid white;
 }
-.songssamples-sample a {
-  color: black;
+.songssamples-sample h3 {
+  background-color: #2e436c;
+  color: white;
+}
+.songssamples-samples-img-div {
+  width: 350px;
+  margin: 0 auto;
+  /* height: 350px; */
 }
 .songssamples-sample img {
-  width: 40%;
+  width: 100%;
 } 

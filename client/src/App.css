@@ -9,13 +9,23 @@ body {
   font-size: 18px;
   text-align: center;
 }
+.App h1 {
+  color: #dcd781;
+}
 a {
   color: white;
 }
 /* .App h1 {
   color: #f25569;
 } */
-
+#submit-button {
+  background-color: #2b4781;
+  color: white;
+}
+button {
+  background-color: #3a6a6f;
+  color: white;
+}
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
