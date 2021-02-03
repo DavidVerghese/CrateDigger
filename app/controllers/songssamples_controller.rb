@@ -54,16 +54,16 @@ end
 
     # Only allow a trusted parameter "white list" through.
     def song_producer_params
-      params.require(:song_producer).permit(:name, :genre, :lifetime, :location)
+      params.require(:song_producer).permit(:name, :genre, :lifetime, :location, :producer_pic_address)
     end
     def sample_producer_params
-      params.require(:sample_producer).permit(:name, :genre, :lifetime, :location)
+      params.require(:sample_producer).permit(:name, :genre, :lifetime, :location, :producer_pic_address)
     end
     def song_params
       #song is the key to sort through the params
-      params.require(:song).permit(:name, :artist, :genre, :record_label, :year, :sample_appears)
+      params.require(:song).permit(:name, :artist, :genre, :record_label, :year, :sample_appears, :song_pic_address, :youtube_address)
     end
     def sample_params 
-      params.require(:sample).permit(:name, :artist, :genre, :record_label, :year, :producer_id, :sampled_at)
+      params.require(:sample).permit(:name, :artist, :genre, :record_label, :year, :producer_id, :sampled_at, :sample_pic_address, :youtube_embed)
     end 
 end
