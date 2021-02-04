@@ -16,7 +16,7 @@ function SearchResults(props) {
   let arrayOfObjects = [];
   return <div className="search-result-parent-div">
     <p>{noResults}</p>
-    <img src={noResultsImgUrl} alt="no-results"/>
+    <img src={noResultsImgUrl}/>
     {props.queriedSongssamples.map((index) => {
       let item = {};
         {
