@@ -190,19 +190,9 @@ function SongsSamplesEditingRedo(props) {
       e.preventDefault();
       updateSongssample(id, songsSampleFormData);
         }}>
-      <h3>Update SongsSamples</h3>
-      <p>{song_id2}</p>
-      <p>{songName2}</p>
-      <p>{sample_id2}</p>
-      <p>{sampleName2}</p>
+      <h2>Edit page: </h2>
 
-          {/* <label>Song Id:
-            <input
-              type="text"
-              name="song_id"
-              onChange={songsSampleHandleChange}
-            />
-      </label> */}
+
       <h2>Song: </h2>
       <label>Song Name:
             <input
@@ -239,13 +229,6 @@ function SongsSamplesEditingRedo(props) {
               onChange={songHandleChange}
             />
       </label>
-      {/* <label>Song Producer:
-            <input
-              type="text"
-              name="producer_id"
-              onChange={songHandleChange}
-            />
-      </label> */}
       <label>Song Sample Appears:
             <input
               type="text"
@@ -267,13 +250,6 @@ function SongsSamplesEditingRedo(props) {
               onChange={songHandleChange}
             />
           </label>
-          {/* <label>Sample Id:
-            <input
-              type="text"
-              name="sample_id"
-              onChange={songsSampleHandleChange}
-            />
-      </label> */}
       <h2>Song Producer: </h2>
       <label><p>Name:</p>
             <input
@@ -346,13 +322,6 @@ function SongsSamplesEditingRedo(props) {
               onChange={sampleHandleChange}
             />
       </label>
-      {/* <label>Sample Producer:
-            <input
-              type="text"
-              name="producer_id"
-              onChange={sampleHandleChange}
-            />
-      </label> */}
       <label>Sample Sampled At:
             <input
               type="text"
