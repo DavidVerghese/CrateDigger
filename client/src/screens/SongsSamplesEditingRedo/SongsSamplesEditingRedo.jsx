@@ -65,7 +65,6 @@ function SongsSamplesEditingRedo(props) {
       const oneSongsSample = allSongssamples.find(songssample => {
         return songssample.id === Number(id);
       });
-      // console.log(oneSongsSample);
       const oneSong = allSongs.find(song => {
         return song.id === Number(id);
       });
@@ -81,7 +80,6 @@ function SongsSamplesEditingRedo(props) {
       const { song_id, sample_id } = oneSongsSample;
       setSong_id2(song_id); 
       setSample_id2(sample_id);
-      // console.log(oneSong.name, oneSample);
       const name = oneSong.name;
       setSongName2(name);
       const artist = oneSong.artist;
@@ -157,8 +155,6 @@ function SongsSamplesEditingRedo(props) {
       song_producer: songProducerFormData,
       sample_producer: sampleProducerFormData
     })
-    console.log(songFormData);
-    // console.log(songsSampleFormData);
   }
   const sampleHandleChange = (e) => {
     const { name, value } = e.target;
@@ -172,8 +168,6 @@ function SongsSamplesEditingRedo(props) {
       song_producer: songProducerFormData,
       sample_producer: sampleProducerFormData
     })
-    console.log(sampleFormData);
-    // console.log(songsSampleFormData);
   }
 
   const songsSampleHandleChange = (e) => {
@@ -182,7 +176,6 @@ function SongsSamplesEditingRedo(props) {
       ...prevState,
       [name]: value
     }));
-    console.log(songsSampleFormData);
   }
 
   return <div>
