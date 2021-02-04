@@ -4,6 +4,9 @@
 
 _**Crate Digger** is a full-stack webapp built using the "React on Rails" stack. It provides information on where famous songs got their samples. Users will be able to look up songs to see if they've been sampled, and checkout songs that use the same sample. The site has full-crud and uses a RESTful JSON API. This is my fourth and final project for a 'Software Engineering Immersive' course at General Assembly. The inspiration for this project is whosampled.com(https://www.whosampled.com/)_
 
+Deployed site: 
+_React front-end site: http://fresh-worm.surge.sh/_
+_Heroku back-end site: https://cratedigger2-api.herokuapp.com/samples_
 
 <br>
 
