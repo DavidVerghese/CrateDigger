@@ -247,7 +247,8 @@ function SongsSamplesEditingRedo(props) {
         updateSongssample(id, songsSampleFormData);
         }}>
       <h2>Edit page </h2>
-
+      <p><em>Instructions: in order to use this page, you will need to retype any information you don't wish to change. Use the grayed out text as a guide. Also, don't refresh this page, as this will crash the site.</em></p>
+        <img id="song-sample-edit-pic" src="https://m.media-amazon.com/images/I/51ULwa7avrL._AC_SY355_.jpg"/>
         <div className="song-sample-editing-redo-song-parent-div">
       <h2>Song: </h2>
       <label><p>Song Name:</p>
