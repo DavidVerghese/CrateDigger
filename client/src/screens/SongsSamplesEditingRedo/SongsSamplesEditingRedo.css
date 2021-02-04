@@ -1,0 +1,27 @@
+
+.songs-samples-editing-redo-form-container {
+  padding: 10px;
+  margin: 0 auto;
+  width: 600px;
+  border: 1px solid white;
+}
+
+.song-sample-editing-redo-song-parent-div {
+  background-color: #4b7f91;
+  color: black;
+  padding: 20px;
+}
+.song-sample-editing-redo-song-producer-parent-div {
+  background-color: #873346;
+  color: black;
+  padding: 20px;
+}
+
+@media (max-width: 400px) {
+  .songs-samples-editing-redo-form-container {
+    width: 350px;
+    padding: 0px;
+    margin-top: 30px;
+  }
+}
+
