@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
+
 import "./SongsSamples.css";
-import { Route, Link, Switch, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Search from '../../components/Search/Search.jsx';
 import SearchResults from '../SongsSamples/SongsSamples.jsx';
 import { AZ, ZA} from "../../utils/sort.js";
@@ -67,7 +67,7 @@ function SongsSamples(props) {
                 SONG: "{index3.songName}" by {index3.songArtist}{" "}
                 </h3>
                 <div className="songssamples-song-img-div">
-              <img src={index3.imageAddress} /></div>
+              <img src={index3.imageAddress} alt="song-cover"/></div>
               <p>GENRE: {index3.songGenre}</p>
             </div>
             <div className="songssamples-sample">
@@ -75,7 +75,7 @@ function SongsSamples(props) {
                 SAMPLE: "{index3.sampleName}" by {index3.sampleArtist}{" "}
                 </h3>
                 <div className="songssamples-samples-img-div">
-              <img src={index3.sampleImageAddress} /></div>
+              <img src={index3.sampleImageAddress} alt="sample-cover" /></div>
               <p>GENRE: {index3.sampleGenre}</p>
               <Link to={`/songssamples/${index3.id}`}><button>Read more</button></Link>
             </div>

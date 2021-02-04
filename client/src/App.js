@@ -1,18 +1,17 @@
-import logo from './logo.svg';
+
 import './App.css';
 import React, { useState, useEffect } from 'react';
 import { Route, Link, Switch, useHistory } from 'react-router-dom';
 import SongsSamples from './screens/SongsSamples/SongsSamples.jsx';
 import SongsSamplesDetail from './screens/SongsSamplesDetail/SongsSamplesDetail.jsx';
-import SongsSamplesEditing from './screens/SongsSamplesEditing/SongsSamplesEditing.jsx';
 import SongsSamplesEditingRedo from './screens/SongsSamplesEditingRedo/SongsSamplesEditingRedo.jsx';
 import SongsSamplesCreate from './screens/SongsSamplesCreate/SongsSamplesCreate.jsx';
 import SearchResults from './screens/SearchResults/SearchResults.jsx';
 import Producers from './screens/Producers/Producers.jsx';
 import ProducersDetail from './screens/ProducersDetail/ProducersDetail.jsx';
 import { getAllSongssamples, deleteSongssample, postSongssample, putSongssample } from './services/songssamples';
-import { getAllSongs, deleteSong, postSong, putSong } from './services/songs';
-import { getAllSamples, deleteSample, postSample, putSample } from './services/samples';
+import { getAllSongs, postSong, putSong } from './services/songs';
+import { getAllSamples,  postSample } from './services/samples';
 import { getAllProducers, deleteProducer, postProducer, putProducer } from './services/producers';
 import Search from './components/Search/Search.jsx';
 import { AZ, ZA } from "./utils/sort.js";
@@ -222,7 +221,6 @@ function App() {
           allProducers={allProducers}
           updateSample = {updateSample}
           removeSongssample={removeSongssample}
-          allSongssamples={allSongssamples}
           
           />
         </Route>
