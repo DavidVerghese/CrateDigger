@@ -1,4 +1,4 @@
-import { Link, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import React, { useState, useEffect } from 'react';
 import './ProducersDetail.css'
 
@@ -50,7 +50,7 @@ function ProducersDetail(props) {
       )
       }
       <h3>Name: {item.name}</h3>
-      <img src={item.imageAddress} />
+      <img src={item.imageAddress} alt="producer-pic"/>
       <div className="producers-detail-text">
       <p>Genre: {item.genre}</p>
       <p>Lifetime: {item.lifetime}</p>

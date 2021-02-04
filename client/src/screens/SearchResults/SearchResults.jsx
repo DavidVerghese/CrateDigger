@@ -1,7 +1,6 @@
 import Search from '../../components/Search/Search.jsx';
 import { AZ, ZA } from "../../utils/sort.js";
-import { Route, Link, Switch, useHistory } from "react-router-dom";
-import React, { useState, useEffect } from 'react';
+import { Link } from "react-router-dom";
 import './SearchResults.css'
 
 function SearchResults(props) {
@@ -17,7 +16,7 @@ function SearchResults(props) {
   let arrayOfObjects = [];
   return <div className="search-result-parent-div">
     <p>{noResults}</p>
-    <img src={noResultsImgUrl}/>
+    <img src={noResultsImgUrl} alt="no-results"/>
     {props.queriedSongssamples.map((index) => {
       let item = {};
         {

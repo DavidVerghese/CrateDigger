@@ -1,5 +1,5 @@
 import './Producers.css';
-import { Route, Link, Switch, useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 function Producers(props) {
   return <div>
@@ -9,7 +9,7 @@ function Producers(props) {
         <div className="producers-entry">
           <h3>Name: {index.name}</h3>
           <div className="producers-image-div">
-            <img src={index.producer_pic_address} />
+            <img src={index.producer_pic_address} alt="producer"/>
           </div>
           <div className="producers-text">
         <Link to={`/producers/${index.id}`}><button>Read more</button></Link></div>
