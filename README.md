@@ -131,20 +131,20 @@ Figma link: https://www.figma.com/file/ijAjLad8c0m3fUxeAPb684/Untitled
 
 | Task                | Priority | Estimated Time | Time Invested | Actual Time |
 | ------------------- | :------: | :------------: | :-----------: | :---------: |
-| Researching song    |    L     |     1.5 hrs      |     n/a     |     n/a   |
-| Setting up Rails    |    H     |     3 hrs      |     n/a     |     n/a   |
-| Setting up React |    H     |     3 hrs      |     n/a     |     n/a    |
-| Setting up CRUD functions |    H     |     3 hrs      |     n/a     |     n/a    |
-| Writing song descriptions |    L     |     2 hrs      |     n/a     |     n/a    |
-| Graphic Design |    L     |     2 hrs      |     n/a     |     n/a    |
-| Mobile Responsiveness |    H    |     3 hrs      |     n/a     |     n/a    |
-| Debugging    |    H     |     3 hrs      |     n/a    |    n/a    |
-| Testing |    H     |     3 hrs      |     n/a     |     n/a    |
-| Cleaning up the code       | Moderate |      2hrs      |      n/a       | n/a            |
-| Pseudocode                 |   Low    |      1hr       |      n/a      |     n/a    |
-| Feedback                   | Moderate |      2hrs      |       n/a     |    n/a     |
-| Incorporating Suggestions  | Moderate |      1hrs      |     n/a      |    n/a      |
-| Preparing for presentation | Moderate |      1hr       |      n/a       |     n/a     |
+| Researching songs    |    L     |     1.5 hrs      |     1hr     |     1hr   |
+| Setting up Rails    |    H     |     3 hrs      |     5hrs     |    5hrs   |
+| Setting up React |    H     |     3 hrs      |     5hrs     |     5hrs    |
+| Setting up CRUD functions |    H     |     3 hrs      |     5hrs     |     5hrs    |
+| Writing song descriptions |    L     |     2 hrs      |     1.5hr     |     1.5hr  |
+| Graphic Design |    L     |     2 hrs      |     2hr     |     2hr    |
+| Mobile Responsiveness |    H    |     3 hrs      |     1hr     |     1hr    |
+| Debugging    |    H     |     3 hrs      |     4hr    |    4h    |
+| Testing |    H     |     3 hrs      |     2hr     |     2hr    |
+| Cleaning up the code       | Moderate |      2hrs      |      2hr       | 2hr            |
+| Pseudocode                 |   Low    |      1hr       |      0.5hr     |     0.5hr    |
+| Feedback                   | Moderate |      2hrs      |       1hr    |    1hr     |
+| Incorporating Suggestions  | Moderate |      1hrs      |     1hr      |    1hr     |
+| Preparing for presentation | Moderate |      1hr       |      0.5hr       |     0.5hr     |
 | TOTAL               |          |     30.5 hrs      |     n/a     |     n/a     |
 
 <br>
