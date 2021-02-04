@@ -13,6 +13,7 @@ function SongsSamplesDetail(props) {
       allSongssamples.map((num) => {
         if (num.id === Number(id)) {
           oneSongssample = num;
+          console.log(oneSongssample.song_id);
         }
       });
       setSongssamples(oneSongssample)
@@ -23,7 +24,7 @@ function SongsSamplesDetail(props) {
     {
       props.allSongs.map((index2) => {
         if (songssamples !== null) {
-          if (index2.id === songssamples.id) {
+          if (index2.id === songssamples.song_id) {
             item.songName = `${index2.name}`;
             item.songArtist = `${index2.artist}`;
             item.songRecordLabel = `${index2.record_label}`;
@@ -32,6 +33,7 @@ function SongsSamplesDetail(props) {
             item.songSampleAppears = `${index2.sample_appears}`;
             item.imageAddress = `${index2.song_pic_address}`;
             item.youtubeAddress = `${index2.youtube_address}`;
+            console.log(item.songName);
             {
               props.allProducers.map((index4) => {
                 if (index2.producer_id === index4.id) {

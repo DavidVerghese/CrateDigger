@@ -4,16 +4,30 @@ import './SongsSamplesEditing.css'
 
 function SongsSamplesEdit(props) {
   //songs
+  const [songProducerFormData, setSongProducerFormData] = useState({
+    name: "",
+    genre: "",
+    location: "",
+    lifetime: "",
+    producer_pic_address: ""
+  });
+  const [sampleProducerFormData, setSampleProducerFormData] = useState({
+    name: "",
+    genre: "",
+    location: "",
+    lifetime: "",
+    producer_pic_address: ""
+  });
   const [songFormData, setSongFormData] = useState({
     name: "",
     artist: "",
     genre: "",
     record_label: "",
     year: "",
-    producer_id: "",
     sample_appears: "",
     song_pic_address: "",
-    youtube_address: ""
+    youtube_address: "",
+    producer_id: "7"
   });
   const [sampleFormData, setSampleFormData] = useState({
     name: "",
@@ -21,13 +35,19 @@ function SongsSamplesEdit(props) {
     genre: "",
     record_label: "",
     year: "",
-    producer_id: "",
     sampled_at: "",
     sample_pic_address: "",
-    youtube_embed: ""
+    youtube_embed: "",
+    producer_id: "7"
   });
-  const { name, artist, genre, record_label, year, producer_id,sample_appears, song_pic_address, youtube_address } = songFormData;
-  const { sampleName, sampleArtist, sampleGenre, sampleRecord_label, sampleYear, sampleProducer_id,sampled_at, sample_pic_address, youtube_embed} = sampleFormData;
+  const [songsSampleFormData, setSongsSampleFormData] = useState({
+    song_id: songFormData,
+    sample_id: sampleFormData,
+    song_producer: songProducerFormData,
+    sample_producer: sampleProducerFormData
+  });
+  const { name, artist, genre, record_label, year, sample_appears, song_pic_address, youtube_address } = songFormData;
+  const { sampleName, sampleArtist, sampleGenre, sampleRecord_label, sampleYear, sampled_at, sample_pic_address, youtube_embed} = sampleFormData;
   const updateSongssample = props.updateSongssample;
   const allSongssamples = props.allSongssamples;
   const updateSong = props.updateSong;
@@ -64,7 +84,7 @@ function SongsSamplesEdit(props) {
       const songGenre = oneSong.genre;
       const songRecordLabel = oneSong.record_label;
       const songYear = oneSong.year;
-      const songProducerId = oneSong.producer_id;
+      // const songProducerId = oneSong.producer_id;
       const songSampleAppears = oneSong.sample_appears;
       const songImageAddress = oneSong.song_pic_address;
       const songYoutubeAddress = oneSong.youtube_address;
@@ -75,12 +95,12 @@ function SongsSamplesEdit(props) {
       const sampleGenre = oneSample.genre;
       const sampleRecordLabel = oneSample.record_label;
       const sampleYear = oneSample.year;
-      const sampleProducerId = oneSample.producer_id;
+      // const sampleProducerId = oneSample.producer_id;
       const sampleSampledAt = oneSample.sampled_at;
       const sampleImageAddress = oneSample.sample_pic_address;
       const sampleYoutubeAddress = oneSample.youtube_embed;
-      setSongFormData({ songName, songArtist, songGenre, songRecordLabel, songYear, songProducerId, songSampleAppears, songImageAddress, songYoutubeAddress });
-      setSampleFormData({ sampleName, sampleArtist, sampleGenre, sampleRecordLabel, sampleYear, sampleProducerId, sampleSampledAt, sampleImageAddress, sampleYoutubeAddress });
+      setSongFormData({ songName, songArtist, songGenre, songRecordLabel, songYear, songSampleAppears, songImageAddress, songYoutubeAddress });
+      setSampleFormData({ sampleName, sampleArtist, sampleGenre, sampleRecordLabel, sampleYear, sampleSampledAt, sampleImageAddress, sampleYoutubeAddress });
       // console.log(songFormData);
       // console.log(sampleFormData);
     }
@@ -96,7 +116,13 @@ function SongsSamplesEdit(props) {
       ...prevState,
       [name]: value
     }));
-    console.log(songFormData);
+    setSongsSampleFormData({
+      song: songFormData,
+      sample: sampleFormData,
+      song_producer: songProducerFormData,
+      sample_producer: sampleProducerFormData
+    })
+    console.log(songsSampleFormData);
   }
   const sampleHandleChange = (e) => {
     const { name, value } = e.target;
@@ -104,6 +130,13 @@ function SongsSamplesEdit(props) {
       ...prevState,
       [name]: value
     }));
+    setSongsSampleFormData({
+      song: songFormData,
+      sample: sampleFormData,
+      song_producer: songProducerFormData,
+      sample_producer: sampleProducerFormData
+    })
+    console.log(songsSampleFormData);
   }
 
   return (<div className="songs-samples-editing-form-container">
@@ -120,16 +153,16 @@ function SongsSamplesEdit(props) {
       <label><p>name:</p>
     <input
           type="text"
-            name="songName"
-            value={name}
+            name="name"
+            // value={name}
         onChange={songHandleChange}
       />
       </label>
       <label><p>artist:</p>
     <input
           type="text"
-            name="songArtist"
-            value={artist}
+            name="artist"
+            // value={artist}
         onChange={songHandleChange}
       />
       </label>
@@ -137,7 +170,7 @@ function SongsSamplesEdit(props) {
     <input
           type="text"
             name="genre"
-            value={genre}
+            // value={genre}
         onChange={songHandleChange}
       />
       </label>
@@ -157,14 +190,14 @@ function SongsSamplesEdit(props) {
         onChange={songHandleChange}
       />
       </label>
-      <label><p>Producer Id:</p>
+      {/* <label><p>Producer Id:</p>
     <input
           type="text"
             name="producer_id"
             value={producer_id}
         onChange={songHandleChange}
       />
-      </label>
+      </label> */}
       <label><p>Sample appears:</p>
     <input
           type="text"
@@ -229,13 +262,13 @@ function SongsSamplesEdit(props) {
         onChange={sampleHandleChange}
       />
       </label>
-      <label><p>Producer Id:</p>
+      {/* <label><p>Producer Id:</p>
     <input
           type="text"
           name="producer_id"
         onChange={sampleHandleChange}
       />
-      </label>
+      </label> */}
       <label><p>Sampled at:</p>
     <input
           type="text"

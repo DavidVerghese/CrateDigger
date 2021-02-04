@@ -5,6 +5,7 @@ import { Route, Link, Switch, useHistory } from 'react-router-dom';
 import SongsSamples from './screens/SongsSamples/SongsSamples.jsx';
 import SongsSamplesDetail from './screens/SongsSamplesDetail/SongsSamplesDetail.jsx';
 import SongsSamplesEditing from './screens/SongsSamplesEditing/SongsSamplesEditing.jsx';
+import SongsSamplesEditingRedo from './screens/SongsSamplesEditingRedo/SongsSamplesEditingRedo.jsx';
 import SongsSamplesCreate from './screens/SongsSamplesCreate/SongsSamplesCreate.jsx';
 import SearchResults from './screens/SearchResults/SearchResults.jsx';
 import Producers from './screens/Producers/Producers.jsx';
@@ -90,6 +91,13 @@ function App() {
     const updatedSample = await putSong(id, sampleData);
     setAllSamples(prevState => prevState.map(sample => {
         return sample.id === Number(id) ? updatedSample : sample
+      })
+    )
+  }
+  const updateProducer = async (id, producerData) => {
+    const updatedProducer = await putProducer(id, producerData);
+    setAllProducers(prevState => prevState.map(producer => {
+        return producer.id === Number(id) ? updatedProducer : producer
       })
     )
   }
@@ -204,12 +212,14 @@ function App() {
         />
       </Route>
       <Route path='/songssamples/:id/edit'>
-        <SongsSamplesEditing
+        <SongsSamplesEditingRedo
           allSongssamples={allSongssamples}
           updateSongssample={updateSongssample}
           allSongs={allSongs}
           updateSong={updateSong}
           allSamples={allSamples}
+          updateProducer={updateProducer}
+          allProducers={allProducers}
           updateSample = {updateSample}
           removeSongssample={removeSongssample}
           allSongssamples={allSongssamples}

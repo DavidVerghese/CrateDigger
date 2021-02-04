@@ -51,6 +51,22 @@ end
     @sample_producer.update(sample_producer_params)
     @songssample.update(songssample_params)
     render json: @sample
+
+    # @songssample = SongsSample.find(params[:id])
+    # @song_id = @songssample.song_id
+    # @song = Song.find(@song_id)
+    # @sample_id = @songssample.sample_id
+    # @sample = Sample.find(@sample_id)
+    # @song.update(song_params)
+    # @sample.update(sample_params)
+
+    # @songssample = SongsSample.find(params[:id])
+    # if @songssample.update(songssample_params)
+    #   render json: @songssample
+    # else
+    #   render json: @songssample.errors, status: :unprocessable_entity
+    # end
+    
   end
 
 
