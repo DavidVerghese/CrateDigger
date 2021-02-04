@@ -67,13 +67,11 @@ function SongsSamplesEdit(props) {
           allSongs.map((index2) => {
             if (index2.id === index.song_id) {
               oneSong = index2;
-              // console.log(oneSong);
             }
           })
           allSamples.map((index3) => {
             if (index3.id === index.sample_id) {
               oneSample = index3;
-              // console.log(oneSample);
             }
           })
         }
@@ -95,14 +93,11 @@ function SongsSamplesEdit(props) {
       const sampleGenre = oneSample.genre;
       const sampleRecordLabel = oneSample.record_label;
       const sampleYear = oneSample.year;
-      // const sampleProducerId = oneSample.producer_id;
       const sampleSampledAt = oneSample.sampled_at;
       const sampleImageAddress = oneSample.sample_pic_address;
       const sampleYoutubeAddress = oneSample.youtube_embed;
       setSongFormData({ songName, songArtist, songGenre, songRecordLabel, songYear, songSampleAppears, songImageAddress, songYoutubeAddress });
       setSampleFormData({ sampleName, sampleArtist, sampleGenre, sampleRecordLabel, sampleYear, sampleSampledAt, sampleImageAddress, sampleYoutubeAddress });
-      // console.log(songFormData);
-      // console.log(sampleFormData);
     }
     if (allSongssamples.length) {
       prefillFormData()
@@ -122,7 +117,6 @@ function SongsSamplesEdit(props) {
       song_producer: songProducerFormData,
       sample_producer: sampleProducerFormData
     })
-    console.log(songsSampleFormData);
   }
   const sampleHandleChange = (e) => {
     const { name, value } = e.target;
@@ -136,7 +130,6 @@ function SongsSamplesEdit(props) {
       song_producer: songProducerFormData,
       sample_producer: sampleProducerFormData
     })
-    console.log(songsSampleFormData);
   }
 
   return (<div className="songs-samples-editing-form-container">
@@ -144,7 +137,6 @@ function SongsSamplesEdit(props) {
     e.preventDefault()
       updateSong(id, songFormData);
       updateSample(id, sampleFormData);
-      console.log(songFormData, sampleFormData);
     }}>
       <div className="song-samples-editing-song-info">
         <h3>Song Information</h3>

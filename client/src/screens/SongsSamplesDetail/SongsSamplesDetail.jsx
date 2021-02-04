@@ -13,7 +13,6 @@ function SongsSamplesDetail(props) {
       allSongssamples.map((num) => {
         if (num.id === Number(id)) {
           oneSongssample = num;
-          console.log(oneSongssample.song_id);
         }
       });
       setSongssamples(oneSongssample)
@@ -33,7 +32,6 @@ function SongsSamplesDetail(props) {
             item.songSampleAppears = `${index2.sample_appears}`;
             item.imageAddress = `${index2.song_pic_address}`;
             item.youtubeAddress = `${index2.youtube_address}`;
-            console.log(item.songName);
             {
               props.allProducers.map((index4) => {
                 if (index2.producer_id === index4.id) {
