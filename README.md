@@ -145,7 +145,7 @@ Figma link: https://www.figma.com/file/ijAjLad8c0m3fUxeAPb684/Untitled
 | Feedback                   | Moderate |      2hrs      |       1hr    |    1hr     |
 | Incorporating Suggestions  | Moderate |      1hrs      |     1hr      |    1hr     |
 | Preparing for presentation | Moderate |      1hr       |      0.5hr       |     0.5hr     |
-| TOTAL               |          |     30.5 hrs      |     n/a     |     n/a     |
+| TOTAL               |          |     30.5 hrs      |     31.5hrs     |     31.5hrs    |
 
 <br>
 
@@ -193,6 +193,15 @@ def create
 end
 ```
 
+> I am proud of this as it is a custom function that creates 5 entries in 5 different tables at once.
+
 ## Code Issues & Resolutions
 
-> Use this section to list of all major issues encountered and their resolution.
+> I had issues with the create page, as it requires creating 5 entries in 5 different tables. I had to create the custom function you see above in my 'songssamples' controller. I recieved lots of help from Corey and Jeremy on this problem. Initially, I tried to approach this problem using lots of JS logic in React, but Corey showed me how to approach this problem using custom controllers in Rails. I also had to use a lot of trial and error as well. 
+
+> I had issues with the edit page. Similar to the create page, it also requires editing entries in 5 tables at once. I had to approach this by looking at how to edit each item individually. It still isn't perfect, but it is at least functional. 
+
+> Styling. This wasn't really a major issue, but it was one that was important to me. I really wanted to create something that looked sleek and modern. I used a tip that Gary mentioned in his P3 presentation, using an eyedropper, to pick the color scheme. I used this image, _https://c1.zzounds.com/media/productmedia/fit,600by600/quality,85/ddj-sz2-top-s-0af81adc4882fd292dc56a6329321373.jpg_ as my color guide. I also tried to pick a font that would be similar to the 'serato' logo you see on it. 
+
+
+
