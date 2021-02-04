@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import './SongsSamplesEditingRedo.css'
 
 function SongsSamplesEditingRedo(props) {
   const [song_id2, setSong_id2] = useState('');
   const [sample_id2, setSample_id2] = useState('');
   const [songName2, setSongName2] = useState('');
   const [sampleName2, setSampleName2] = useState('');
+  let count = 0;
 
   const [songProducerFormData, setSongProducerFormData] = useState({
     name: "",
@@ -127,7 +129,8 @@ function SongsSamplesEditingRedo(props) {
       sample: sampleFormData,
       song_producer: songProducerFormData,
       sample_producer: sampleProducerFormData
-    })
+    });
+    count += 1;
   }
   const sampleProducerHandleChange = (e) => {
     const { name, value } = e.target;
@@ -140,7 +143,8 @@ function SongsSamplesEditingRedo(props) {
       sample: sampleFormData,
       song_producer: songProducerFormData,
       sample_producer: sampleProducerFormData
-    })
+    });
+    count += 1;
   }
   
   const songHandleChange = (e) => {
@@ -154,7 +158,8 @@ function SongsSamplesEditingRedo(props) {
       sample: sampleFormData,
       song_producer: songProducerFormData,
       sample_producer: sampleProducerFormData
-    })
+    });
+    count += 1;
   }
   const sampleHandleChange = (e) => {
     const { name, value } = e.target;
@@ -167,7 +172,8 @@ function SongsSamplesEditingRedo(props) {
       sample: sampleFormData,
       song_producer: songProducerFormData,
       sample_producer: sampleProducerFormData
-    })
+    });
+    count += 1;
   }
 
   const songsSampleHandleChange = (e) => {
@@ -176,74 +182,77 @@ function SongsSamplesEditingRedo(props) {
       ...prevState,
       [name]: value
     }));
+    count += 1;
   }
 
-  return <div>
+  return <div className="songs-samples-editing-redo-form-container">
     <form onSubmit={(e) => {
       e.preventDefault();
-      updateSongssample(id, songsSampleFormData);
+        updateSongssample(id, songsSampleFormData);
         }}>
-      <h2>Edit page: </h2>
+      <h2>Edit page </h2>
 
-
+        <div className="song-sample-editing-redo-song-parent-div">
       <h2>Song: </h2>
-      <label>Song Name:
+      <label><p>Song Name:</p>
             <input
               type="text"
               name="name"
               onChange={songHandleChange}
             />
       </label>
-      <label>Song Artist:
+      <label><p>Song Artist:</p>
             <input
               type="text"
               name="artist"
               onChange={songHandleChange}
             />
       </label>
-      <label>Song Genre:
+      <label> <p>Song Genre:</p>
             <input
               type="text"
               name="genre"
               onChange={songHandleChange}
             />
       </label>
-      <label>Song Record Label:
+      <label> <p>Song Record Label:</p>
             <input
               type="text"
               name="record_label"
               onChange={songHandleChange}
             />
       </label>
-      <label>Song Year:
+      <label> <p>Song Year:</p>
             <input
               type="year"
               name="name"
               onChange={songHandleChange}
             />
       </label>
-      <label>Song Sample Appears:
+      <label> <p>Song Sample Appears:</p>
             <input
               type="text"
               name="sample_appears"
               onChange={songHandleChange}
             />
       </label>
-      <label>Song Img url:
+      <label> <p>Song Img url:</p>
             <input
               type="text"
               name="sample_appears"
               onChange={songHandleChange}
             />
       </label>
-      <label>Song Youtube Address:
+      <label> <p>Song Youtube Address:</p>
             <input
               type="text"
               name="youtube_address"
               onChange={songHandleChange}
             />
-          </label>
-      <h2>Song Producer: </h2>
+        </label>
+      </div>
+      <div className="song-sample-editing-redo-song-producer-parent-div">
+      <h2> Song Producer: </h2>
       <label><p>Name:</p>
             <input
               type="text"
@@ -278,64 +287,69 @@ function SongsSamplesEditingRedo(props) {
               name="producer_pic_address"
               onChange={songProducerHandleChange}
             />
-      </label>
+        </label>
+      </div>
+      <div className="song-sample-editing-redo-song-parent-div">
       <h2>Sample:</h2>
-      <label>Sample Name:
+      <label><p>Sample Name:</p>
             <input
               type="text"
               name="name"
               onChange={sampleHandleChange}
             />
       </label>
-      <label>Sample Artist:
+      <label><p>Sample Artist:</p>
             <input
               type="text"
               name="artist"
               onChange={sampleHandleChange}
             />
       </label>
-      <label>Sample Genre:
+      <label><p>Sample Genre:</p>
             <input
               type="text"
               name="genre"
               onChange={sampleHandleChange}
             />
       </label>
-      <label>Sample Record Label:
+      <label><p>Sample Record Label:</p>
             <input
               type="text"
               name="record_label"
               onChange={sampleHandleChange}
             />
       </label>
-      <label>Sample Year:
+      <label><p>Sample Year:</p>
             <input
               type="year"
               name="name"
               onChange={sampleHandleChange}
             />
       </label>
-      <label>Sample Sampled At:
+      <label><p>Sample Sampled At:</p>
             <input
               type="text"
               name="sampled_at"
               onChange={sampleHandleChange}
             />
       </label>
-      <label>Sample Img url:
+      <label><p>Sample Img url:</p>
             <input
               type="text"
               name="sample_pic_address"
               onChange={sampleHandleChange}
             />
       </label>
-      <label>Sample Youtube Address:
+      <label><p>Sample Youtube Address:</p>
             <input
               type="text"
               name="youtube_embed"
               onChange={sampleHandleChange}
             />
-      </label>
+        </label>
+      </div>
+      
+      <div className="song-sample-editing-redo-song-producer-parent-div">
       <h2>Sample Producer:</h2>
       <label><p>Name:</p>
             <input
@@ -371,8 +385,9 @@ function SongsSamplesEditingRedo(props) {
               name="producer_pic_address"
               onChange={sampleProducerHandleChange}
             />
-      </label>
-          <button>Submit</button>
+        </label>
+        <br/>
+          <button>Submit</button></div>
         </form>
   </div>
 }
