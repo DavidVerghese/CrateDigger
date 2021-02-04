@@ -7,6 +7,20 @@ function SongsSamplesEditingRedo(props) {
   const [songName2, setSongName2] = useState('');
   const [sampleName2, setSampleName2] = useState('');
 
+  const [songProducerFormData, setSongProducerFormData] = useState({
+    name: "",
+    genre: "",
+    location: "",
+    lifetime: "",
+    producer_pic_address: ""
+  });
+  const [sampleProducerFormData, setSampleProducerFormData] = useState({
+    name: "",
+    genre: "",
+    location: "",
+    lifetime: "",
+    producer_pic_address: ""
+  });
 
   const [songFormData, setSongFormData] = useState({
     name: "",
@@ -30,15 +44,20 @@ function SongsSamplesEditingRedo(props) {
   });
   const [songsSampleFormData, setSongsSampleFormData] = useState({
     song_id: songFormData,
-    sample_id: sampleFormData
+    sample_id: sampleFormData,
+    song_producer: songProducerFormData,
+    sample_producer: sampleProducerFormData
   });
   const { song_id, sample_id } = songsSampleFormData;
   const { name, artist, genre, record_label, year, sample_appears, song_pic_address, youtube_address } = songFormData;
   const { sampleName, sampleArtist, sampleGenre, sample_record_label, sampleYear, sampled_at, sample_pic_address, youtube_embed } = sampleFormData;
+  const { songProducerName, songProducerGenre, songProducerLocation, songProducerLifetime } = songProducerFormData;
+  const { sampleProducerName, sampleProducerGenre, sampleProducerLocation, sampleProducerLifetime } = sampleProducerFormData;
 
   const { updateSongssample, allSongssamples } = props;
   const { updateSong, allSongs } = props;
   const { updateSample, allSamples } = props;
+  const { updateProducer, allProducers } = props;
   const { id } = useParams();
 
   useEffect(() => {
@@ -50,8 +69,14 @@ function SongsSamplesEditingRedo(props) {
       const oneSong = allSongs.find(song => {
         return song.id === Number(id);
       });
+      const oneSongProducer = allProducers.find(producer => {
+        return producer.id === oneSong.producer_id;
+      });
       const oneSample = allSamples.find(sample => {
         return sample.id === Number(id);
+      });
+      const oneSampleProducer = allProducers.find(producer => {
+        return producer.id === oneSample.producer_id;
       });
       const { song_id, sample_id } = oneSongsSample;
       setSong_id2(song_id); 
@@ -77,12 +102,48 @@ function SongsSamplesEditingRedo(props) {
       const samplePicAddress = oneSong.sample_pic_address;
       const sampleYoutubeLink = oneSong.youtube_embed;
 
+      const songProducerName = oneSongProducer.name;
+      const songProducerGenre = oneSongProducer.genre;
+      const songProducerLifetime = oneSongProducer.lifetime;
+      const songProducerLocation = oneSongProducer.location;
+
+      const sampleProducerName = oneSampleProducer.name;
+      const sampleProducerGenre = oneSampleProducer.genre;
+      const sampleProducerLifetime = oneSampleProducer.lifetime;
+      const sampleProducerLocation = oneSampleProducer.location;
       // setSongsSampleFormData({ song_id, sample_id });
     }
     if (allSongssamples.length) {
       prefillFormData()
     }
   }, [allSongssamples, id])
+
+  const songProducerHandleChange = (e) => {
+    const { name, value } = e.target;
+    setSongProducerFormData(prevState => ({
+      ...prevState,
+      [name]: value
+    }));
+    setSongsSampleFormData({
+      song: songFormData,
+      sample: sampleFormData,
+      song_producer: songProducerFormData,
+      sample_producer: sampleProducerFormData
+    })
+  }
+  const sampleProducerHandleChange = (e) => {
+    const { name, value } = e.target;
+    setSampleProducerFormData(prevState => ({
+      ...prevState,
+      [name]: value
+    }));
+    setSongsSampleFormData({
+      song: songFormData,
+      sample: sampleFormData,
+      song_producer: songProducerFormData,
+      sample_producer: sampleProducerFormData
+    })
+  }
   
   const songHandleChange = (e) => {
     const { name, value } = e.target;
@@ -93,6 +154,8 @@ function SongsSamplesEditingRedo(props) {
     setSongsSampleFormData({
       song: songFormData,
       sample: sampleFormData,
+      song_producer: songProducerFormData,
+      sample_producer: sampleProducerFormData
     })
     console.log(songFormData);
     // console.log(songsSampleFormData);
@@ -106,6 +169,8 @@ function SongsSamplesEditingRedo(props) {
     setSongsSampleFormData({
       song: songFormData,
       sample: sampleFormData,
+      song_producer: songProducerFormData,
+      sample_producer: sampleProducerFormData
     })
     console.log(sampleFormData);
     // console.log(songsSampleFormData);
@@ -138,6 +203,7 @@ function SongsSamplesEditingRedo(props) {
               onChange={songsSampleHandleChange}
             />
       </label> */}
+      <h2>Song: </h2>
       <label>Song Name:
             <input
               type="text"
@@ -173,13 +239,13 @@ function SongsSamplesEditingRedo(props) {
               onChange={songHandleChange}
             />
       </label>
-      <label>Song Producer:
+      {/* <label>Song Producer:
             <input
               type="text"
               name="producer_id"
               onChange={songHandleChange}
             />
-      </label>
+      </label> */}
       <label>Song Sample Appears:
             <input
               type="text"
@@ -208,6 +274,43 @@ function SongsSamplesEditingRedo(props) {
               onChange={songsSampleHandleChange}
             />
       </label> */}
+      <h2>Song Producer: </h2>
+      <label><p>Name:</p>
+            <input
+              type="text"
+              name="name"
+              onChange={songProducerHandleChange}
+            />
+      </label>
+      <label><p>Genre:</p>
+            <input
+              type="text"
+              name="genre"
+              onChange={songProducerHandleChange}
+            />
+      </label>
+      <label><p>Location:</p>
+            <input
+              type="text"
+              name="location"
+              onChange={songProducerHandleChange}
+            />
+      </label>
+      <label><p>Lifetime:</p>
+            <input
+              type="text"
+              name="lifetime"
+              onChange={songProducerHandleChange}
+            />
+      </label>
+      <label><p>Image URL:</p>
+            <input
+              type="text"
+              name="producer_pic_address"
+              onChange={songProducerHandleChange}
+            />
+      </label>
+      <h2>Sample:</h2>
       <label>Sample Name:
             <input
               type="text"
@@ -243,13 +346,13 @@ function SongsSamplesEditingRedo(props) {
               onChange={sampleHandleChange}
             />
       </label>
-      <label>Sample Producer:
+      {/* <label>Sample Producer:
             <input
               type="text"
               name="producer_id"
               onChange={sampleHandleChange}
             />
-      </label>
+      </label> */}
       <label>Sample Sampled At:
             <input
               type="text"
@@ -270,7 +373,43 @@ function SongsSamplesEditingRedo(props) {
               name="youtube_embed"
               onChange={sampleHandleChange}
             />
-          </label>
+      </label>
+      <h2>Sample Producer:</h2>
+      <label><p>Name:</p>
+            <input
+              type="text"
+              name="name"
+              onChange={sampleProducerHandleChange}
+            />
+      </label>
+      <label><p>Genre:</p>
+            <input
+              type="text"
+              name="genre"
+              onChange={sampleProducerHandleChange}
+            />
+      </label>
+      <label><p>Location:</p>
+            <input
+              type="text"
+              name="location"
+              onChange={sampleProducerHandleChange}
+            />
+      </label>
+      <label><p>Lifetime:</p>
+            <input
+              type="text"
+              name="lifetime"
+              onChange={sampleProducerHandleChange}
+            />
+      </label>
+      <label><p>Image URL:</p>
+            <input
+              type="text"
+              name="producer_pic_address"
+              onChange={sampleProducerHandleChange}
+            />
+      </label>
           <button>Submit</button>
         </form>
   </div>
