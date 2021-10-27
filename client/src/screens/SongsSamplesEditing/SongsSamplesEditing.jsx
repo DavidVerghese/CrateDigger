@@ -146,7 +146,7 @@ function SongsSamplesEdit(props) {
     <input
           type="text"
             name="name"
-            // value={name}
+            value={name}
         onChange={songHandleChange}
       />
       </label>
@@ -154,7 +154,7 @@ function SongsSamplesEdit(props) {
     <input
           type="text"
             name="artist"
-            // value={artist}
+            value={artist}
         onChange={songHandleChange}
       />
       </label>
@@ -162,7 +162,7 @@ function SongsSamplesEdit(props) {
     <input
           type="text"
             name="genre"
-            // value={genre}
+            value={genre}
         onChange={songHandleChange}
       />
       </label>

@@ -14,43 +14,58 @@ class SongssamplesController < ApplicationController
 
   # POST /songssamples
   def create
-    @song_producer = Producer.create(song_producer_params)
-    @sample_producer = Producer.create(sample_producer_params)
-    @sample = Sample.new(sample_params)
-    @sample.producer = @sample_producer
-    @sample.save
-    @song = Song.new(song_params)
-    @song.producer = @song_producer
-    @song.save
+  #   @song_producer = Producer.create(song_producer_params)
+  #   @sample_producer = Producer.create(sample_producer_params)
+  #   @sample = Sample.new(sample_params)
+  #   @sample.producer = @sample_producer
+  #   @sample.save
+  #   @song = Song.new(song_params)
+  #   @song.producer = @song_producer
+  #   @song.save
 
-    if @song.save && @sample.save
-      @songssample = SongsSample.new(song: @song, sample: @sample)
-    if @songssample.save
-      render json: @songssample, include: [{song: {include: :producer}}, {sample: {include: :producer}}], status: :created
-    else
-      render json: @songssample.errors, status: :unprocessable_entity
-    end
+  #   if @song.save && @sample.save
+  #     @songssample = SongsSample.new(song: @song, sample: @sample)
+  #   if @songssample.save
+  #     render json: @songssample, include: [{song: {include: :producer}}, {sample: {include: :producer}}], status: :created
+  #   else
+  #     render json: @songssample.errors, status: :unprocessable_entity
+  #   end
+  # end
+
+  @songssample = SongsSample.new(songssample_params)
+
+  if @songssample.save
+    render json: @songssample, status: :created
+  else
+    render json: @songssample.errors, status: :unprocessable_entity
   end
+
 end
 
   # PATCH/PUT /songssamples/1
   def update
 
     @songssample = SongsSample.find(params[:id])
-    @song_id = @songssample.song_id
-    @sample_id = @songssample.sample_id
-    @song = Song.find(@song_id)
-    @song_producer_id = @song.producer_id
-    @song_producer = Producer.find(@song_producer_id)
-    @sample = Sample.find(@sample_id)
-    @sample_producer_id = @sample.producer_id
-    @sample_producer = Producer.find(@sample_producer_id)
-    @song.update(song_params)
-    @sample.update(sample_params)
-    @song_producer.update(song_producer_params)
-    @sample_producer.update(sample_producer_params)
     @songssample.update(songssample_params)
-    render json: @sample
+    render json: @songssample
+
+
+
+    # @songssample = SongsSample.find(params[:id])
+    # @song_id = @songssample.song_id
+    # @sample_id = @songssample.sample_id
+    # @song = Song.find(@song_id)
+    # @song_producer_id = @song.producer_id
+    # @song_producer = Producer.find(@song_producer_id)
+    # @sample = Sample.find(@sample_id)
+    # @sample_producer_id = @sample.producer_id
+    # @sample_producer = Producer.find(@sample_producer_id)
+    # @song.update(song_params)
+    # @sample.update(sample_params)
+    # @song_producer.update(song_producer_params)
+    # @sample_producer.update(sample_producer_params)
+    # @songssample.update(songssample_params)
+    # render json: @sample
 
     # @songssample = SongsSample.find(params[:id])
     # @song_id = @songssample.song_id

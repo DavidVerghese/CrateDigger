@@ -1,4 +1,4 @@
-import { Link, useParams } from 'react-router-dom'
+import { Route, Link, useParams } from 'react-router-dom'
 import React, { useState, useEffect } from 'react';
 import './SongsSamplesDetail.css'
 
@@ -94,7 +94,10 @@ function SongsSamplesDetail(props) {
       </div>
       <div className="songssamples-detail-buttons-parent-div">
       <Link to={`/songssamples/${item.id}/edit`}><button>Edit</button></Link>
-    <button onClick={() => removeSongssample(item.id)}>Delete</button></div>
+        <Link to={`/songssamples`}><button onClick={() => removeSongssample(item.id)}>Delete</button></Link></div>
+      
+       
+      
     </div>
   </div>
 }

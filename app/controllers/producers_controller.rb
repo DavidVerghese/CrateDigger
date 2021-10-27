@@ -4,7 +4,7 @@ class ProducersController < ApplicationController
       render json: @producers
     end
     def show
-      @producer = Producer.new(producer_params)
+      @producer = Producer.find(params[:id])
       render json: @producer
     end
     def create
