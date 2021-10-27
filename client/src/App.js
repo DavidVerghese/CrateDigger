@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { Route, Link, Switch, useHistory } from 'react-router-dom';
 import SongsSamples from './screens/SongsSamples/SongsSamples.jsx';
 import SongsSamplesDetail from './screens/SongsSamplesDetail/SongsSamplesDetail.jsx';
+import SongsSamplesEditing from './screens/SongsSamplesEditing/SongsSamplesEditing.jsx';
 import SongsSamplesEditingRedo from './screens/SongsSamplesEditingRedo/SongsSamplesEditingRedo.jsx';
 import SongsSamplesCreate from './screens/SongsSamplesCreate/SongsSamplesCreate.jsx';
 import SearchResults from './screens/SearchResults/SearchResults.jsx';

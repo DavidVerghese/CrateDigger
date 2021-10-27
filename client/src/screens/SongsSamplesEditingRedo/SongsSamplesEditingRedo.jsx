@@ -6,7 +6,7 @@ function SongsSamplesEditingRedo(props) {
   const [song_id2, setSong_id2] = useState('');
   const [sample_id2, setSample_id2] = useState('');
 
-  const [songName2, setSongName2] = useState('');
+  const [songName2, setSongName2] = useState('No Diggity');
   const [songArtist2, setSongArtist2] = useState('');
   const [songGenre2, setSongGenre2] = useState('');
   const [songRecordLabel2, setSongRecordLabel2] = useState('');
@@ -97,13 +97,13 @@ function SongsSamplesEditingRedo(props) {
         return songssample.id === Number(id);
       });
       const oneSong = allSongs.find(song => {
-        return song.id === Number(id);
+        return song.id === oneSongsSample.song_id;
       });
       const oneSongProducer = allProducers.find(producer => {
         return producer.id === oneSong.producer_id;
       });
       const oneSample = allSamples.find(sample => {
-        return sample.id === Number(id);
+        return sample.id === oneSongsSample.song_id;
       });
       const oneSampleProducer = allProducers.find(producer => {
         return producer.id === oneSample.producer_id;
@@ -112,7 +112,10 @@ function SongsSamplesEditingRedo(props) {
       setSong_id2(song_id); 
       setSample_id2(sample_id);
       const name = oneSong.name;
-      setSongName2(name);
+      // setSongName2(name);
+
+      // console.log(songName2);
+
       const artist = oneSong.artist;
       setSongArtist2(artist);
       const genre = oneSong.genre;
@@ -169,7 +172,7 @@ function SongsSamplesEditingRedo(props) {
 
       // setSongsSampleFormData({ song_id, sample_id });
     }
-    if (allSongssamples.length) {
+    if (allSongssamples.length && allSongs.length &&allSamples.length &&allProducers.length) {
       prefillFormData()
     }
   }, [allSongssamples, id])
@@ -204,11 +207,14 @@ function SongsSamplesEditingRedo(props) {
   }
   
   const songHandleChange = (e) => {
+
     const { name, value } = e.target;
+    console.log(name, value);
     setSongFormData(prevState => ({
       ...prevState,
       [name]: value
     }));
+    console.log(songFormData);
     setSongsSampleFormData({
       song: songFormData,
       sample: sampleFormData,
@@ -240,7 +246,6 @@ function SongsSamplesEditingRedo(props) {
     }));
     count += 1;
   }
-
   return <div className="songs-samples-editing-redo-form-container">
     <form onSubmit={(e) => {
       e.preventDefault();
@@ -251,18 +256,24 @@ function SongsSamplesEditingRedo(props) {
         <img id="song-sample-edit-pic" src="https://m.media-amazon.com/images/I/51ULwa7avrL._AC_SY355_.jpg"/>
         <div className="song-sample-editing-redo-song-parent-div">
       <h2>Song: </h2>
-      <label><p>Song Name:</p>
+        <label>
+
+          <p>Song Name:</p>
+        
             <input
               type="text"
             name="name"
-            placeholder={songName2}
+            value={songName2}
+            // placeholder={songName2}
               onChange={songHandleChange}
+   
             />
       </label>
       <label><p>Song Artist:</p>
             <input
               type="text"
             name="artist"
+            value={songArtist2}
             placeholder={songArtist2}
               onChange={songHandleChange}
             />
@@ -271,6 +282,7 @@ function SongsSamplesEditingRedo(props) {
             <input
               type="text"
             name="genre"
+            value={genre}
             placeholder={songGenre2}
               onChange={songHandleChange}
             />
