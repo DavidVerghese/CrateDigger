@@ -5,6 +5,7 @@ export const getAllSongssamples = async () => {
   return resp.data;
 }
 
+
 export const getOneSongssample = async (id) => {
   const resp = await api.get(`/songssamples/${id}`);
   return resp.data;
