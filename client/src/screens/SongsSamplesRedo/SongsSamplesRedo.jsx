@@ -1,14 +1,10 @@
 import { getAllSongs } from '../../services/songs.js'
-import { getAllSamples } from '../../services/samples.js'
-import { getAllSongsSamples } from '../../services/songssamples.js'
 import { useState, useEffect } from 'react';
+import "./SongsSamplesRedo.css";
 
 function SongsSamplesRedo(props) {
 
   const [songs, setSongs] = useState([]);
-  const [samples, setSamples] = useState([]);
-  const [songssamples, setSongsSamples] = useState([]);
-
   useEffect(() => {
     const fetchSongs = async () => {
       const songs = await getAllSongs();
@@ -19,8 +15,8 @@ function SongsSamplesRedo(props) {
 
   return <div>
     <h1>hi</h1>
-    {songs.map((index) => {
-      return <p>{index.name}</p>
+    {songs.map((index, key) => {
+      return <div key={key}><p>{index.name} Find out what samples this song contains</p><img className="songsample-redo-pic" src={index.song_pic_address}/><button>Click Here</button></div>
     })}
   </div>
 }
