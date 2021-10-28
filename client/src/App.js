@@ -3,6 +3,7 @@ import './App.css';
 import React, { useState, useEffect } from 'react';
 import { Route, Link, Switch, useHistory } from 'react-router-dom';
 import SongsSamples from './screens/SongsSamples/SongsSamples.jsx';
+import SongsSamplesRedo from './screens/SongsSamplesRedo/SongsSamplesRedo.jsx';
 import SongsSamplesDetail from './screens/SongsSamplesDetail/SongsSamplesDetail.jsx';
 import SongsSamplesEditingRedo from './screens/SongsSamplesEditingRedo/SongsSamplesEditingRedo.jsx';
 import SongsSamplesCreate from './screens/SongsSamplesCreate/SongsSamplesCreate.jsx';
@@ -199,6 +200,10 @@ function App() {
           allSongs={allSongs}
           allSamples={allSamples}
           allProducers={allProducers}
+          />
+      </Route>
+      <Route exact path='/songssamplesredo'>
+        <SongsSamplesRedo
           />
       </Route>
       <Route exact path='/songssamples/:id'>
