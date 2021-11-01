@@ -4,5 +4,7 @@ Rails.application.routes.draw do
   resources :producers
   resources :samples
   resources :songssamples
-  resources :samplesforsongs
+  resources :samplesassociatedwithsongs do 
+      resources :producers
+    end
 end
