@@ -12,6 +12,10 @@ class SongssamplesController < ApplicationController
     render json: @songssample
   end
 
+  def songs
+    songs.pluck(:name)
+  end
+
   # POST /songssamples
   def create
   #   @song_producer = Producer.create(song_producer_params)
