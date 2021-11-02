@@ -1,5 +1,6 @@
 import { getAllSongs } from '../../services/songs.js'
 import { useState, useEffect } from 'react';
+import AllPostsCard from "../../components/AllPostsCard/AllPostsCard"
 import "./AllPosts.css";
 
 function AllPosts(props) {
@@ -14,10 +15,12 @@ function AllPosts(props) {
   }, []);
 
   return <div>
-    <h1>hi</h1>
+    <h1>All Posts</h1>
+    <div className="all-posts-content">
     {songs.map((index, key) => {
-      return <div key={key}><p>{index.name} Find out what samples this song contains</p><img className="songsample-redo-pic" src={index.song_pic_address}/><button>Click Here</button></div>
+      return <AllPostsCard key={key} index={index}/>
     })}
+    </div>
   </div>
 }
 

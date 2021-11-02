@@ -1,3 +1,8 @@
+.all-posts-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 .songsample-redo-pic {
   width: 100px;
 }
