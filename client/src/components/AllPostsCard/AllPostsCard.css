@@ -1,0 +1,11 @@
+.allposts-thumbnail {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin: 20px;
+}
+.allposts-thumbnail-pic {
+  width: 250px;
+  height: 250px;
+  /* object-fit: no-cover; */
+}
