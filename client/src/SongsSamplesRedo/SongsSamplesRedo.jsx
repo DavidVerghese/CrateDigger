@@ -1,4 +1,4 @@
-import { getAllSongs } from '../../services/songs.js'
+import { getAllSongs } from '../services/songs.js'
 import { useState, useEffect } from 'react';
 import "./SongsSamplesRedo.css";
 
