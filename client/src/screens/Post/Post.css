@@ -1,0 +1,13 @@
+.post {
+  display: flex;
+  flex-direction: column;
+}
+.posts-iframe {
+  width: 560px;
+  height: 315px;
+}
+.song-or-sample {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

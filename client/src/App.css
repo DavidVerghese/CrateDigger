@@ -6,6 +6,9 @@ body {
   font-size: 18px;
   text-align: center;
 }
+button {
+  max-width: 200px;
+}
 .App h1 {
   color: #dcd781;
 }
