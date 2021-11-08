@@ -16,6 +16,7 @@ function AllPosts(props) {
 
   return <div>
     <h1>All Posts</h1>
+    <p><i>Find out the samples these songs contain</i></p>
     <div className="all-posts-content">
     {songs.map((index, key) => {
       return <AllPostsCard key={key} index={index}/>
