@@ -3,6 +3,8 @@
   flex-direction: column;
   width: 300px;
   margin: 20px;
+  border: 1px solid white;
+  padding: 10px;
 }
 .allposts-thumbnail-pic {
   width: 250px;
