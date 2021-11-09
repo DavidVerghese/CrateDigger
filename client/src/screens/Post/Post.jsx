@@ -26,10 +26,15 @@ function Post(props) {
     return <iframe className = "posts-iframe" src={youtube_embed} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   }
   function sample(sample) {
-    return <div>
-      <p>Sample name: {sample.name}</p>
+    return <div className="song-or-sample">
+      <div className="posts-info">
+          <p>Sample name: {sample.name}</p>
     <p>Sample artist: {sample.artist}</p>
-      <button>Find out more info</button>
+        <button>Find out more info</button>
+        <button>Edit</button>
+        <button>Delete</button>
+      </div>
+    
       <div> {youtubePlayer(sample.youtube_embed)}</div>
    
     </div>
@@ -38,12 +43,23 @@ function Post(props) {
   return <div className="post">
     <h2> Song:</h2>
     <div className="song-or-sample">
+    <div className="posts-info">
     <p>Song name: {song.name}</p>
     <p>Song artist: {song.artist}</p>
-    <button>Find out more info</button>
-    {youtubePlayer(song.youtube_embed)}</div>
+        <button>Find out more info</button>
+        <button>Edit</button>
+        </div>
+      {youtubePlayer(song.youtube_embed)}</div>
+    
     <h2> Samples:</h2>
-    {samplesAssociatedWithASong.map((index) => { return sample(index) })}</div>
+    {samplesAssociatedWithASong.map((index) => { return sample(index) })}
+    <div className="posts-add-sample">
+       <em>Want to add in a new sample</em>
+    <button>Add a sample</button>
+    </div>
+   
+  </div>
+  
 }
 export default Post
 
