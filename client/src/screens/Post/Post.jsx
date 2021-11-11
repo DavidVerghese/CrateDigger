@@ -8,6 +8,7 @@ import { useParams } from "react-router-dom";
 function Post(props) {
   const [song, setSong] = useState([]);
   const [samplesAssociatedWithASong, setSamplesAssociatedWithASong] = useState([]);
+  const [numberOfSamples, setNumberOfSamples] = useState(0);
   const { id } = useParams();
   useEffect(() => {
     const fetchSong = async () => {
@@ -18,18 +19,19 @@ function Post(props) {
     const fetchSamplesAssociatedWithASong = async () => {
       const samplesAssociatedWithASong = await getAllSamplesAssociatedWithASong(id);
       setSamplesAssociatedWithASong(samplesAssociatedWithASong);
+      setNumberOfSamples(samplesAssociatedWithASong.length);
     };
     fetchSamplesAssociatedWithASong();
   }, []);
 
   function youtubePlayer(youtube_embed) {
-    return <iframe className = "posts-iframe" src={youtube_embed} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    return <iframe className="posts-iframe" src={youtube_embed} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
   }
   function sample(sample) {
     return <div className="song-or-sample">
       <div className="posts-info">
-          <p>Sample name: {sample.name}</p>
-    <p>Sample artist: {sample.artist}</p>
+        <p>Sample name: {sample.name}</p>
+        <p>Sample artist: {sample.artist}</p>
         <button>Find out more info</button>
         <button>Edit</button>
         <button>Delete</button>
@@ -39,20 +41,33 @@ function Post(props) {
    
     </div>
   }
+  function noSample() {
+    return <div className="no-samples">
+     <p>
+        No samples found
+      </p>
+    
+     <img src="https://media0.giphy.com/media/5x89XRx3sBZFC/giphy.gif?cid=790b761101365822e14d9f412f100401e53afcafca7580d1&rid=giphy.gif&ct=g"/>
+   
+    </div>
+  }
+  function allSamples() {
+    return samplesAssociatedWithASong.map((index) => { return sample(index) })
+  }
 
   return <div className="post">
     <h2> Song:</h2>
     <div className="song-or-sample">
-    <div className="posts-info">
-    <p>Song name: {song.name}</p>
-    <p>Song artist: {song.artist}</p>
+      <div className="posts-info">
+        <p>Song name: {song.name}</p>
+        <p>Song artist: {song.artist}</p>
         <button>Find out more info</button>
         <button>Edit</button>
-        </div>
+      </div>
       {youtubePlayer(song.youtube_embed)}</div>
     
     <h2> Samples:</h2>
-    {samplesAssociatedWithASong.map((index) => { return sample(index) })}
+    {(numberOfSamples !== 0) ? allSamples() :  noSample()}
     <div className="posts-add-sample">
        <em>Want to add in a new sample</em>
     <button>Add a sample</button>
