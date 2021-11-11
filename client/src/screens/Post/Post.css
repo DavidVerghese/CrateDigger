@@ -28,3 +28,12 @@
   /* flex-direction: column;
   align-items: center; */
 }
+.no-samples {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.no-samples img {
+  max-width: 400px;
+  margin: 20px;
+}
