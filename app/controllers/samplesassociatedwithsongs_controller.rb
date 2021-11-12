@@ -6,10 +6,10 @@ class SamplesassociatedwithsongsController < ApplicationController
     @songssamples = SongsSample.where(song_id: params[:id])
     # get all the sample ids that are matched to this 
     # song id 
-    @sampleids = @songssamples.pluck(:sample_id)
+    # @sampleids = @songssamples.pluck(:sample_id)
     # get all the samples based on these sample ids
-    @samples = Sample.where(id: @sampleids)
-    render json: @samples
+    # @samples = Sample.where(id: @sampleids)
+    # render json: @samples
+    render json: @songssamples
   end
-  
 end
