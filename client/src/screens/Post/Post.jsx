@@ -56,7 +56,7 @@ function Post(props) {
   }
   function allSamples() {
     return samplesAssociatedWithASong.map((index) => {
-      return <Sample id={index.sample_id} />
+      return <Sample songssample_id={index.id} sample_id={index.sample_id} />
     })
   }
 
