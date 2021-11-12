@@ -2,7 +2,7 @@ import './SongEdit.css'
 import { getOneSong, putSong } from "../../services/songs";
 import { useParams, Redirect } from "react-router-dom";
 import React, { useState, useEffect } from "react";
-
+import { youtubePlayer} from "../../services/youtubePlayer"
 function SongEdit() {
   const { id } = useParams();
   const [isUpdated, setUpdated] = useState(false);
@@ -107,6 +107,19 @@ const handleSubmit = async (event) => {
       autoFocus
       onChange={handleChange}
       />
+
+<label htmlFor="youtube_embed">Youtube Embed</label>
+    <input
+      className="youtube_embed"
+      placeholder="youtube_embed"
+      value={song.youtube_embed}
+      name="youtube_embed"
+      required
+      autoFocus
+      onChange={handleChange}
+      />
+
+      {youtubePlayer(song.youtube_embed)}
 
 
     <button type="submit">
