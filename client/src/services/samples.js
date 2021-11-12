@@ -15,7 +15,7 @@ export const postSample = async (sampleData) => {
   return resp.data;
 }
 
-export const putSongsample = async (id, sampleData) => {
+export const putSample = async (id, sampleData) => {
   const resp = await api.put(`/samples/${id}`, sampleData);
   return resp.data;
 }

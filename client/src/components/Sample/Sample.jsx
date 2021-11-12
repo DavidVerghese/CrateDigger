@@ -30,7 +30,7 @@ function Sample(props) {
     <p>Sample name: {sample.name}</p>
     <p>Sample artist: {sample.artist}</p>
     <Link to={`/sample/${sample.id}`}> <button>Find out more info</button></Link>
-    <button>Edit</button>
+    <Link to={`/sampleedit/${sample.id}`}><button>Edit</button></Link>
     
     <button onClick={handleDelete}>
               Remove this sample
