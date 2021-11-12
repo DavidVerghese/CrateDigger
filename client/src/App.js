@@ -7,6 +7,7 @@ import AllPosts from './screens/AllPosts/AllPosts.jsx';
 import Post from './screens/Post/Post.jsx'
 import Song from './screens/Song/Song.jsx'
 import SongEdit from './screens/SongEdit/SongEdit.jsx'
+import SampleEdit from './screens/SampleEdit/SampleEdit.jsx'
 import Sample from './screens/Sample/Sample.jsx'
 import SongsSamplesDetail from './screens/SongsSamplesDetail/SongsSamplesDetail.jsx';
 import SongsSamplesEditing from './screens/SongsSamplesDetail/SongsSamplesEditing/SongsSamplesEditing.jsx';
@@ -222,6 +223,9 @@ function App() {
       </Route>
       <Route exact path='/sample/:id'>
         <Sample/>
+      </Route>
+      <Route exact path='/sampleedit/:id'>
+        <SampleEdit/>
       </Route>
       <Route exact path='/songssamples/:id'>
         <SongsSamplesDetail

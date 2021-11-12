@@ -29,7 +29,7 @@ function Song(props) {
     <p>Record label: {sample.record_label}</p>
     <p>Year: {sample.year}</p>
     <p>Producer: {producer.name}</p>
-    <button>Edit</button>
+    <Link to={`/sampleedit/${sample.id}`}> <button>Edit</button></Link>
     <div> {youtubePlayer(sample.youtube_embed)}</div>
   </div>
 }
