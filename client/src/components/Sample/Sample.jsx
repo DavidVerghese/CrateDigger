@@ -29,7 +29,7 @@ function Sample(props) {
   <div className="posts-info">
     <p>Sample name: {sample.name}</p>
     <p>Sample artist: {sample.artist}</p>
-    <button>Find out more info</button>
+    <Link to={`/sample/${sample.id}`}> <button>Find out more info</button></Link>
     <button>Edit</button>
     
     <button onClick={handleDelete}>
