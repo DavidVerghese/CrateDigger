@@ -175,7 +175,7 @@ function App() {
       <div className="nav">
       <Link to='/'><h1>CRATE DIGGER</h1></Link>
       <p><Link to='/songssamples'>ALL POSTS</Link></p>
-      <p><Link to='/producers'>PRODUCERS</Link></p>
+      {/* <p><Link to='/producers'>PRODUCERS</Link></p> */}
         <p><Link to='/new'>ADD A POST</Link></p>
         <div className="searchbar-parent-div">
            <Search

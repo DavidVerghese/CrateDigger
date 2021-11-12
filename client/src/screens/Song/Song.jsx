@@ -27,7 +27,7 @@ function Song(props) {
     <p>Genre: {song.genre}</p>
     <p>Record label: {song.record_label}</p>
     <p>Year: {song.year}</p>
-    <Link to={`/producers/${song.producer_id}`}><button>Find out producer</button></Link>
+    <p>Producer: {producer.name}</p>
     <Link to={`/songedit/${song.id}`}><button>Edit</button></Link>
     <div> {youtubePlayer(song.youtube_embed)}</div>
   </div>
