@@ -4,6 +4,9 @@ import { youtubePlayer } from '../../services/youtubePlayer'
 import { getAllSamplesAssociatedWithASong } from '../../services/samples_associated_with_songs'
 import { getOneSample } from '../../services/samples'
 import Sample from '../../components/Sample/Sample'
+import Song from '../Song/Song'
+import { Link } from "react-router-dom";
+
 import { useState, useEffect } from 'react';
 import { useParams } from "react-router-dom";
 
@@ -27,9 +30,6 @@ function Post(props) {
     fetchSamplesAssociatedWithASong();
   }, []);
 
-  // function youtubePlayer(youtube_embed) {
-  //   return <iframe className="posts-iframe" src={youtube_embed} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
-  // }
   function sample(sample) {
     return <div className="song-or-sample">
       <div className="posts-info">
@@ -66,7 +66,7 @@ function Post(props) {
       <div className="posts-info">
         <p>Song name: {song.name}</p>
         <p>Song artist: {song.artist}</p>
-        <button>Find out more info</button>
+        <Link to={`/songs/${song.id}`}><button>Find out more info</button></Link>
         <button>Edit</button>
       </div>
       {youtubePlayer(song.youtube_embed)}</div>

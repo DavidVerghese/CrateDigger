@@ -5,6 +5,7 @@ import { Route, Link, Switch, useHistory } from 'react-router-dom';
 import SongsSamples from './screens/SongsSamples/SongsSamples.jsx';
 import AllPosts from './screens/AllPosts/AllPosts.jsx';
 import Post from './screens/Post/Post.jsx'
+import Song from './screens/Song/Song.jsx'
 import SongsSamplesDetail from './screens/SongsSamplesDetail/SongsSamplesDetail.jsx';
 import SongsSamplesEditing from './screens/SongsSamplesDetail/SongsSamplesEditing/SongsSamplesEditing.jsx';
 import SongsSamplesEditingRedo from './screens/SongsSamplesEditingRedo/SongsSamplesEditingRedo.jsx';
@@ -210,6 +211,9 @@ function App() {
       </Route>
       <Route exact path='/allposts/:id'>
         <Post/>
+      </Route>
+      <Route exact path='/songs/:id'>
+        <Song/>
       </Route>
       <Route exact path='/songssamples/:id'>
         <SongsSamplesDetail

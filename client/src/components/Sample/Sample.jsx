@@ -33,7 +33,7 @@ function Sample(props) {
     <button>Edit</button>
     
     <button onClick={handleDelete}>
-              Delete
+              Remove this sample
             </button>
   </div>
 
