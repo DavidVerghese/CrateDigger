@@ -2,6 +2,8 @@ import './Post.css'
 import { getOneSong } from '../../services/songs.js'
 import { youtubePlayer } from '../../services/youtubePlayer'
 import { getAllSamplesAssociatedWithASong } from '../../services/samples_associated_with_songs'
+import { getOneSample } from '../../services/samples'
+import Sample from '../../components/Sample/Sample'
 import { useState, useEffect } from 'react';
 import { useParams } from "react-router-dom";
 
@@ -18,15 +20,16 @@ function Post(props) {
     fetchSong();
     const fetchSamplesAssociatedWithASong = async () => {
       const samplesAssociatedWithASong = await getAllSamplesAssociatedWithASong(id);
+      console.log(samplesAssociatedWithASong);
       setSamplesAssociatedWithASong(samplesAssociatedWithASong);
       setNumberOfSamples(samplesAssociatedWithASong.length);
     };
     fetchSamplesAssociatedWithASong();
   }, []);
 
-  function youtubePlayer(youtube_embed) {
-    return <iframe className="posts-iframe" src={youtube_embed} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
-  }
+  // function youtubePlayer(youtube_embed) {
+  //   return <iframe className="posts-iframe" src={youtube_embed} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+  // }
   function sample(sample) {
     return <div className="song-or-sample">
       <div className="posts-info">
@@ -43,16 +46,18 @@ function Post(props) {
   }
   function noSample() {
     return <div className="no-samples">
-     <p>
+      <p>
         No samples found
       </p>
     
-     <img src="https://media0.giphy.com/media/5x89XRx3sBZFC/giphy.gif?cid=790b761101365822e14d9f412f100401e53afcafca7580d1&rid=giphy.gif&ct=g"/>
+      <img src="https://media0.giphy.com/media/5x89XRx3sBZFC/giphy.gif?cid=790b761101365822e14d9f412f100401e53afcafca7580d1&rid=giphy.gif&ct=g" />
    
     </div>
   }
   function allSamples() {
-    return samplesAssociatedWithASong.map((index) => { return sample(index) })
+    return samplesAssociatedWithASong.map((index) => {
+      return <Sample id={index.sample_id} />
+    })
   }
 
   return <div className="post">
@@ -67,7 +72,7 @@ function Post(props) {
       {youtubePlayer(song.youtube_embed)}</div>
     
     <h2> Samples:</h2>
-    {(numberOfSamples !== 0) ? allSamples() :  noSample()}
+    {(numberOfSamples !== 0) ? allSamples() : noSample()}
     <div className="posts-add-sample">
        <em>Want to add in a new sample</em>
     <button>Add a sample</button>

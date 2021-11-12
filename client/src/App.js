@@ -6,7 +6,7 @@ import SongsSamples from './screens/SongsSamples/SongsSamples.jsx';
 import AllPosts from './screens/AllPosts/AllPosts.jsx';
 import Post from './screens/Post/Post.jsx'
 import SongsSamplesDetail from './screens/SongsSamplesDetail/SongsSamplesDetail.jsx';
-import SongsSamplesEditing from './screens/SongsSamplesEditing/SongsSamplesEditing.jsx';
+import SongsSamplesEditing from './screens/SongsSamplesDetail/SongsSamplesEditing/SongsSamplesEditing.jsx';
 import SongsSamplesEditingRedo from './screens/SongsSamplesEditingRedo/SongsSamplesEditingRedo.jsx';
 import SongsSamplesCreate from './screens/SongsSamplesCreate/SongsSamplesCreate.jsx';
 import SearchResults from './screens/SearchResults/SearchResults.jsx';

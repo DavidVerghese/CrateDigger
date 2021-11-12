@@ -6,5 +6,6 @@ Rails.application.routes.draw do
   resources :songssamples
   resources :samplesassociatedwithsongs do 
       resources :producers
+      resources :songssamples
     end
 end
