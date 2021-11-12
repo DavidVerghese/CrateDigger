@@ -74,7 +74,7 @@ function Post(props) {
     <h2> Samples:</h2>
     {(numberOfSamples !== 0) ? allSamples() : noSample()}
     <div className="posts-add-sample">
-       <em>Want to add in a new sample</em>
+       <em>Want to add in a new sample?</em>
     <button>Add a sample</button>
     </div>
    

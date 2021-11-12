@@ -211,7 +211,7 @@ function App() {
         <AllPosts
           />
       </Route>
-      <Route exact path='/allposts/:id'>
+      <Route exact path='/post/:id'>
         <Post/>
       </Route>
       <Route exact path='/song/:id'>
