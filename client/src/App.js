@@ -6,6 +6,7 @@ import SongsSamples from './screens/SongsSamples/SongsSamples.jsx';
 import AllPosts from './screens/AllPosts/AllPosts.jsx';
 import Post from './screens/Post/Post.jsx'
 import Song from './screens/Song/Song.jsx'
+import Sample from './screens/Sample/Sample.jsx'
 import SongsSamplesDetail from './screens/SongsSamplesDetail/SongsSamplesDetail.jsx';
 import SongsSamplesEditing from './screens/SongsSamplesDetail/SongsSamplesEditing/SongsSamplesEditing.jsx';
 import SongsSamplesEditingRedo from './screens/SongsSamplesEditingRedo/SongsSamplesEditingRedo.jsx';
@@ -212,8 +213,11 @@ function App() {
       <Route exact path='/allposts/:id'>
         <Post/>
       </Route>
-      <Route exact path='/songs/:id'>
+      <Route exact path='/song/:id'>
         <Song/>
+      </Route>
+      <Route exact path='/sample/:id'>
+        <Sample/>
       </Route>
       <Route exact path='/songssamples/:id'>
         <SongsSamplesDetail
