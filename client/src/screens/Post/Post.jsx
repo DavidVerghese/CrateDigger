@@ -66,7 +66,7 @@ function Post(props) {
       <div className="posts-info">
         <p>Song name: {song.name}</p>
         <p>Song artist: {song.artist}</p>
-        <Link to={`/songs/${song.id}`}><button>Find out more info</button></Link>
+        <Link to={`/song/${song.id}`}><button>Find out more info</button></Link>
         <button>Edit</button>
       </div>
       {youtubePlayer(song.youtube_embed)}</div>
