@@ -8,4 +8,6 @@ Rails.application.routes.draw do
       resources :producers
       resources :songssamples
     end
+  resources :sampleproducers
+  resources :songproducers
 end
