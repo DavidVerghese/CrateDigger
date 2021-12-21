@@ -1,5 +1,10 @@
 class SongproducersController < ApplicationController
 
+  def show
+    set_producer
+    render json: @producer.name
+  end
+
   def update
     set_producer
     @producer.update(producer_params)
