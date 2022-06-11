@@ -23,7 +23,7 @@ import { getAllProducers, deleteProducer, postProducer, putProducer } from './se
 import Search from './components/Search/Search.jsx';
 import { AZ, ZA } from "./utils/sort.js";
 import Home from './screens/Home/Home.jsx';
-
+import Card  from './screens/Card/Card';
 function App() {
 
   const [allSongssamples, setAllSongssamples] = useState([]);
@@ -34,12 +34,12 @@ function App() {
   const history = useHistory();
   useEffect(() => {
     fetchData();
-  }, [allSongssamples])
+  }, [])
 
   const fetchData = async () => {
     const songssamples = await getAllSongssamples();
     setAllSongssamples(songssamples);
-
+    console.log(allSongssamples);
     const songs = await getAllSongs();
     setAllSongs(songs);
 
@@ -49,6 +49,7 @@ function App() {
     const producers = await getAllProducers();
     setAllProducers(producers);
   }
+
 
   const createSongssample = async (songssampleData) => {
     const newSongssample = await postSongssample(songssampleData);
@@ -174,21 +175,26 @@ function App() {
     <div className="App">
       <div className="nav">
       <Link to='/'><h1>CRATE DIGGER</h1></Link>
-      <p><Link to='/songssamples'>ALL POSTS</Link></p>
-      {/* <p><Link to='/producers'>PRODUCERS</Link></p> */}
+      {/* <p><Link to='/songssamples'>ALL POSTS</Link></p>
+    
         <p><Link to='/new'>ADD A POST</Link></p>
         <div className="searchbar-parent-div">
            <Search
         onSubmit={handleSubmit} 
         onChange={handleSearch} 
       />
-      <Link to='/searchresults'><button id="submit-button">Submit</button></Link>
-          </div>
+          <Link to='/searchresults'><button id="submit-button">Submit</button></Link>
+          <Link to='/table'><p style={{color:'white'}}>Table</p></Link>
+          </div> */}
      
       </div>
       <Route exact path='/'>
           <Home />
-        </Route>
+      </Route>
+      <Route exact path='/cards'>
+        <Card allSongssamples={allSongssamples} allSongs={allSongs} allSamples={allSamples}/>
+      </Route>
+
       <Route exact path='/new'>
           <SongsSamplesCreate
           createSongssample={createSongssample}
@@ -199,7 +205,8 @@ function App() {
           allSamples={allSamples}
           allProducers={allProducers}
           />
-        </Route>
+      </Route>
+      
       <Route exact path='/songssamples'>
         <SongsSamples
           allSongssamples={allSongssamples}

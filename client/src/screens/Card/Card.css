@@ -1,0 +1,34 @@
+tr, th, td {
+  border: 0.5px solid white;
+}
+.table img {
+  width: 100px;
+  height: 100px;
+}
+.hide {
+  color: black;
+}
+.table {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+.directions {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+}
+.entry {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  color: black;
+  /* max-width: 700px; */
+  width: 80%;
+  margin: 20px;
+  margin-left: 100px;
+  border: 1px solid rgba(21, 14, 14, 0.4);
+  padding: 30px;
+}
