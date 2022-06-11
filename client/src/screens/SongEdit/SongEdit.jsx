@@ -1,5 +1,6 @@
 import './SongEdit.css'
 import { getOneSong, putSong } from "../../services/songs";
+import { putSongProducerName, getSongProducerName } from "../../services/songproducers";
 import { useParams, Redirect } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import { youtubePlayer} from "../../services/youtubePlayer"
@@ -18,6 +19,14 @@ function SongEdit() {
     youtube_address: "",
     youtube_embed: ""
   });
+  const [producerName, setProducerName] = useState({
+    name: ""
+  })
+  const [producerObject, setProducerObject] = useState({
+    producer: {
+      name: ""
+    }
+  })
 
 useEffect(() => {
   const fetchSong = async () => {
@@ -25,9 +34,15 @@ useEffect(() => {
     setSong(song);
   };
   fetchSong();
+  const fetchProducerName = async () => {
+    const producerName = await getSongProducerName(id);
+    setProducerName( producerName );
+    
+  };
+  fetchProducerName();
 
-}, [id]);
-  
+}, [id])
+
 if (isUpdated) {
   return <Redirect to={`/song/${id}`} />;
 }
@@ -41,6 +56,16 @@ if (isUpdated) {
       [name]: value,
     });
   };
+
+  const songProducerNameChange = (event) => {
+    const { name, value } = event.target;
+    setProducerObject({
+      producer: {
+          [name]: value,
+        }
+      
+      });
+    };
   
 
 
@@ -50,6 +75,7 @@ const handleSubmit = async (event) => {
     ...song
   });
   const updated = await putSong(id, song);
+  const updated2 = await putSongProducerName(id, producerName);
   setUpdated(updated);
 };
 
@@ -117,6 +143,16 @@ const handleSubmit = async (event) => {
       required
       autoFocus
       onChange={handleChange}
+      />
+      <label htmlFor="producer_name">Producer Name</label>
+    <input
+      className="producer_name"
+      placeholder="producer_name"
+      value={producerName}
+      name="producer_name"
+      required
+      autoFocus
+      onChange={songProducerNameChange}
       />
 
       {youtubePlayer(song.youtube_embed)}
