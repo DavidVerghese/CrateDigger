@@ -137,7 +137,7 @@ tommy_butler = Producer.where(name: "Tommy Butler", genre:"soul", lifetime: "unk
 ).first_or_create
 
 @prison_song = Sample.where(
-  name: "Prison Song",
+  name: "Prisson Song",
   artist: "Carlton Williams",
   genre: "Soul",
   record_label: "Cotillon",
