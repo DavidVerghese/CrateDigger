@@ -25,7 +25,7 @@ function Card(props) {
     
    <em className={!revealSample ? "show" : "hide"}>Flip the card to see the sample! </em>
    
-    {allSongssamples.map((index, key) => {
+    {allSongssamples.length>0 ? allSongssamples.map((index, key) => {
       if (key === currentCard) {
         return (<div key={key} className="entry">
           {allSongs.map((song) => song.id === index.song_id && !revealSample ? <p>SONG: {song.name} by {song.artist}</p> : null)}
@@ -36,7 +36,7 @@ function Card(props) {
             
           <button onClick={() => setRevealSample(!revealSample)}>'Flip the card'</button>
         </div>)}
-    })}
+    }):null}
     <div className="directions">
       <button onClick={() => { goBack(); setRevealSample(false) }}>Previous</button>
       <button onClick={() => { goForward(); setRevealSample(false) }}>Next</button>
