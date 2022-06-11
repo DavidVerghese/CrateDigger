@@ -39,7 +39,6 @@ function App() {
   const fetchData = async () => {
     const songssamples = await getAllSongssamples();
     setAllSongssamples(songssamples);
-    console.log(allSongssamples);
     const songs = await getAllSongs();
     setAllSongs(songs);
 
@@ -50,6 +49,7 @@ function App() {
     setAllProducers(producers);
   }
 
+  console.log(allSongssamples);
 
   const createSongssample = async (songssampleData) => {
     const newSongssample = await postSongssample(songssampleData);
