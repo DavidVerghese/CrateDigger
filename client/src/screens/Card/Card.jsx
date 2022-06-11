@@ -4,7 +4,7 @@ import { getOneSong } from "../../services/songs";
 
 function Card(props) {
   const { allSongssamples, allSongs,allSamples } = props;
-  // console.log(allSongssamples);
+  console.log(allSongssamples);
   const [revealSample, setRevealSample] = useState(false);
   const [currentCard, setCurrentCard] = useState(0);
   function goForward(){
