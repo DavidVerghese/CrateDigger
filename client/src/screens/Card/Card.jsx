@@ -25,8 +25,8 @@ function Card(props) {
     
    <em className={!revealSample ? "show" : "hide"}>Flip the card to see the sample! </em>
    
-    {allSongssamples.length>0 ? allSongssamples.map((index, key) => {
-      if (key === currentCard+7) {
+    { allSongssamples.map((index, key) => {
+      if (key === currentCard) {
         return (<div key={key} className="entry">
           {allSongs.map((song) => song.id === index.song_id && !revealSample ? <p>SONG: {song.name} by {song.artist}</p> : null)}
           {allSongs.map((song) => song.id === index.song_id && !revealSample ? <iframe width="560" height="315" src={song.youtube_embed} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe> : null)}
@@ -36,7 +36,7 @@ function Card(props) {
             
           <button onClick={() => setRevealSample(!revealSample)}>'Flip the card'</button>
         </div>)}
-    }):null}
+    })}
     <div className="directions">
       <button onClick={() => { goBack(); setRevealSample(false) }}>Previous</button>
       <button onClick={() => { goForward(); setRevealSample(false) }}>Next</button>
