@@ -1,7 +1,7 @@
-# Song.destroy_all
-# Producer.destroy_all
-# Sample.destroy_all
-# SongsSample.destroy_all
+Song.destroy_all
+Producer.destroy_all
+Sample.destroy_all
+SongsSample.destroy_all
 
 # PRODUCERS
 
