@@ -23,7 +23,8 @@ import { getAllProducers, deleteProducer, postProducer, putProducer } from './se
 import Search from './components/Search/Search.jsx';
 import { AZ, ZA } from "./utils/sort.js";
 import Home from './screens/Home/Home.jsx';
-import Card  from './screens/Card/Card';
+import Card from './screens/Card/Card';
+
 function App() {
 
   const [allSongssamples, setAllSongssamples] = useState([]);
