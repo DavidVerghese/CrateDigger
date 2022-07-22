@@ -10,8 +10,21 @@
   font-size: 150%;
   padding: 10px;
 }
+#spin {
+  animation: rotation 2s infinite linear;
+  margin: 0px 30px;
+}
 @media (max-width: 400px) {
   #home-pic {
     width: 300px;
+  }
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
   }
 }

@@ -11,9 +11,8 @@ function Home() {
    
     <div>
       {/* <img id="home-pic" src="https://media2.giphy.com/media/Z4ITmGFsXV19C/giphy.gif" alt="two djs" ></img> */}
-      <img src={crate_digger} />
-      <img src={crate_digger} />
-      <img src={crate_digger} />
+      <img id="spin" src={crate_digger} />
+      <img id="spin" src={crate_digger} />
     </div>
    
     <Link to="/cards"><button>Click to enter</button></Link>
