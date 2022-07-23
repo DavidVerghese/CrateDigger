@@ -13,7 +13,7 @@
 #turntable-container {
   position: relative;
   max-width: 500px;
-  border: 2px solid #dadada;
+  /* border: 2px solid #dadada; */
   border-radius: 25px;
 }
 #turntable {

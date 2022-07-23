@@ -27,19 +27,19 @@ function Card(props) {
    
     { allSongssamples.map((index, key) => {
       if (key === currentCard) {
-        return (<div key={key} className="entry">
-          {allSongs.map((song) => song.id === index.song_id && !revealSample ? <p>SONG: {song.name} by {song.artist}</p> : null)}
+        return (<div key={key} className="card" style={{ padding: "20px", color:"black" }}>
+          {allSongs.map((song) => song.id === index.song_id && !revealSample ? <h2>SONG: {song.name} by {song.artist}</h2> : null)}
           {allSongs.map((song) => song.id === index.song_id && !revealSample ? <iframe width="560" height="315" src={song.youtube_embed} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe> : null)}
             
-          {allSamples.map((song) => song.id === index.song_id && revealSample ? <p>SAMPLE: {song.name} by {song.artist}</p> : null)}
+          {allSamples.map((song) => song.id === index.song_id && revealSample ? <h2>SAMPLE: {song.name} by {song.artist}</h2> : null)}
           {allSamples.map((song) => song.id === index.sample_id && revealSample ? <iframe width="560" height="315" src={song.youtube_embed} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe> : null)}
             
-          <button onClick={() => setRevealSample(!revealSample)}>'Flip the card'</button>
+          <button type="button" className="btn btn-primary" onClick={() => setRevealSample(!revealSample)}>'Flip the card'</button>
         </div>)}
     })}
     <div className="directions">
-      <button onClick={() => { goBack(); setRevealSample(false) }}>Previous</button>
-      <button onClick={() => { goForward(); setRevealSample(false) }}>Next</button>
+      <button type="button" className="btn btn-primary" onClick={() => { goBack(); setRevealSample(false) }}>Previous</button>
+      <button type="button" className="btn btn-primary" onClick={() => { goForward(); setRevealSample(false) }}>Next</button>
     </div>
     
 

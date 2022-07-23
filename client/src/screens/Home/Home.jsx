@@ -7,6 +7,9 @@ import turntable from "../../pictures/turntable.png"
 
 function Home() {
   return <div className="home">
+
+
+    
     {/* <h2>Welcome to Crate Digger!</h2> */}
     <p>Find out where your favorite songs got their tune</p>
     <br />
@@ -23,7 +26,7 @@ function Home() {
     
   
    
-    <Link to="/cards"><button>Click to enter</button></Link>
+    <Link to="/cards"><button type="button" className="btn btn-primary">Click to enter</button></Link>
   </div>
 }
 export default Home
