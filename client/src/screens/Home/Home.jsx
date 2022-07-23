@@ -1,19 +1,27 @@
 import './Home.css'
 import { Link } from "react-router-dom";
 
-import crate_digger from "../../pictures/crate_digger.png"
+import vinyl from "../../pictures/vinyl.png";
+import turntable_arm from "../../pictures/turntable_arm.png";
+import turntable from "../../pictures/turntable.png"
 
 function Home() {
   return <div className="home">
-    <h2>Welcome to Crate Digger!</h2>
+    {/* <h2>Welcome to Crate Digger!</h2> */}
     <p>Find out where your favorite songs got their tune</p>
     <br />
    
-    <div>
-      {/* <img id="home-pic" src="https://media2.giphy.com/media/Z4ITmGFsXV19C/giphy.gif" alt="two djs" ></img> */}
-      <img id="spin" src={crate_digger} />
-      <img id="spin" src={crate_digger} />
+    <div id="turntable-container">
+      <img id="turntable-arm" src={turntable_arm} />
+      <img id="turntable" src={turntable} />
+      <img id="spin" src={vinyl} />
     </div>
+
+    
+    
+    
+    
+  
    
     <Link to="/cards"><button>Click to enter</button></Link>
   </div>

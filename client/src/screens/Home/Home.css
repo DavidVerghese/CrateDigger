@@ -10,9 +10,34 @@
   font-size: 150%;
   padding: 10px;
 }
+#turntable-container {
+  position: relative;
+  max-width: 500px;
+  border: 2px solid #dadada;
+  border-radius: 25px;
+}
+#turntable {
+  position: relative;
+  top: 0;
+  left: 0;
+  max-width: 500px;
+}
+#turntable-arm {
+  position:absolute; 
+  top: 15px; 
+  right: 50px; 
+  max-width: 152px;
+  z-index: 1;
+}
 #spin {
-  animation: rotation 2s infinite linear;
-  margin: 0px 30px;
+  animation: rotation 6s infinite linear;
+  /* margin: 0px 30px; */
+  max-width: 260px;
+
+  position:absolute; 
+  top: 35px; 
+  left: 100px; 
+  z-index: 0;
 }
 @media (max-width: 400px) {
   #home-pic {
