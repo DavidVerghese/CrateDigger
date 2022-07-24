@@ -29,10 +29,10 @@ function Card(props) {
       if (key === currentCard) {
         return (<div key={key} className="card" style={{  color:"black" }}>
           {allSongs.map((song) => song.id === index.song_id && !revealSample ? <h2>SONG: {song.name} by {song.artist}</h2> : null)}
-          {allSongs.map((song) => song.id === index.song_id && !revealSample ? <iframe width="560" height="315" src={song.youtube_embed} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe> : null)}
+          {allSongs.map((song) => song.id === index.song_id && !revealSample ? <iframe  src={song.youtube_embed} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe> : null)}
             
           {allSamples.map((song) => song.id === index.song_id && revealSample ? <h2>SAMPLE: {song.name} by {song.artist}</h2> : null)}
-          {allSamples.map((song) => song.id === index.sample_id && revealSample ? <iframe width="560" height="315" src={song.youtube_embed} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe> : null)}
+          {allSamples.map((song) => song.id === index.sample_id && revealSample ? <iframe src={song.youtube_embed} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe> : null)}
             
           <button type="button" className="btn btn-primary" onClick={() => setRevealSample(!revealSample)}>'Flip the card'</button>
         </div>)}

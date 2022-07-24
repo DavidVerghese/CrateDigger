@@ -41,11 +41,21 @@ button {
   background-color: #3a6a6f;
   color: white;
 }
+iframe {
+  width: "560px";
+  height:"315px"
+}
 
 .footer {
   padding: 30px;
 }
 
+@media (max-width: 550px){
+  iframe {
+    width: "196px";
+    height:"110px"
+  }
+}
 @media (max-width: 400px) {
   body {
     font-size: 15px;
