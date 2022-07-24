@@ -284,7 +284,7 @@ function App() {
           allProducers={allProducers}
         />
       </Route>
-      <div className="footer"> © David Verghese</div>
+      {/* <div className="footer"> © David Verghese</div> */}
     </div>
   );
 }

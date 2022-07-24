@@ -27,7 +27,7 @@ function Card(props) {
    
     { allSongssamples.map((index, key) => {
       if (key === currentCard) {
-        return (<div key={key} className="card" style={{ padding: "20px", color:"black" }}>
+        return (<div key={key} className="card" style={{  color:"black" }}>
           {allSongs.map((song) => song.id === index.song_id && !revealSample ? <h2>SONG: {song.name} by {song.artist}</h2> : null)}
           {allSongs.map((song) => song.id === index.song_id && !revealSample ? <iframe width="560" height="315" src={song.youtube_embed} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe> : null)}
             

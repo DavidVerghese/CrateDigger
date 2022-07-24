@@ -13,7 +13,6 @@
 #turntable-container {
   position: relative;
   max-width: 500px;
-  /* border: 2px solid #dadada; */
   border-radius: 25px;
 }
 #turntable {
@@ -44,8 +43,25 @@
   #home-pic {
     width: 300px;
   }
+
 }
 
+@media (max-width: 550px) {
+  #turntable-container {
+    max-width: 200px;
+  }
+  #turntable {
+    max-width: 200px;
+  }
+  #turntable-arm {
+    max-width: 40px;
+  }
+  #spin {
+    max-width: 90px;
+    top: 15px; 
+    left: 50px; 
+  }
+}
 @keyframes rotation {
   from {
     transform: rotate(0deg);
