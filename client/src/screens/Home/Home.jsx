@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import vinyl from "../../pictures/vinyl.png";
 import turntable_arm from "../../pictures/turntable_arm.png";
 import turntable from "../../pictures/turntable.png"
+import Button from 'react-bootstrap/Button';
 
 function Home() {
   return <div className="home">
@@ -20,13 +21,7 @@ function Home() {
       <img id="spin" src={vinyl} />
     </div>
 
-    
-    
-    
-    
-  
-   
-    <Link to="/cards"><button type="button" className="btn btn-primary">Click to enter</button></Link>
+    <Link to="/cards"><Button>Click to enter</Button></Link>
   </div>
 }
 export default Home

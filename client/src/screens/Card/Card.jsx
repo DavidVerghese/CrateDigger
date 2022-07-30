@@ -1,6 +1,7 @@
 import './Card.css'
 import { useEffect, useState, useRef} from "react";
 import { getOneSong } from "../../services/songs";
+import Button from 'react-bootstrap/Button';
 
 function Card(props) {
   const { allSongssamples, allSongs,allSamples } = props;
@@ -33,13 +34,16 @@ function Card(props) {
             
           {allSamples.map((song) => song.id === index.song_id && revealSample ? <h2>SAMPLE: {song.name} by {song.artist}</h2> : null)}
           {allSamples.map((song) => song.id === index.sample_id && revealSample ? <iframe src={song.youtube_embed} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe> : null)}
-            
-          <button type="button" className="btn btn-primary" onClick={() => setRevealSample(!revealSample)}>'Flip the card'</button>
+          
+          <Button  onClick={() => setRevealSample(!revealSample)}>'Flip the card'</Button>
+        
         </div>)}
     })}
     <div className="directions">
-      <button type="button" className="btn btn-primary" onClick={() => { goBack(); setRevealSample(false) }}>Previous</button>
-      <button type="button" className="btn btn-primary" onClick={() => { goForward(); setRevealSample(false) }}>Next</button>
+      <Button onClick={() => { goBack(); setRevealSample(false) }}>Back</Button>
+      <Button onClick={() => {  goForward(); setRevealSample(false) }}>Next</Button>
+    
+     
     </div>
     
 
